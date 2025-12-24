@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Rebels PH | Lucifer's Symphony</title>
+  
+  <!-- ===== GOOGLE ANALYTICS ===== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJ9X8BV4KM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TJ9X8BV4KM');
+  </script>
+  
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -11,12 +21,12 @@
     /* ====== ROOT COLORS ====== */
     :root {
       /* DAY MODE COLORS */
-      --day-primary: #1a73e8;
-      --day-secondary: #0d5cba;
-      --day-accent: #c62828;
-      --day-bg: #f0f8ff;
-      --day-text: #000000;
-      --day-grid: rgba(26, 115, 232, 0.1);
+      --day-primary: #ff6b35;
+      --day-secondary: #1a73e8;
+      --day-accent: #ffcc00;
+      --day-bg: #1a1a2e;
+      --day-text: #e6e6e6;
+      --day-grid: rgba(255, 107, 53, 0.15);
       --day-sun-glow: #ffcc00;
       --day-sun-core: #ff6600;
       
@@ -48,16 +58,17 @@
       --grid-color: var(--night-grid);
     }
 
-    /* DAY MODE VARIABLES */
+    /* ===== ENHANCED DAY MODE ===== */
     .day-mode {
-      --primary-color: var(--day-primary);
-      --secondary-color: var(--day-secondary);
-      --accent-color: var(--day-accent);
-      --bg-color: var(--day-bg);
-      --text-color: var(--day-text);
-      --grid-color: var(--day-grid);
+      --primary-color: #ff6b35;
+      --secondary-color: #1a73e8;
+      --accent-color: #ffcc00;
+      --bg-color: #1a1a2e;
+      --text-color: #e6e6e6;
+      --grid-color: rgba(255, 107, 53, 0.15);
       --cursor-color: #1a73e8;
       --cursor-glow: #4285f4;
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
     }
 
     /* NIGHT MODE VARIABLES */
@@ -315,14 +326,14 @@
       100% { background-position: 0% 0%; }
     }
 
-    /* ===== COMPACT REALISTIC MUSIC PLAYER - PERFECT WIDTH ===== */
+    /* ===== COMPACT REALISTIC MUSIC PLAYER ===== */
     .music-player-container {
       position: fixed;
       top: 75px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 998;
-      width: 802px; /* INCREASED BY 8% FROM 743px */
+      width: 802px;
       height: 140px;
       background: rgba(25, 25, 40, 0.85);
       border-radius: 15px;
@@ -334,7 +345,6 @@
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border: 1px solid rgba(255, 255, 255, 0.1);
       
-      /* Glass effect */
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       box-shadow: 
@@ -343,7 +353,6 @@
         0 0 0 1px rgba(255, 255, 255, 0.05);
     }
 
-    /* Scroll behavior - when scrolled, move below name */
     .music-player-container.scrolled {
       top: 70px;
       transform: translateX(-50%) scale(0.95);
@@ -609,7 +618,6 @@
       background: rgba(255, 255, 255, 0.12);
     }
 
-    /* Metallic accents */
     .metallic-accent {
       position: absolute;
       width: 60%;
@@ -626,10 +634,13 @@
       bottom: 8px;
     }
 
-    /* DAY MODE - SUN PLAYER STYLES */
+    /* ===== ENHANCED DAY MODE STYLES ===== */
     .day-mode .music-player-container {
-      background: linear-gradient(135deg, rgba(40, 30, 10, 0.85), rgba(20, 15, 5, 0.85));
-      border: 1px solid rgba(255, 204, 0, 0.25);
+      background: linear-gradient(135deg, rgba(30, 30, 46, 0.92), rgba(40, 40, 60, 0.92));
+      border: 2px solid var(--accent-color);
+      box-shadow: 
+        0 15px 40px rgba(255, 107, 53, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
     }
 
     .day-mode .icon-ring {
@@ -647,25 +658,48 @@
     }
 
     .day-mode .progress-fill {
-      background: linear-gradient(90deg, #ffcc00, #ff6600);
-      box-shadow: 0 0 8px rgba(255, 153, 0, 0.5);
+      background: linear-gradient(90deg, #ff6b35, #ffcc00);
+      box-shadow: 0 0 15px rgba(255, 107, 53, 0.5);
     }
 
     .day-mode .control-btn:hover {
-      color: #ffcc00;
+      color: #ff6b35;
       box-shadow: 
-        0 5px 15px rgba(255, 153, 0, 0.3),
+        0 5px 15px rgba(255, 107, 53, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
 
     .day-mode .player-name {
-      background: linear-gradient(to right, #ffcc00, #ff9900, #ff6600);
+      background: linear-gradient(to right, #ff6b35, #ffcc00, #1a73e8);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
-    /* NIGHT MODE - MOON PLAYER STYLES */
+    .day-mode .section-container {
+      background: rgba(30, 30, 46, 0.92);
+      backdrop-filter: blur(12px);
+      border: 2px solid var(--accent-color);
+      box-shadow: 
+        0 10px 40px rgba(255, 204, 0, 0.25),
+        0 0 30px rgba(26, 115, 232, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .day-mode .content-item {
+      background: rgba(40, 40, 60, 0.95);
+      border: 1px solid rgba(255, 107, 53, 0.3);
+      border-left: 4px solid var(--primary-color);
+      transition: all 0.3s ease;
+    }
+
+    .day-mode .content-item:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(255, 107, 53, 0.2);
+      border-color: var(--accent-color);
+    }
+
+    /* NIGHT MODE STYLES */
     .night-mode .music-player-container {
       background: linear-gradient(135deg, rgba(20, 25, 40, 0.85), rgba(10, 15, 30, 0.85));
       border: 1px solid rgba(102, 153, 255, 0.25);
@@ -704,7 +738,7 @@
       color: transparent;
     }
 
-    /* LUCIFER MODE - DEVIL PLAYER STYLES */
+    /* LUCIFER MODE STYLES */
     .lucifer-mode .music-player-container {
       background: linear-gradient(135deg, rgba(40, 10, 10, 0.85), rgba(20, 5, 5, 0.85));
       border: 1px solid rgba(204, 51, 51, 0.25);
@@ -754,6 +788,11 @@
       50% { opacity: 1; }
     }
 
+    @keyframes sunPulse {
+      0% { opacity: 0.08; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0.15; transform: translate(-50%, -50%) scale(1.1); }
+    }
+
     /* ===== BACKGROUND EFFECTS ===== */
     .bg-grid {
       position:fixed; top:0; left:0; width:100%; height:100%;
@@ -773,10 +812,16 @@
       z-index:-2; opacity:0.05;
       transition:background 0.8s ease, opacity 0.8s ease;
     }
+
+    .day-mode .glow-effect {
+      background: radial-gradient(circle, rgba(255, 204, 0, 0.2) 0%, transparent 70%);
+      opacity: 0.1;
+      animation: sunPulse 4s infinite alternate;
+    }
     
     #matrix { position:fixed; top:0; left:0; z-index:-1; }
 
-    /* ===== HEADER CONTAINER - PERFECTLY SPACED ===== */
+    /* ===== HEADER CONTAINER ===== */
     .header-container { 
       text-align:center; 
       padding: 140px 20px 20px;
@@ -794,6 +839,13 @@
       margin-top: 5px;
       margin-bottom: 5px;
     }
+
+    .day-mode h1 {
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 10px rgba(255, 204, 0, 0.3);
+    }
     
     @keyframes colorBlink {
       0%, 100% { color: var(--primary-color); text-shadow: 0 0 15px var(--primary-color); }
@@ -807,7 +859,7 @@
       15% { transform: translate(-2px, -2px) skew(-1deg); opacity: 0.9; }
     }
 
-    /* ===== DATE AND TIME DISPLAY - PERFECTLY CENTERED ===== */
+    /* ===== DATE AND TIME DISPLAY ===== */
     .datetime-container {
       text-align: center;
       margin: 5px 0 15px;
@@ -882,6 +934,12 @@
       z-index: 50;
       transition: all 0.8s ease;
     }
+
+    .day-mode nav {
+      background: rgba(30, 30, 46, 0.9);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      box-shadow: 0 5px 20px rgba(255, 107, 53, 0.2);
+    }
     
     nav a {
       color: var(--text-color);
@@ -893,12 +951,25 @@
       transition: 0.3s;
       position: relative;
     }
+
+    .day-mode nav a {
+      background: rgba(40, 40, 60, 0.9);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      color: var(--text-color);
+    }
     
     nav a:hover {
       color: var(--accent-color);
       border-color: var(--secondary-color);
       text-shadow: 0 0 8px var(--secondary-color);
       background: rgba(var(--primary-color-rgb), 0.1);
+    }
+
+    .day-mode nav a:hover {
+      background: var(--primary-color);
+      color: white;
+      box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+      border-color: var(--primary-color);
     }
     
     nav a.active {
@@ -937,13 +1008,6 @@
     
     .section-container.active {
       display: block;
-    }
-
-    .day-mode .section-container {
-      background: rgba(255, 255, 255, 0.95);
-      color: var(--text-color);
-      box-shadow: 0 0 30px var(--primary-color),
-                  inset 0 0 20px rgba(26, 115, 232, 0.1);
     }
 
     .section-container::before {
@@ -993,8 +1057,9 @@
     }
 
     .day-mode .section-content {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(40, 40, 60, 0.9);
       color: var(--text-color);
+      border: 1px solid rgba(255, 107, 53, 0.3);
     }
 
     .content-item {
@@ -1007,17 +1072,6 @@
       position: relative;
       overflow: hidden;
       color: var(--text-color);
-    }
-
-    .day-mode .content-item {
-      background: rgba(255, 255, 255, 0.95);
-      color: var(--text-color);
-    }
-
-    .content-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 20px rgba(var(--secondary-color-rgb), 0.3);
-      border-color: var(--primary-color);
     }
 
     .item-title {
@@ -1067,7 +1121,7 @@
     }
 
     .day-mode footer {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(30, 30, 46, 0.9);
       color: var(--text-color);
     }
 
@@ -1117,7 +1171,7 @@
     .day-mode .click-counter,
     .day-mode .secret-trigger,
     .day-mode .visitor-counter {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(30, 30, 46, 0.9);
       color: var(--text-color);
     }
 
@@ -1133,6 +1187,220 @@
       pointer-events: none;
       opacity: 0;
       transition: opacity 0.5s ease, filter 0.5s ease;
+    }
+
+    /* ===== GCASH MODAL STYLES ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(15px);
+      animation: modalFadeIn 0.5s ease;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-content {
+      background: var(--bg-color);
+      border: 3px solid var(--accent-color);
+      border-radius: 20px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 
+        0 0 60px var(--primary-color),
+        0 0 100px rgba(var(--primary-color-rgb), 0.5),
+        inset 0 0 30px rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+      position: relative;
+      animation: modalGlow 2s infinite alternate;
+    }
+
+    @keyframes modalGlow {
+      0% { box-shadow: 0 0 40px var(--primary-color), 0 0 80px rgba(var(--primary-color-rgb), 0.3); }
+      100% { box-shadow: 0 0 60px var(--primary-color), 0 0 120px rgba(var(--primary-color-rgb), 0.5); }
+    }
+
+    .modal-header {
+      background: linear-gradient(90deg, var(--bg-color), rgba(var(--primary-color-rgb), 0.4), var(--bg-color));
+      padding: 20px;
+      border-bottom: 2px solid var(--primary-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-header h3 {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      margin: 0;
+      text-shadow: 0 0 15px var(--primary-color);
+      letter-spacing: 2px;
+    }
+
+    .close-modal {
+      color: var(--accent-color);
+      font-size: 2.5rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .close-modal:hover {
+      transform: scale(1.2) rotate(90deg);
+      text-shadow: 0 0 20px var(--accent-color);
+      background: rgba(var(--accent-color-rgb), 0.2);
+    }
+
+    .modal-body {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .qr-container {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      margin: 0 auto 30px;
+      border: 4px solid var(--primary-color);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 
+        0 0 40px var(--primary-color),
+        inset 0 0 30px rgba(255, 255, 255, 0.1);
+      transition: all 0.5s;
+    }
+
+    .qr-container:hover {
+      transform: scale(1.05);
+      box-shadow: 
+        0 0 60px var(--accent-color),
+        inset 0 0 40px rgba(255, 255, 255, 0.2);
+    }
+
+    .qr-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(1.1) contrast(1.1);
+    }
+
+    .qr-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, 
+        rgba(var(--primary-color-rgb), 0.3), 
+        rgba(var(--accent-color-rgb), 0.3));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      color: white;
+      opacity: 0;
+      transition: all 0.5s;
+      backdrop-filter: blur(5px);
+    }
+
+    .qr-container:hover .qr-overlay {
+      opacity: 1;
+    }
+
+    .tagline {
+      text-align: center;
+      color: var(--secondary-color);
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      border-left: 4px solid var(--accent-color);
+      border-right: 4px solid var(--accent-color);
+      font-style: italic;
+      text-shadow: 0 0 10px var(--secondary-color);
+    }
+
+    .fuel-message {
+      color: var(--text-color);
+      font-size: 1.1rem;
+      margin-top: 25px;
+      padding: 15px;
+      background: rgba(var(--primary-color-rgb), 0.1);
+      border-radius: 15px;
+      border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    }
+
+    .fuel-message strong {
+      color: var(--accent-color);
+      text-shadow: 0 0 10px var(--accent-color);
+    }
+
+    .modal-footer {
+      padding: 20px;
+      text-align: center;
+      border-top: 2px solid var(--accent-color);
+      background: linear-gradient(90deg, var(--bg-color), rgba(var(--accent-color-rgb), 0.1), var(--bg-color));
+    }
+
+    .confirm-btn {
+      padding: 15px 40px;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      border: none;
+      color: white;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 5px 20px rgba(var(--primary-color-rgb), 0.4);
+    }
+
+    .confirm-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 
+        0 0 40px var(--accent-color),
+        0 10px 30px rgba(var(--accent-color-rgb), 0.6);
+      letter-spacing: 5px;
+    }
+
+    /* Mode-specific modal styles */
+    .day-mode .modal-content {
+      background: #1a1a2e;
+      border-color: #ffcc00;
+    }
+
+    .night-mode .modal-content {
+      background: #0a0a0a;
+      border-color: #b66dff;
+    }
+
+    .lucifer-mode .modal-content {
+      background: #1a0a0a;
+      border-color: #ff3300;
     }
 
     /* ===== TERMINAL INTERFACE STYLES ===== */
@@ -1305,14 +1573,14 @@
 
     /* MODE-SPECIFIC ADJUSTMENTS */
     .day-mode .terminal-interface {
-      background: rgba(255, 255, 255, 0.95);
-      border-color: #1a73e8;
-      box-shadow: 0 0 50px rgba(26, 115, 232, 0.5);
+      background: rgba(30, 30, 46, 0.95);
+      border-color: #ff6b35;
+      box-shadow: 0 0 50px rgba(255, 107, 53, 0.5);
     }
 
     .day-mode .terminal-body {
-      color: #1a73e8;
-      background: rgba(240, 248, 255, 0.9);
+      color: #ff6b35;
+      background: rgba(26, 26, 46, 0.9);
     }
 
     .night-mode .terminal-interface {
@@ -1336,7 +1604,7 @@
       
       .music-player-container {
         width: 90%;
-        max-width: 866px; /* ADJUSTED FROM 817px */
+        max-width: 866px;
       }
       
       .header-container {
@@ -1346,6 +1614,11 @@
       .terminal-interface {
         width: 95%;
         height: 450px;
+      }
+      
+      .qr-container {
+        width: 250px;
+        height: 250px;
       }
     }
 
@@ -1499,6 +1772,19 @@
       .terminal-title {
         font-size: 0.8rem;
       }
+      
+      .qr-container {
+        width: 220px;
+        height: 220px;
+      }
+      
+      .modal-header h3 {
+        font-size: 1.5rem;
+      }
+      
+      .tagline {
+        font-size: 1.1rem;
+      }
     }
     
     @media (max-width: 480px) {
@@ -1608,6 +1894,25 @@
       #terminalInput {
         font-size: 0.8rem;
       }
+      
+      .qr-container {
+        width: 200px;
+        height: 200px;
+      }
+      
+      .modal-header h3 {
+        font-size: 1.3rem;
+      }
+      
+      .tagline {
+        font-size: 1rem;
+        padding: 10px;
+      }
+      
+      .confirm-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
     }
     
     @media (max-width: 360px) {
@@ -1658,6 +1963,19 @@
       .terminal-output p {
         font-size: 0.8rem;
       }
+      
+      .qr-container {
+        width: 180px;
+        height: 180px;
+      }
+      
+      .modal-body {
+        padding: 20px;
+      }
+      
+      .modal-header h3 {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
@@ -1704,8 +2022,8 @@
           </div>
         </div>
         <div class="player-titles">
-          <h2 class="player-name" id="playerName">LUNARIUM DRACŌNIS</h2>
-          <p class="player-subtitle" id="playerSubtitle">MOON MUSIC PLAYER</p>
+          <h2 class="player-name" id="playerName">LUNAR TRANSMISSION</h2>
+          <p class="player-subtitle" id="playerSubtitle">FREQUENCY FUEL</p>
         </div>
       </div>
       
@@ -1753,11 +2071,11 @@
     <div class="glow-effect"></div>
     <canvas id="matrix"></canvas>
 
-    <!-- MAIN HEADER - PERFECTLY ALIGNED -->
+    <!-- MAIN HEADER -->
     <div class="header-container">
       <h1 id="mainHeader">DIGITAL REBELS PH</h1>
       
-      <!-- Date and Time Display - PERFECTLY CENTERED -->
+      <!-- Date and Time Display -->
       <div class="datetime-container">
         <div class="date-display" id="dateDisplay"></div>
         <div class="time-display" id="timeDisplay"></div>
@@ -1773,6 +2091,8 @@
       <a href="#" onclick="showSection('learning')"><i class="fas fa-graduation-cap"></i> LEARNING HUB</a>
       <a href="#" onclick="showSection('arsenal')"><i class="fas fa-tools"></i> ARSENAL</a>
       <a href="#" onclick="openTerminal(event)"><i class="fas fa-terminal"></i> TERMINAL</a>
+      <!-- NEW FREQUENCY FUEL BUTTON -->
+      <a href="#" onclick="openGCashModal(event)"><i class="fas fa-bolt"></i> FREQUENCY FUEL</a>
     </nav>
 
     <!-- MAIN CONTENT SECTIONS -->
@@ -1929,7 +2249,7 @@
 
     <!-- VISITOR COUNTER -->
     <div class="visitor-counter" id="visitorCounter">
-      Mga Pagbisita: <span id="visitCount">0</span>
+      Frequency Syncs: <span id="visitCount">0</span>
     </div>
 
     <div class="click-counter" id="clickCounter">Right-click 3x to activate dissolve</div>
@@ -1941,9 +2261,43 @@
       <p style="margin-top:10px; font-size:0.9rem; color: var(--text-color);">
         🎵 <a href="https://youtube.com/@UdioGod" style="color:var(--primary-color); text-decoration:none; font-weight: bold;">@UdioGod</a> |
         ⚡ <span style="color: var(--text-color);">FREQUENCY: 9.999</span> | 
-        🔄 <span style="color: var(--text-color);">DAY/NIGHT/LUCIFER MODE</span>
+        🔄 <span style="color: var(--text-color);">DAY/NIGHT/LUCIFER MODE</span> |
+        ⚡ <a href="#" onclick="openGCashModal(event)" style="color:var(--accent-color); text-decoration:none; font-weight: bold;">FREQUENCY FUEL</a>
       </p>
     </footer>
+  </div>
+
+  <!-- GCASH MODAL -->
+  <div id="gcashModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-bolt"></i> FREQUENCY FUEL</h3>
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="qr-container">
+          <!-- CHANGE THIS URL TO YOUR GCASH QR CODE IMAGE -->
+          <img src="https://via.placeholder.com/280x280/ff6b35/1a1a2e?text=GCASH+QR+CODE" alt="GCash QR Code" id="gcashQR">
+          <div class="qr-overlay">
+            <i class="fas fa-qrcode"></i>
+          </div>
+        </div>
+        
+        <div class="tagline">
+          "Every peso amplifies the signal. Every contribution fuels the rebellion."
+        </div>
+        
+        <div class="fuel-message">
+          <strong>SCAN TO FUEL THE FREQUENCY</strong><br>
+          Your support keeps the digital rebellion transmitting at 9.999 MHz
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="confirm-btn" onclick="closeModal()">
+          <i class="fas fa-check"></i> SIGNAL AMPLIFIED
+        </button>
+      </div>
+    </div>
   </div>
 
   <!-- TERMINAL INTERFACE -->
@@ -2239,19 +2593,20 @@
     const playerIcon = document.querySelector('.player-icon i');
     const iconRing = document.querySelector('.icon-ring');
     
+    // UPDATED: No more "SUN/MOON/LUCIFER MUSIC PLAYER" text
     if (mode === 'day') {
-      playerName.textContent = "SOLARIUM PRISMA";
-      playerSubtitle.textContent = "SUN MUSIC PLAYER";
+      playerName.textContent = "SOLARIUM FREQUENCY";
+      playerSubtitle.textContent = "AMPLIFY THE SIGNAL";
       playerIcon.className = "fas fa-sun";
       iconRing.style.borderColor = "rgba(255, 204, 0, 0.5)";
     } else if (mode === 'night') {
-      playerName.textContent = "LUNARIUM DRACŌNIS";
-      playerSubtitle.textContent = "MOON MUSIC PLAYER";
+      playerName.textContent = "LUNAR TRANSMISSION";
+      playerSubtitle.textContent = "FREQUENCY FUEL";
       playerIcon.className = "fas fa-moon";
       iconRing.style.borderColor = "rgba(102, 153, 255, 0.5)";
     } else {
-      playerName.textContent = "LUX LUCIFER";
-      playerSubtitle.textContent = "LUCIFER MUSIC PLAYER";
+      playerName.textContent = "LUCIFER'S SIGNAL";
+      playerSubtitle.textContent = "POWER THE REBELLION";
       playerIcon.className = "fas fa-star-and-crescent";
       iconRing.style.borderColor = "rgba(204, 51, 51, 0.5)";
     }
@@ -2400,13 +2755,13 @@
   let matrixInterval;
   
   function drawMatrix() {
-    ctx.fillStyle = currentMode === 'day' ? "rgba(240, 248, 255, 0.03)" : "rgba(10, 10, 10, 0.03)";
+    ctx.fillStyle = currentMode === 'day' ? "rgba(26, 26, 46, 0.03)" : "rgba(10, 10, 10, 0.03)";
     ctx.fillRect(0, 0, width, height);
     
     let textColor, glowColor;
     if (currentMode === 'day') {
-      textColor = "#1a73e8";
-      glowColor = "#1a73e840";
+      textColor = "#ff6b35";
+      glowColor = "#ff6b3540";
     } else if (currentMode === 'night') {
       textColor = "#6ecbff";
       glowColor = "#6ecbff40";
@@ -2523,6 +2878,9 @@
     
     localStorage.setItem('digitalRebelsVisitCount', visitCount.toString());
     document.getElementById('visitCount').textContent = visitCount;
+    
+    // Updated visitor counter text
+    document.querySelector('.visitor-counter').innerHTML = `Frequency Syncs: <span id="visitCount">${visitCount}</span>`;
   }
   
   // ===== RIGHT-CLICK COUNTER =====
@@ -2564,7 +2922,7 @@
     
     dissolveOverlay.style.opacity = "1";
     dissolveOverlay.style.filter = "blur(8px)";
-    dissolveOverlay.style.background = currentMode === 'day' ? "rgba(240, 248, 255, 0.7)" : "rgba(0, 0, 0, 0.7)";
+    dissolveOverlay.style.background = currentMode === 'day' ? "rgba(26, 26, 46, 0.7)" : "rgba(0, 0, 0, 0.7)";
     
     document.getElementById("clickCounter").textContent = "DISSOLVE ACTIVATED!";
     
@@ -2577,6 +2935,54 @@
       }, 500);
     }, 2000);
   }
+
+  // ===== GCASH MODAL FUNCTIONS =====
+  function openGCashModal(event) {
+    if (event) event.preventDefault();
+    
+    const modal = document.getElementById('gcashModal');
+    modal.classList.add('active');
+    
+    // Play sound
+    const clickSound = document.getElementById('clickSound');
+    clickSound.currentTime = 0;
+    clickSound.play().catch(e => console.log("Sound error:", e));
+    
+    // Add shockwave effect
+    const shockwave = document.createElement('div');
+    shockwave.className = 'terminal-shockwave';
+    shockwave.style.left = (event.clientX || window.innerWidth/2) + 'px';
+    shockwave.style.top = (event.clientY || window.innerHeight/2) + 'px';
+    shockwave.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color');
+    document.body.appendChild(shockwave);
+    
+    setTimeout(() => shockwave.remove(), 1000);
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('gcashModal');
+    modal.classList.remove('active');
+    
+    // Play sound
+    const clickSound = document.getElementById('clickSound');
+    clickSound.currentTime = 0;
+    clickSound.play().catch(e => console.log("Sound error:", e));
+  }
+
+  // Close modal with ESC key
+  document.addEventListener('keydown', function(e) {
+    const modal = document.getElementById('gcashModal');
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  // Close modal when clicking outside
+  document.getElementById('gcashModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeModal();
+    }
+  });
 
   // ===== TERMINAL SYSTEM =====
   let terminalActive = false;
@@ -2637,7 +3043,7 @@
 
   // Terminal commands
   const terminalCommands = {
-    help: "Available commands: help, clear, mode, music, manifesto, time, visitor, matrix, exit",
+    help: "Available commands: help, clear, mode, music, manifesto, time, visitor, matrix, fuel, exit",
     clear: function() {
       document.getElementById('terminalOutput').innerHTML = '';
       return "Terminal cleared.";
@@ -2660,7 +3066,7 @@
     },
     visitor: function() {
       const count = document.getElementById('visitCount').textContent;
-      return `Total visitors: ${count}`;
+      return `Frequency Syncs: ${count}`;
     },
     matrix: function() {
       // Speed up matrix temporarily
@@ -2670,6 +3076,10 @@
       }
       matrixInterval = setInterval(drawMatrix, 35);
       return "Matrix overload activated!";
+    },
+    fuel: function() {
+      openGCashModal();
+      return "Accessing Frequency Fuel interface...";
     },
     exit: function() {
       closeTerminal();
