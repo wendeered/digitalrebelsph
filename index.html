@@ -1108,6 +1108,240 @@
       color: var(--primary-color);
     }
 
+    /* ===== GENESIS SECTION SPECIAL STYLES ===== */
+    #genesisSection {
+      display: none;
+      border: 3px solid #ff3300;
+      background: rgba(10, 5, 5, 0.95);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #genesisSection::before {
+      content: "666";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 300px;
+      color: rgba(255, 51, 0, 0.05);
+      font-weight: 900;
+      z-index: 0;
+      animation: forbiddenGlow 4s infinite alternate;
+    }
+
+    #genesisSection .section-title {
+      color: #ff3300;
+      text-shadow: 0 0 20px #ff3300, 0 0 40px #990000;
+      position: relative;
+      z-index: 2;
+      font-size: 2.8rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    #genesisSection .section-content {
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid #990000;
+      position: relative;
+      z-index: 2;
+      backdrop-filter: blur(5px);
+    }
+
+    #genesisSection .content-item {
+      background: rgba(20, 5, 5, 0.9);
+      border: 1px solid #ff3300;
+      border-left: 5px solid #ff3300;
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    #genesisSection .content-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 51, 0, 0.1) 50%, transparent 70%);
+      z-index: 1;
+    }
+
+    #genesisSection .item-title {
+      color: #ff6600;
+      text-shadow: 0 0 10px #ff3300;
+      font-size: 1.6rem;
+      border-bottom: 2px solid #ff3300;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+
+    #genesisSection .item-text {
+      color: #e6e6e6;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      position: relative;
+      z-index: 2;
+    }
+
+    #genesisSection .item-list li {
+      color: #ff9966;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      padding-left: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    #genesisSection .item-list li::before {
+      content: "☠";
+      color: #ff3300;
+      font-size: 1.2rem;
+      left: 0;
+      top: 0;
+    }
+
+    /* Forbidden knowledge warning */
+    .forbidden-warning {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 51, 0, 0.2);
+      color: #ff9966;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      border: 1px solid #ff3300;
+      z-index: 3;
+      animation: pulseWarning 2s infinite;
+    }
+
+    /* Image grid for Genesis */
+    .genesis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .genesis-image {
+      height: 180px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 2px solid #ff3300;
+      position: relative;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .genesis-image:hover {
+      transform: translateY(-5px) scale(1.03);
+      border-color: #ff6600;
+      box-shadow: 0 10px 25px rgba(255, 51, 0, 0.3);
+    }
+
+    .genesis-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .genesis-image:hover img {
+      transform: scale(1.1);
+    }
+
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+      padding: 10px;
+      color: white;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* Genesis reveal effect */
+    .genesis-reveal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      z-index: 9998;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    .genesis-reveal.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .reveal-text {
+      color: #ff3300;
+      font-size: 4rem;
+      text-align: center;
+      text-shadow: 0 0 30px #ff3300;
+      animation: revealPulse 2s infinite;
+    }
+
+    @keyframes revealPulse {
+      0%, 100% { opacity: 0.7; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+
+    @keyframes forbiddenGlow {
+      0% { opacity: 0.05; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0.1; transform: translate(-50%, -50%) scale(1.1); }
+    }
+
+    /* Genesis access denied */
+    .genesis-denied {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 400px;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .denied-icon {
+      font-size: 5rem;
+      color: #ff3300;
+      margin-bottom: 20px;
+      animation: deniedPulse 3s infinite;
+    }
+
+    .denied-text {
+      color: #ff9966;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #ff3300;
+    }
+
+    .denied-instruction {
+      color: #cccccc;
+      font-size: 1rem;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+
+    @keyframes deniedPulse {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+
     /* ===== FOOTER ===== */
     footer {
       text-align:center; 
@@ -1620,6 +1854,10 @@
         width: 250px;
         height: 250px;
       }
+      
+      .genesis-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      }
     }
 
     @media (max-width: 768px) {
@@ -1785,6 +2023,19 @@
       .tagline {
         font-size: 1.1rem;
       }
+      
+      .genesis-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+      }
+      
+      .genesis-image {
+        height: 150px;
+      }
+      
+      #genesisSection .section-title {
+        font-size: 2.2rem;
+      }
     }
     
     @media (max-width: 480px) {
@@ -1913,6 +2164,24 @@
         padding: 12px 25px;
         font-size: 1rem;
       }
+      
+      .genesis-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 10px;
+      }
+      
+      .genesis-image {
+        height: 130px;
+      }
+      
+      #genesisSection .section-title {
+        font-size: 1.8rem;
+        letter-spacing: 3px;
+      }
+      
+      #genesisSection::before {
+        font-size: 200px;
+      }
     }
     
     @media (max-width: 360px) {
@@ -1975,6 +2244,14 @@
       
       .modal-header h3 {
         font-size: 1.2rem;
+      }
+      
+      .genesis-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .genesis-image {
+        height: 180px;
       }
     }
   </style>
@@ -2090,8 +2367,9 @@
       <a href="#" onclick="showSection('vision')"><i class="fas fa-eye"></i> VISION</a>
       <a href="#" onclick="showSection('learning')"><i class="fas fa-graduation-cap"></i> LEARNING HUB</a>
       <a href="#" onclick="showSection('arsenal')"><i class="fas fa-tools"></i> ARSENAL</a>
+      <!-- GENESIS - LUCIFER MODE ONLY -->
+      <a href="#" onclick="accessGenesis(event)"><i class="fas fa-skull-crossbones"></i> GENESIS</a>
       <a href="#" onclick="openTerminal(event)"><i class="fas fa-terminal"></i> TERMINAL</a>
-      <!-- NEW FREQUENCY FUEL BUTTON -->
       <a href="#" onclick="openGCashModal(event)"><i class="fas fa-bolt"></i> FREQUENCY FUEL</a>
     </nav>
 
@@ -2245,6 +2523,87 @@
           </div>
         </div>
       </div>
+
+      <!-- GENESIS SECTION - FORBIDDEN KNOWLEDGE (LUCIFER MODE ONLY) -->
+      <div class="section-container" id="genesisSection">
+        <div class="forbidden-warning">
+          <i class="fas fa-exclamation-triangle"></i> LUCIFER MODE ONLY
+        </div>
+        <h2 class="section-title"><i class="fas fa-skull-crossbones"></i> GENESIS</h2>
+        <div class="section-content">
+          <div class="content-item">
+            <div class="item-title">THE FORBIDDEN ARCHIVES</div>
+            <div class="item-text">
+              "What the system doesn't want you to see. What they tried to bury. The truth that sets you free."
+            </div>
+          </div>
+          
+          <div class="content-item">
+            <div class="item-title">GAMEFOWL: THE ORIGINAL DECENTRALIZED SYSTEM</div>
+            <div class="item-text">
+              Before cryptocurrency, there was gamefowl breeding. A system of genetics that corporations couldn't control. 
+              Pure bloodlines, selective breeding, and genetic mastery - all outside the matrix.
+            </div>
+            
+            <!-- GAMEFOWL IMAGES GRID -->
+            <div class="genesis-grid">
+              <!-- IMAGE 1 - Palitan mo ng actual image URL -->
+              <div class="genesis-image">
+                <img src="https://raw.githubusercontent.com/wendeered/digitalrebelsph/main/images/gamefowl1.jpg" alt="Gamefowl Genetics" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMDAwMDAwIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNGRjMzMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5HQU1FRk9XTApJTUdBRTwvdGV4dD4KPC9zdmc+'">
+                <div class="image-overlay">GENETIC MASTERY</div>
+              </div>
+              
+              <!-- IMAGE 2 -->
+              <div class="genesis-image">
+                <img src="https://raw.githubusercontent.com/wendeered/digitalrebelsph/main/images/gamefowl2.jpg" alt="Pure Bloodlines" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3Lnczb3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAwMDAiLz4KPHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI0ZGMzMwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlBVQkIgRk9SQklEREVOCktOT1dMRURHRTwvdGV4dD4KPC9zdmc+'">
+                <div class="image-overlay">PURE BLOODLINES</div>
+              </div>
+              
+              <!-- IMAGE 3 -->
+              <div class="genesis-image">
+                <img src="https://raw.githubusercontent.com/wendeered/digitalrebelsph/main/images/ai_music1.jpg" alt="AI Music Rebellion" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMDAwMDAwIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNGRjMzMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5BSSBNVVNJQwpSRUJFTExJT048L3RleHQ+Cjwvc3ZnPg=='">
+                <div class="image-overlay">AI REBELLION</div>
+              </div>
+              
+              <!-- IMAGE 4 -->
+              <div class="genesis-image">
+                <img src="https://raw.githubusercontent.com/wendeered/digitalrebelsph/main/images/anti_system1.jpg" alt="Anti-System" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMDAwMDAwIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNGRjMzMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5BTlRJLVNZU1RFTSBcbiBBUkNISVZFPC90ZXh0Pgo8L3N2Zz4='">
+                <div class="image-overlay">SYSTEM BREACH</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="content-item">
+            <div class="item-title">THE SYSTEM'S DIRTY SECRETS</div>
+            <ul class="item-list">
+              <li>Gamefowl breeding teaches genetic independence</li>
+              <li>AI music production bypasses record labels</li>
+              <li>Digital art creates value without permission</li>
+              <li>Ecosystem defense is ultimate rebellion</li>
+              <li>Self-sufficiency breaks dependency chains</li>
+              <li>Knowledge is the real forbidden fruit</li>
+              <li>The system fears what it cannot control</li>
+            </ul>
+          </div>
+          
+          <div class="content-item">
+            <div class="item-title">ABOUT THE SIGNAL TRANSMITTER</div>
+            <div class="item-text">
+              <strong>Wendee Red Matocinos</strong> - Not a leader, not a guru, not a savior. Just a transmitter.
+              <br><br>
+              <strong>Gamefowl Geneticist:</strong> Mastering genetics outside corporate control
+              <br>
+              <strong>AI Music Producer:</strong> Creating frequencies that bypass the industry
+              <br>
+              <strong>Digital Artist:</strong> Visualizing rebellion through code and pixels
+              <br>
+              <strong>Ecosystem Defender:</strong> Protecting what truly matters from destruction
+              <br><br>
+              "I don't create movements. I transmit frequencies. You either resonate or you don't."
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- VISITOR COUNTER -->
@@ -2260,11 +2619,18 @@
       <p style="color: var(--text-color); font-weight: bold;">DIGITAL REBELS PH | WENDEE RED MATOCINOS | THE 7TH APOSTLE | 2023-2025</p>
       <p style="margin-top:10px; font-size:0.9rem; color: var(--text-color);">
         🎵 <a href="https://youtube.com/@UdioGod" style="color:var(--primary-color); text-decoration:none; font-weight: bold;">@UdioGod</a> |
+        🐓 <span style="color: var(--text-color);">GAMEFOWL GENETICIST</span> |
         ⚡ <span style="color: var(--text-color);">FREQUENCY: 9.999</span> | 
         🔄 <span style="color: var(--text-color);">DAY/NIGHT/LUCIFER MODE</span> |
-        ⚡ <a href="#" onclick="openGCashModal(event)" style="color:var(--accent-color); text-decoration:none; font-weight: bold;">FREQUENCY FUEL</a>
+        ⚡ <a href="#" onclick="openGCashModal(event)" style="color:var(--accent-color); text-decoration:none; font-weight: bold;">FREQUENCY FUEL</a> |
+        ⛧ <a href="#" onclick="accessGenesis(event)" style="color:var(--accent-color); text-decoration:none; font-weight: bold;">GENESIS ARCHIVES</a>
       </p>
     </footer>
+  </div>
+
+  <!-- GENESIS REVEAL EFFECT -->
+  <div class="genesis-reveal" id="genesisReveal">
+    <div class="reveal-text">ACCESSING FORBIDDEN KNOWLEDGE</div>
   </div>
 
   <!-- GCASH MODAL -->
@@ -2332,6 +2698,7 @@
   <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/286/286-preview.mp3"></audio>
   <audio id="hoverSound" src="https://assets.mixkit.co/active_storage/sfx/259/259-preview.mp3"></audio>
   <audio id="dissolveSound" src="https://assets.mixkit.co/active_storage/sfx/250/250-preview.mp3"></audio>
+  <audio id="forbiddenSound" src="https://assets.mixkit.co/active_storage/sfx/257/257-preview.mp3"></audio>
 
 <script>
   // ===== LOADING SYSTEM =====
@@ -2593,7 +2960,6 @@
     const playerIcon = document.querySelector('.player-icon i');
     const iconRing = document.querySelector('.icon-ring');
     
-    // UPDATED: No more "SUN/MOON/LUCIFER MUSIC PLAYER" text
     if (mode === 'day') {
       playerName.textContent = "SOLARIUM FREQUENCY";
       playerSubtitle.textContent = "AMPLIFY THE SIGNAL";
@@ -2699,6 +3065,21 @@
       terminalMode.textContent = mode.toUpperCase();
     }
     
+    // Show/hide Genesis section
+    const genesisSection = document.getElementById('genesisSection');
+    if (mode === 'lucifer') {
+      genesisSection.style.display = 'block';
+    } else {
+      genesisSection.style.display = 'none';
+      // If Genesis is active when switching away from Lucifer, go to Manifesto
+      if (genesisSection.classList.contains('active')) {
+        genesisSection.classList.remove('active');
+        document.getElementById('manifestoSection').classList.add('active');
+        document.querySelectorAll("nav a").forEach(link => link.classList.remove("active"));
+        document.querySelector("nav a[onclick*='showSection(\"manifesto\")']").classList.add("active");
+      }
+    }
+    
     // Play sound
     const clickSound = document.getElementById('clickSound');
     clickSound.currentTime = 0;
@@ -2738,6 +3119,59 @@
     if (window.innerWidth > 1024) {
       document.getElementById('mainContent').style.gridTemplateColumns = '1fr';
     }
+    
+    return false;
+  }
+
+  // ===== GENESIS ACCESS FUNCTION =====
+  function accessGenesis(event) {
+    event.preventDefault();
+    
+    if (!loadingComplete) return false;
+    
+    if (currentMode !== 'lucifer') {
+      // Show access denied message
+      const genesisReveal = document.getElementById('genesisReveal');
+      genesisReveal.classList.add('active');
+      
+      // Play forbidden sound
+      const forbiddenSound = document.getElementById('forbiddenSound');
+      forbiddenSound.currentTime = 0;
+      forbiddenSound.play().catch(e => console.log("Sound error:", e));
+      
+      // Show message
+      document.getElementById('clickCounter').textContent = "ACCESS DENIED: LUCIFER MODE REQUIRED";
+      document.getElementById('clickCounter').style.color = "#ff3300";
+      document.getElementById('clickCounter').style.borderColor = "#ff3300";
+      
+      setTimeout(() => {
+        genesisReveal.classList.remove('active');
+        document.getElementById('clickCounter').textContent = "Right-click 3x to activate dissolve";
+        document.getElementById('clickCounter').style.color = "";
+        document.getElementById('clickCounter').style.borderColor = "";
+      }, 2000);
+      
+      return false;
+    }
+    
+    // If in Lucifer mode, redirect to genesis.html
+    // Play transition sound
+    const clickSound = document.getElementById('clickSound');
+    clickSound.currentTime = 0;
+    clickSound.play().catch(e => console.log("Sound error:", e));
+    
+    // Show loading effect
+    const genesisReveal = document.getElementById('genesisReveal');
+    genesisReveal.classList.add('active');
+    
+    // Update text
+    const revealText = document.querySelector('.reveal-text');
+    revealText.textContent = "ACCESSING GENESIS ARCHIVES...";
+    
+    // Redirect after effect
+    setTimeout(() => {
+      window.location.href = 'genesis.html';
+    }, 1500);
     
     return false;
   }
@@ -3043,7 +3477,7 @@
 
   // Terminal commands
   const terminalCommands = {
-    help: "Available commands: help, clear, mode, music, manifesto, time, visitor, matrix, fuel, exit",
+    help: "Available commands: help, clear, mode, music, manifesto, genesis, time, visitor, matrix, fuel, exit",
     clear: function() {
       document.getElementById('terminalOutput').innerHTML = '';
       return "Terminal cleared.";
@@ -3059,6 +3493,18 @@
     manifesto: function() {
       showSection('manifesto');
       return "Opening Manifesto...";
+    },
+    genesis: function() {
+      if (currentMode !== 'lucifer') {
+        activateMode('lucifer');
+        setTimeout(() => {
+          accessGenesis({preventDefault: () => {}});
+        }, 500);
+        return "Switching to LUCIFER mode to access Genesis Archives...";
+      } else {
+        accessGenesis({preventDefault: () => {}});
+        return "Accessing Genesis Archives...";
+      }
     },
     time: function() {
       updateDateTime();
@@ -3141,6 +3587,9 @@
     initLoadingScreen();
     initMusicPlayer();
     initMatrixRain();
+    
+    // Hide Genesis section initially (only shows in Lucifer mode)
+    document.getElementById('genesisSection').style.display = 'none';
     
     document.addEventListener('keydown', function(e) {
       if (e.key === 's' || e.key === 'S') {
