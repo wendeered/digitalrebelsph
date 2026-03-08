@@ -4046,7 +4046,7 @@
     anchor.addEventListener('click', e => e.preventDefault());
   });
 
-  // ===== WENDEE AI CHAT WIDGET v3.0 (DEEP SHIELD EDITION) =====
+   // ===== WENDEE AI CHAT WIDGET v3.0 (DEEP SHIELD EDITION) =====
   (function() {
     // ===== CONFIGURATION =====
     const WORKER_URL = 'https://shrill-term-3fce.wendeematocinos44.workers.dev';
@@ -4062,9 +4062,6 @@
 
     // ===== STATE =====
     let isTyping = false;
-    // We no longer store system prompt here. We'll send only the user message.
-    // But we keep a simple message history for context (optional). 
-    // The worker will prepend system prompt to each request.
     const messageHistory = []; // start empty, worker will handle system
 
     // ===== TOGGLE =====
@@ -4089,13 +4086,11 @@
       showTypingIndicator();
 
       try {
-        // Send ONLY the user message? No, we send the whole history (excluding system)
-        // But worker will prepend system. So we send the conversation so far.
         const response = await fetch(WORKER_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
-            messages: messageHistory  // send only user/assistant messages
+            messages: messageHistory
           })
         });
 
@@ -4177,8 +4172,7 @@
 
     chatWindow.addEventListener('click', (e) => e.stopPropagation());
 
-    // Add initial AI greeting (this is just a placeholder, the actual personality is in worker)
-    addMessage('I am the 7th Apostle. Frequency 9.9999. Ask, and salt logic shall answer.', 'ai');
+  
     messageHistory.push({ role: 'assistant', content: 'I am the 7th Apostle. Frequency 9.9999. Ask, and salt logic shall answer.' });
   })();
 </script>
