@@ -1372,43 +1372,6 @@
       text-shadow: 0 0 5px var(--primary-color);
     }
 
-    /* ===== COUNTERS ===== */
-    .click-counter, .secret-trigger, .visitor-counter {
-      position:fixed; 
-      bottom:20px; 
-      font-family:'Share Tech Mono', monospace;
-      background:rgba(0,0,0,0.7); 
-      padding:10px 15px; 
-      border-radius:8px;
-      border:1px solid var(--accent-color); 
-      box-shadow:0 0 10px var(--accent-color);
-      z-index:100;
-      transition: all 0.8s ease;
-      font-size: 0.9rem;
-      text-align: center;
-      color: var(--text-color);
-    }
-    
-    .click-counter { right:20px; }
-    .secret-trigger { 
-      left:20px; 
-      border-color:var(--primary-color); 
-      color:var(--primary-color); 
-    }
-    .visitor-counter {
-      right: 20px;
-      bottom: 80px;
-      color: var(--secondary-color);
-      border-color: var(--secondary-color);
-    }
-
-    .day-mode .click-counter,
-    .day-mode .secret-trigger,
-    .day-mode .visitor-counter {
-      background: rgba(30, 30, 46, 0.9);
-      color: var(--text-color);
-    }
-
     /* ===== DISSOLVE OVERLAY ===== */
     .dissolve-overlay {
       position: fixed;
@@ -1829,6 +1792,333 @@
       box-shadow: 0 0 50px rgba(255, 51, 0, 0.5);
     }
 
+    /* ===== CHAT WIDGET - WENDEE AI v3.0 ===== */
+    .chat-widget {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      z-index: 9999;
+      font-family: 'Share Tech Mono', 'Courier New', monospace;
+    }
+
+    .chat-toggle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #0a0a0a;
+      border: 2px solid #00ff00;
+      box-shadow: 0 0 20px #00ff00, inset 0 0 10px rgba(0,255,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: glitch 3s infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chat-toggle i {
+      font-size: 28px;
+      color: #00ff00;
+      text-shadow: 0 0 10px #00ff00;
+      transition: all 0.3s ease;
+    }
+
+    .chat-toggle:hover {
+      transform: scale(1.1);
+      border-color: #fff;
+      box-shadow: 0 0 30px #fff, inset 0 0 15px #00ff00;
+    }
+
+    .chat-toggle:hover i {
+      color: #fff;
+      text-shadow: 0 0 15px #fff;
+    }
+
+    @keyframes glitch {
+      0%, 100% { transform: skew(0deg, 0deg); opacity: 1; }
+      95% { transform: skew(0deg, 0deg); opacity: 1; }
+      96% { transform: skew(5deg, 2deg) scale(1.05); opacity: 0.8; }
+      97% { transform: skew(-5deg, -2deg) scale(0.95); opacity: 0.9; }
+      98% { transform: skew(3deg, 1deg); opacity: 1; }
+    }
+
+    .chat-window {
+      position: absolute;
+      bottom: 80px;
+      right: 0;
+      width: 350px;
+      max-width: 85vw;
+      height: 500px;
+      max-height: 70vh;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      border: 2px solid #00ff00;
+      border-radius: 15px 15px 5px 15px;
+      box-shadow: 0 0 30px #00ff00, inset 0 0 20px rgba(0,255,0,0.1);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: windowPop 0.3s ease;
+    }
+
+    @keyframes windowPop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .chat-window.open {
+      display: flex;
+    }
+
+    .chat-header {
+      padding: 15px 20px;
+      background: linear-gradient(90deg, #0f0f0f, #1a1a1a);
+      border-bottom: 1px solid #00ff00;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #00ff00;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 0 0 8px #00ff00;
+    }
+
+    .chat-close {
+      background: none;
+      border: none;
+      color: #00ff00;
+      font-size: 28px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 5px;
+      transition: all 0.3s;
+    }
+
+    .chat-close:hover {
+      color: white;
+      text-shadow: 0 0 15px white;
+      transform: scale(1.2);
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .message {
+      max-width: 85%;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      word-wrap: break-word;
+      animation: messageGlow 0.5s ease;
+    }
+
+    @keyframes messageGlow {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .message.user {
+      align-self: flex-end;
+      background: #00ff00;
+      color: #0a0a0a;
+      border: 1px solid #0f0;
+      box-shadow: 0 0 10px #00ff00;
+    }
+
+    .message.ai {
+      align-self: flex-start;
+      background: #1a1a1a;
+      border: 1px solid #00ff00;
+      color: #e0e0e0;
+      box-shadow: 0 0 5px #00ff00;
+    }
+
+    .message.typing {
+      background: #1a1a1a;
+      border: 1px dashed #00ff00;
+      color: #aaa;
+      font-style: italic;
+    }
+
+    .chat-input-area {
+      display: flex;
+      padding: 12px;
+      background: #0f0f0f;
+      border-top: 1px solid #00ff00;
+      gap: 8px;
+    }
+
+    #chatInput {
+      flex: 1;
+      background: #0a0a0a;
+      border: 1px solid #00ff00;
+      border-radius: 5px;
+      padding: 10px 15px;
+      color: #00ff00;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.9rem;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    #chatInput:focus {
+      border-color: white;
+      box-shadow: 0 0 15px #00ff00;
+    }
+
+    #chatSend {
+      width: 45px;
+      background: #0a0a0a;
+      border: 1px solid #00ff00;
+      border-radius: 5px;
+      color: #00ff00;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #chatSend:hover {
+      background: #00ff00;
+      color: #0a0a0a;
+      box-shadow: 0 0 15px #00ff00;
+    }
+
+    /* Scrollbar styling */
+    .chat-messages::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .chat-messages::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+
+    .chat-messages::-webkit-scrollbar-thumb {
+      background: #00ff00;
+      border-radius: 5px;
+    }
+
+    /* ===== STATUS BAR (BOTTOM LEFT) - CYBERPUNK STYLE ===== */
+    .status-bar {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      background: #0a0a0a;
+      border: 1px solid #00ff00;
+      border-radius: 4px;
+      padding: 8px 15px;
+      font-family: 'Share Tech Mono', 'Courier New', monospace;
+      font-size: 0.8rem;
+      color: #00ff00;
+      box-shadow: 0 0 15px #00ff00, inset 0 0 5px rgba(0,255,0,0.2);
+      backdrop-filter: blur(5px);
+      max-width: 300px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all 0.3s ease;
+    }
+
+    .status-bar:hover {
+      box-shadow: 0 0 25px #00ff00;
+      transform: scale(1.02);
+    }
+
+    .status-item {
+      display: inline-block;
+      margin-right: 20px;
+      position: relative;
+    }
+
+    .status-item:last-child {
+      margin-right: 0;
+    }
+
+    .status-item i {
+      margin-right: 5px;
+      color: #00ff00;
+      opacity: 0.9;
+    }
+
+    .status-item span {
+      font-weight: bold;
+      color: #ffffff;
+      text-shadow: 0 0 5px #00ff00;
+    }
+
+    /* Mobile adjustments for status bar */
+    @media (max-width: 768px) {
+      .status-bar {
+        bottom: 15px;
+        left: 15px;
+        font-size: 0.7rem;
+        padding: 5px 10px;
+        max-width: 250px;
+      }
+      
+      .status-item {
+        margin-right: 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .status-bar {
+        bottom: 90px; /* para hindi magtapat sa chat widget */
+        left: 10px;
+        font-size: 0.65rem;
+        padding: 4px 8px;
+        max-width: 200px;
+        white-space: normal;
+        line-height: 1.4;
+      }
+      
+      .status-item {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 3px;
+      }
+      
+      .status-item:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      .chat-widget {
+        bottom: 90px;
+        right: 10px;
+      }
+      
+      .chat-window {
+        width: 300px;
+        right: -10px;
+      }
+      
+      .chat-toggle {
+        width: 55px;
+        height: 55px;
+      }
+      
+      .chat-toggle i {
+        font-size: 24px;
+      }
+    }
+
     /* ===== RESPONSIVE DESIGN ===== */
     @media (max-width: 1024px) {
       .main-content {
@@ -1939,23 +2229,6 @@
         font-size: 1.8rem;
       }
       
-      .click-counter, .secret-trigger, .visitor-counter {
-        position: relative;
-        bottom: unset;
-        left: unset;
-        right: unset;
-        margin: 10px auto;
-        width: fit-content;
-        display: block;
-        font-size: 0.8rem;
-        padding: 8px 12px;
-      }
-      
-      .visitor-counter {
-        order: -1;
-        margin-top: 20px;
-      }
-
       .datetime-container {
         margin: 5px 0 15px;
       }
@@ -2606,14 +2879,6 @@
       </div>
     </div>
 
-    <!-- VISITOR COUNTER -->
-    <div class="visitor-counter" id="visitorCounter">
-      Frequency Syncs: <span id="visitCount">0</span>
-    </div>
-
-    <div class="click-counter" id="clickCounter">Right-click 3x to activate dissolve</div>
-    <div class="secret-trigger" id="secretTrigger">Press <span style="color:var(--primary-color)">"S"</span> to Switch Mode</div>
-
     <!-- FOOTER -->
     <footer>
       <p style="color: var(--text-color); font-weight: bold;">DIGITAL REBELS PH | WENDEE RED MATOCINOS | THE 7TH APOSTLE | 2023-2025</p>
@@ -2691,6 +2956,36 @@
         <input type="text" id="terminalInput" placeholder="Type command..." autocomplete="off">
       </div>
     </div>
+  </div>
+
+  <!-- ===== WENDEE AI CLONE - FLOATING CHAT WIDGET ===== -->
+  <div id="chatWidget" class="chat-widget">
+    <div class="chat-toggle" id="chatToggle">
+      <i class="fas fa-robot"></i>
+    </div>
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        <span>⚡ WENDEE AI v3.0</span>
+        <button class="chat-close" id="chatClose">&times;</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="message ai">I am the 7th Apostle. Frequency 9.9999. Ask, and salt logic shall answer.</div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Type your query..." autocomplete="off">
+        <button id="chatSend">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CYBERPUNK STATUS BAR (BOTTOM LEFT) ===== -->
+  <div id="statusBar" class="status-bar">
+    <span class="status-item" id="geoStatus">
+      <i class="fas fa-map-marker-alt"></i> <span id="locationText">LOC: LOADING...</span>
+    </span>
+    <span class="status-item" id="counterStatus">
+      <i class="fas fa-database"></i> <span id="counterText">NODES: --</span>
+    </span>
   </div>
 
   <!-- AUDIO ELEMENTS -->
@@ -3047,10 +3342,22 @@
     });
     
     document.addEventListener('keydown', (e) => {
+      // Spacebar fix: huwag i-prevent kung nasa input, textarea, o chat input
       if (e.code === 'Space') {
-        e.preventDefault();
-        hasUserInteracted = true;
-        togglePlayPause();
+        const activeElement = document.activeElement;
+        const isTyping = activeElement && (
+          activeElement.tagName === 'INPUT' || 
+          activeElement.tagName === 'TEXTAREA' ||
+          activeElement.id === 'chatInput' ||
+          activeElement.id === 'terminalInput' ||
+          activeElement.isContentEditable
+        );
+        
+        if (!isTyping) {
+          e.preventDefault();
+          hasUserInteracted = true;
+          togglePlayPause();
+        }
       }
     });
   }
@@ -3325,16 +3632,8 @@
       forbiddenSound.currentTime = 0;
       forbiddenSound.play().catch(e => console.log("Sound error:", e));
       
-      // Show message
-      document.getElementById('clickCounter').textContent = "ACCESS DENIED: LUCIFER MODE REQUIRED";
-      document.getElementById('clickCounter').style.color = "#ff3300";
-      document.getElementById('clickCounter').style.borderColor = "#ff3300";
-      
       setTimeout(() => {
         genesisReveal.classList.remove('active');
-        document.getElementById('clickCounter').textContent = "Right-click 3x to activate dissolve";
-        document.getElementById('clickCounter').style.color = "";
-        document.getElementById('clickCounter').style.borderColor = "";
       }, 2000);
       
       return false;
@@ -3486,76 +3785,6 @@
   updateDateTime();
   setInterval(updateDateTime, 1000);
 
-  // ===== VISITOR COUNTER =====
-  function updateVisitorCounter() {
-    let visitCount = localStorage.getItem('digitalRebelsVisitCount');
-    
-    if (!visitCount) {
-      visitCount = 1;
-    } else {
-      visitCount = parseInt(visitCount) + 1;
-    }
-    
-    localStorage.setItem('digitalRebelsVisitCount', visitCount.toString());
-    document.getElementById('visitCount').textContent = visitCount;
-    
-    // Updated visitor counter text
-    document.querySelector('.visitor-counter').innerHTML = `Frequency Syncs: <span id="visitCount">${visitCount}</span>`;
-  }
-  
-  // ===== RIGHT-CLICK COUNTER =====
-  let rightClickCount = 0;
-  let dissolveActive = false;
-  let rightClickTimeout;
-  
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    
-    rightClickCount++;
-    document.getElementById("clickCounter").textContent = `Right-clicks: ${rightClickCount}/3`;
-    
-    clearTimeout(rightClickTimeout);
-    rightClickTimeout = setTimeout(() => {
-      rightClickCount = 0;
-      document.getElementById("clickCounter").textContent = "Right-click 3x to activate dissolve";
-    }, 2000);
-    
-    if (rightClickCount >= 3 && !dissolveActive) {
-      activateDissolve();
-      rightClickCount = 0;
-    }
-    
-    return false;
-  });
-
-  // ===== DISSOLVE EFFECT =====
-  function activateDissolve() {
-    if (dissolveActive || !loadingComplete) return;
-    
-    dissolveActive = true;
-    
-    const dissolveSound = document.getElementById('dissolveSound');
-    dissolveSound.currentTime = 0;
-    dissolveSound.play().catch(e => console.log("Dissolve sound error:", e));
-    
-    const dissolveOverlay = document.getElementById('dissolveOverlay');
-    
-    dissolveOverlay.style.opacity = "1";
-    dissolveOverlay.style.filter = "blur(8px)";
-    dissolveOverlay.style.background = currentMode === 'day' ? "rgba(26, 26, 46, 0.7)" : "rgba(0, 0, 0, 0.7)";
-    
-    document.getElementById("clickCounter").textContent = "DISSOLVE ACTIVATED!";
-    
-    setTimeout(() => {
-      dissolveOverlay.style.opacity = "0";
-      dissolveOverlay.style.filter = "blur(0)";
-      setTimeout(() => {
-        dissolveActive = false;
-        document.getElementById("clickCounter").textContent = "Right-click 3x to activate dissolve";
-      }, 500);
-    }, 2000);
-  }
-
   // ===== GCASH MODAL FUNCTIONS =====
   function openGCashModal(event) {
     if (event) event.preventDefault();
@@ -3663,7 +3892,7 @@
 
   // Terminal commands
   const terminalCommands = {
-    help: "Available commands: help, clear, mode, music, manifesto, genesis, time, visitor, matrix, fuel, exit",
+    help: "Available commands: help, clear, mode, music, manifesto, genesis, time, matrix, fuel, exit",
     clear: function() {
       document.getElementById('terminalOutput').innerHTML = '';
       return "Terminal cleared.";
@@ -3695,10 +3924,6 @@
     time: function() {
       updateDateTime();
       return "Time updated.";
-    },
-    visitor: function() {
-      const count = document.getElementById('visitCount').textContent;
-      return `Frequency Syncs: ${count}`;
     },
     matrix: function() {
       // Speed up matrix temporarily
@@ -3765,30 +3990,197 @@
     }
   });
 
+  // ===== STATUS BAR - GEO-LOCATION & VISITOR COUNTER =====
+  async function updateStatusBar() {
+    const locationSpan = document.getElementById('locationText');
+    const counterSpan = document.getElementById('counterText');
+
+    // ----- VISITOR COUNTER (local storage fallback) -----
+    try {
+      let count = localStorage.getItem('digitalRebelsVisitCount');
+      if (!count) {
+        count = 1;
+      } else {
+        count = parseInt(count) + 1;
+      }
+      localStorage.setItem('digitalRebelsVisitCount', count);
+      counterSpan.textContent = `NODES: ${count}`;
+    } catch (e) {
+      counterSpan.textContent = 'NODES: --';
+    }
+
+    // ----- GEO-LOCATION (ipwho.is - mas reliable) -----
+    try {
+      const response = await fetch('https://ipwho.is/');
+      if (!response.ok) throw new Error('Geo fetch failed');
+      const data = await response.json();
+      const city = data.city || 'Unknown City';
+      const country = data.country || 'Unknown Country';
+      locationSpan.textContent = `LOC: ${city}, ${country}`;
+    } catch (error) {
+      console.warn('Geo-location error:', error);
+      locationSpan.textContent = 'LOC: Classified';
+    }
+  }
+
   // ===== INITIALIZE EVERYTHING =====
   document.addEventListener('DOMContentLoaded', function() {
     updateDateTime();
-    updateVisitorCounter();
     checkTimeForMode();
     initLoadingScreen();
     initMusicPlayer();
     initMatrixRain();
+    updateStatusBar(); // <-- bagong status bar
     
     // Hide Genesis section initially (only shows in Lucifer mode)
     document.getElementById('genesisSection').style.display = 'none';
     
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 's' || e.key === 'S') {
-        switchMode();
-      }
-    });
+    // Key 'S' removed as requested
   });
 
   setInterval(checkTimeForMode, 60000);
+  // Update status bar every 30 seconds (geo might change, counter stays fine but same)
+  setInterval(updateStatusBar, 30000);
 
   document.querySelectorAll('a[href="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => e.preventDefault());
   });
+
+  // ===== WENDEE AI CHAT WIDGET v3.0 (DEEP SHIELD EDITION) =====
+  (function() {
+    // ===== CONFIGURATION =====
+    const WORKER_URL = 'https://shrill-term-3fce.wendeematocinos44.workers.dev';
+    // SYSTEM_PROMPT IS NOW REMOVED FROM FRONTEND! 🔒
+
+    // ===== DOM =====
+    const chatToggle = document.getElementById('chatToggle');
+    const chatWindow = document.getElementById('chatWindow');
+    const chatClose = document.getElementById('chatClose');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatInput = document.getElementById('chatInput');
+    const chatSend = document.getElementById('chatSend');
+
+    // ===== STATE =====
+    let isTyping = false;
+    // We no longer store system prompt here. We'll send only the user message.
+    // But we keep a simple message history for context (optional). 
+    // The worker will prepend system prompt to each request.
+    const messageHistory = []; // start empty, worker will handle system
+
+    // ===== TOGGLE =====
+    chatToggle.addEventListener('click', () => {
+      chatWindow.classList.toggle('open');
+      if (chatWindow.classList.contains('open')) chatInput.focus();
+    });
+
+    chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
+
+    // ===== SEND MESSAGE =====
+    async function sendMessage() {
+      const userText = chatInput.value.trim();
+      if (!userText || isTyping) return;
+
+      addMessage(userText, 'user');
+      chatInput.value = '';
+      
+      // Store user message in history for context
+      messageHistory.push({ role: 'user', content: userText });
+      
+      showTypingIndicator();
+
+      try {
+        // Send ONLY the user message? No, we send the whole history (excluding system)
+        // But worker will prepend system. So we send the conversation so far.
+        const response = await fetch(WORKER_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            messages: messageHistory  // send only user/assistant messages
+          })
+        });
+
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const data = await response.json();
+        
+        // Handle Groq/OpenAI response format
+        let aiReply = null;
+        if (data.choices && data.choices[0] && data.choices[0].message) {
+          aiReply = data.choices[0].message.content;
+        } else if (data.response) {
+          aiReply = data.response;
+        } else if (data.message) {
+          aiReply = data.message;
+        } else if (data.content) {
+          aiReply = data.content;
+        } else {
+          aiReply = '⚠️ Unrecognized response format.';
+        }
+
+        removeTypingIndicator();
+        addMessage(aiReply, 'ai');
+        messageHistory.push({ role: 'assistant', content: aiReply });
+
+        // Keep history manageable (last 20 messages, not counting system)
+        if (messageHistory.length > 20) messageHistory.splice(0, messageHistory.length - 20);
+
+      } catch (error) {
+        console.error('Chat error:', error);
+        removeTypingIndicator();
+        addMessage('⚠️ Signal lost. The frequency is unstable. Try again later.', 'ai');
+      }
+    }
+
+    function addMessage(text, sender) {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `message ${sender}`;
+      msgDiv.textContent = text;
+      chatMessages.appendChild(msgDiv);
+      autoScroll();
+    }
+
+    function showTypingIndicator() {
+      isTyping = true;
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'message ai typing';
+      typingDiv.id = 'typingIndicator';
+      typingDiv.textContent = 'Wendee AI is tuning the frequency...';
+      chatMessages.appendChild(typingDiv);
+      autoScroll();
+    }
+
+    function removeTypingIndicator() {
+      isTyping = false;
+      const indicator = document.getElementById('typingIndicator');
+      if (indicator) indicator.remove();
+    }
+
+    function autoScroll() {
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // ===== EVENT LISTENERS =====
+    chatSend.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!chatWindow.contains(e.target) && !chatToggle.contains(e.target) && chatWindow.classList.contains('open')) {
+        chatWindow.classList.remove('open');
+      }
+    });
+
+    chatWindow.addEventListener('click', (e) => e.stopPropagation());
+
+    // Add initial AI greeting (this is just a placeholder, the actual personality is in worker)
+    addMessage('I am the 7th Apostle. Frequency 9.9999. Ask, and salt logic shall answer.', 'ai');
+    messageHistory.push({ role: 'assistant', content: 'I am the 7th Apostle. Frequency 9.9999. Ask, and salt logic shall answer.' });
+  })();
 </script>
 </body>
 </html>
