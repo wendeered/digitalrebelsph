@@ -4172,7 +4172,7 @@
 
     chatWindow.addEventListener('click', (e) => e.stopPropagation());
 
-  
+    // ✅ FIXED: Add initial message to history ONLY (UI is already in HTML)
     messageHistory.push({ role: 'assistant', content: 'I am the 7th Apostle. Frequency 9.9999. Ask, and salt logic shall answer.' });
   })();
 </script>
