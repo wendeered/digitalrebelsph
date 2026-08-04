@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Rebels PH | Lucifer's Symphony</title>
+  <title>Digital Rebels PH | Alchemist's Terminal v9.999</title>
   
-  <!-- ===== GOOGLE ANALYTICS ===== -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJ9X8BV4KM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,4167 +14,1286 @@
     gtag('config', 'G-TJ9X8BV4KM');
   </script>
   
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* ====== ROOT COLORS ====== */
+    /* ===== RESET & ROOT ===== */
+    * { margin:0; padding:0; box-sizing:border-box; }
     :root {
-      /* DAY MODE COLORS */
-      --day-primary: #ff6b35;
-      --day-secondary: #1a73e8;
-      --day-accent: #ffcc00;
-      --day-bg: #1a1a2e;
-      --day-text: #e6e6e6;
-      --day-grid: rgba(255, 107, 53, 0.15);
-      --day-sun-glow: #ffcc00;
-      --day-sun-core: #ff6600;
-      
-      /* NIGHT MODE COLORS */
-      --night-primary: #6ecbff;
-      --night-secondary: #a1ff6e;
-      --night-accent: #b66dff;
-      --night-bg: #0a0a0a;
-      --night-text: #e0e0e0;
-      --night-grid: rgba(110, 203, 255, 0.1);
-      --night-moon-glow: #aaccff;
-      --night-moon-core: #6699ff;
-      
-      /* LUCIFER MODE COLORS */
-      --lucifer-primary: #ffd700;
-      --lucifer-secondary: #ff3300;
-      --lucifer-accent: #9900ff;
-      --lucifer-bg: #050505;
-      --lucifer-text: #e0e0e0;
-      --lucifer-grid: rgba(255, 51, 0, 0.1);
-      --lucifer-fire: #ff3300;
-      
-      /* Default to time-based mode */
-      --primary-color: var(--night-primary);
-      --secondary-color: var(--night-secondary);
-      --accent-color: var(--night-accent);
-      --bg-color: var(--night-bg);
-      --text-color: var(--night-text);
-      --grid-color: var(--night-grid);
+      --neon-green: #00ff88;
+      --neon-gold: #ffcc00;
+      --neon-blue: #00e5ff;
+      --bg-dark: #050505;
+      --panel-bg: rgba(12, 16, 15, 0.85);
+      --border-color: rgba(0, 255, 136, 0.4);
     }
 
-    /* ===== ENHANCED DAY MODE ===== */
-    .day-mode {
-      --primary-color: #ff6b35;
-      --secondary-color: #1a73e8;
-      --accent-color: #ffcc00;
-      --bg-color: #1a1a2e;
-      --text-color: #e6e6e6;
-      --grid-color: rgba(255, 107, 53, 0.15);
-      --cursor-color: #1a73e8;
-      --cursor-glow: #4285f4;
-      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    body.theme-day {
+      --neon-green: #ffaa00;
+      --neon-gold: #fff700;
+      --neon-blue: #ff6600;
+      --bg-dark: #120e03;
+      --panel-bg: rgba(25, 20, 10, 0.88);
+      --border-color: rgba(255, 170, 0, 0.5);
+    }
+    body.theme-night {
+      --neon-green: #00bfff;
+      --neon-gold: #00e5ff;
+      --neon-blue: #7000ff;
+      --bg-dark: #02050e;
+      --panel-bg: rgba(5, 10, 25, 0.88);
+      --border-color: rgba(0, 191, 255, 0.4);
+    }
+    body.theme-lucifer {
+      --neon-green: #ff0033;
+      --neon-gold: #ff4400;
+      --neon-blue: #880000;
+      --bg-dark: #080002;
+      --panel-bg: rgba(20, 2, 5, 0.9);
+      --border-color: rgba(255, 0, 51, 0.6);
+    }
+    body.theme-broken {
+      --neon-green: #ff3399;
+      --neon-gold: #9900ee;
+      --neon-blue: #00ffff;
+      --bg-dark: #0a030d;
+      --panel-bg: rgba(20, 5, 25, 0.88);
+      --border-color: rgba(255, 51, 153, 0.5);
     }
 
-    /* NIGHT MODE VARIABLES */
-    .night-mode {
-      --primary-color: var(--night-primary);
-      --secondary-color: var(--night-secondary);
-      --accent-color: var(--night-accent);
-      --bg-color: var(--night-bg);
-      --text-color: var(--night-text);
-      --grid-color: var(--night-grid);
-      --cursor-color: #6ecbff;
-      --cursor-glow: #00ffe7;
-    }
-
-    /* LUCIFER MODE VARIABLES */
-    .lucifer-mode {
-      --primary-color: var(--lucifer-primary);
-      --secondary-color: var(--lucifer-secondary);
-      --accent-color: var(--lucifer-accent);
-      --bg-color: var(--lucifer-bg);
-      --text-color: var(--lucifer-text);
-      --grid-color: var(--lucifer-grid);
-      --cursor-color: #ff3300;
-      --cursor-glow: #ffd700;
-    }
-
-    * { 
-      margin:0; padding:0; box-sizing:border-box;
-      cursor: none !important;
-    }
-    
     body {
-      min-height:100vh;
-      background:var(--bg-color);
-      font-family:'Orbitron', sans-serif;
-      overflow-x:hidden;
-      transition: all 0.8s ease;
-      position:relative;
-      color:var(--text-color);
-    }
-
-    /* ===== LOADING SCREEN ===== */
-    .loading-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--bg-color);
+      background-color: var(--bg-dark);
+      color: var(--neon-green);
+      font-family: 'Share Tech Mono', monospace;
+      min-height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      z-index: 10000;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-    
-    .loading-screen.hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-    
-    .loading-spinner {
-      width: 80px;
-      height: 80px;
-      border: 8px solid rgba(var(--primary-color-rgb), 0.2);
-      border-top: 8px solid var(--primary-color);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin-bottom: 30px;
-    }
-    
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    .loading-text {
-      font-size: 1.5rem;
-      color: var(--primary-color);
-      text-align: center;
-      font-weight: 700;
-      text-shadow: 0 0 10px var(--primary-color);
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-    }
-    
-    .loading-subtext {
-      font-size: 1rem;
-      color: var(--secondary-color);
-      text-align: center;
-      font-family: 'Share Tech Mono', monospace;
-      max-width: 500px;
-      padding: 0 20px;
-      line-height: 1.5;
-    }
-    
-    .loading-progress {
-      width: 300px;
-      height: 4px;
-      background: rgba(var(--primary-color-rgb), 0.2);
-      border-radius: 2px;
-      margin-top: 30px;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .loading-progress-bar {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-      border-radius: 2px;
-      transition: width 0.3s ease;
-    }
-    
-    .loading-countdown {
-      font-size: 0.9rem;
-      color: var(--accent-color);
-      margin-top: 15px;
-      font-family: 'Share Tech Mono', monospace;
-    }
-
-    /* ===== MAIN CONTENT ===== */
-    .main-content-wrapper {
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-    
-    .main-content-wrapper.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    /* ===== CUSTOM CURSOR ===== */
-    .cursor {
-      position: fixed;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      mix-blend-mode: difference;
-      transition: transform 0.05s ease;
-      animation: cursorFloat 3s infinite ease-in-out;
-    }
-    
-    .cursor-dot {
-      position: fixed;
-      width: 6px;
-      height: 6px;
-      background-color: var(--cursor-color);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 10000;
-      transition: transform 0.02s ease;
-      box-shadow: 0 0 10px var(--cursor-glow);
-    }
-    
-    @keyframes cursorFloat {
-      0%, 100% { transform: translate(-50%, -50%) scale(1); }
-      50% { transform: translate(-50%, -50%) scale(1.1); }
-    }
-
-    /* ===== DISCLAIMER BANNER ===== */
-    .disclaimer-banner {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: linear-gradient(90deg, var(--accent-color), var(--secondary-color), var(--accent-color));
-      color: white;
-      text-align: center;
-      padding: 6px;
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.7rem;
-      z-index: 1002;
-      border-bottom: 1px solid var(--primary-color);
-      animation: pulseWarning 3s infinite;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-    
-    @keyframes pulseWarning {
-      0%, 100% { opacity: 0.9; }
-      50% { opacity: 0.7; }
-    }
-
-    /* ===== TOP HEADER ROW ===== */
-    .top-header-row {
-      position: fixed;
-      top: 30px;
-      left: 0;
-      width: 100%;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
-      z-index: 1001;
-      box-sizing: border-box;
-    }
-
-    /* ===== NAME ===== */
-    .name {
-      font-size: 12px;
-      font-weight: bold;
-      font-family: 'Courier New', monospace;
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--primary-color));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 300% 100%;
-      animation: rgbLeftToRight 6s linear infinite;
-      border: 1px solid var(--primary-color);
-      border-radius: 3px;
-      padding: 3px 6px;
-      max-width: 200px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      order: 1;
-    }
-    
-    @keyframes rgbLeftToRight {
-      0% { background-position: 0% 0%; }
-      100% { background-position: 100% 0%; }
-    }
-    
-    /* ===== APOSTLE ===== */
-    .apostle {
-      font-size: 12px;
-      font-weight: bold;
-      font-family: 'Courier New', monospace;
-      background: linear-gradient(270deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--primary-color));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 300% 100%;
-      animation: rgbRightToLeft 6s linear infinite;
-      border: 1px solid var(--secondary-color);
-      border-radius: 3px;
-      padding: 3px 6px;
-      max-width: 320px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      order: 3;
-    }
-    
-    @keyframes rgbRightToLeft {
-      0% { background-position: 100% 0%; }
-      100% { background-position: 0% 0%; }
-    }
-
-    /* ===== COMPACT REALISTIC MUSIC PLAYER ===== */
-    .music-player-container {
-      position: fixed;
-      top: 75px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 998;
-      width: 802px;
-      height: 140px;
-      background: rgba(25, 25, 40, 0.85);
-      border-radius: 15px;
       padding: 15px;
-      display: flex;
-      align-items: center;
+      overflow-x: hidden;
       position: relative;
-      overflow: visible;
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      box-shadow: 
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        0 10px 30px rgba(0, 0, 0, 0.6),
-        0 0 0 1px rgba(255, 255, 255, 0.05);
+      transition: background-color 0.5s ease, color 0.5s ease;
     }
 
-    .music-player-container.scrolled {
-      top: 70px;
-      transform: translateX(-50%) scale(0.95);
-      box-shadow: 
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        0 5px 15px rgba(0, 0, 0, 0.5),
-        0 0 0 1px rgba(255, 255, 255, 0.05);
-    }
-
-    .music-player-container:hover {
-      transform: translateX(-50%) scale(1.02);
-      box-shadow: 
-        inset 0 1px 0 rgba(255, 255, 255, 0.15),
-        0 15px 40px rgba(0, 0, 0, 0.7),
-        0 0 0 1px rgba(255, 255, 255, 0.1);
-    }
-
-    .music-player-container.scrolled:hover {
-      transform: translateX(-50%) scale(0.97);
-    }
-
-    .music-player-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, transparent 30%, rgba(255, 255, 255, 0.03) 50%, transparent 70%);
+    #bgCanvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
       z-index: 0;
+      opacity: 0.22;
+      pointer-events: none;
     }
 
-    .player-left {
-      flex: 0 0 auto;
-      display: flex;
-      align-items: center;
-      margin-right: 15px;
-      position: relative;
-      z-index: 1;
-      min-width: 220px;
-    }
-
-    .player-icon-container {
-      width: 50px;
-      height: 50px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 12px;
-      flex-shrink: 0;
-    }
-
-    .icon-ring {
-      position: absolute;
+    .terminal-wrapper {
       width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      border: 2px solid;
-      animation: rotate 20s linear infinite;
-    }
-
-    .icon-ring::before {
-      content: '';
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      top: -5px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .player-icon {
-      font-size: 1.8rem;
-      position: relative;
-      z-index: 2;
-      filter: drop-shadow(0 0 8px currentColor);
-      animation: pulse 3s infinite ease-in-out;
-    }
-
-    .player-titles {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-width: 165px;
-    }
-
-    .player-name {
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 2px;
-      background: linear-gradient(to right, #ffffff, #e0e0ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .player-subtitle {
-      font-size: 0.7rem;
-      color: #aaaacc;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .player-center {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      z-index: 1;
-      padding-right: 15px;
-      min-width: 275px;
-    }
-
-    .track-info {
-      margin-bottom: 10px;
-      text-align: center;
-      min-width: 275px;
-    }
-
-    .track-title {
-      font-size: 1.1rem;
-      margin-bottom: 3px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      color: white;
-      font-weight: 600;
-      text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-      padding: 0 5px;
-    }
-
-    .track-artist {
-      color: #8888aa;
-      font-size: 0.8rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
-      padding: 0 5px;
-    }
-
-    .progress-container {
-      width: 100%;
-      margin: 8px 0;
-      min-width: 275px;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 4px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 2px;
-      overflow: hidden;
-      margin-bottom: 5px;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .progress-fill {
-      height: 100%;
-      border-radius: 2px;
-      position: relative;
-      transition: width 0.3s ease;
-    }
-
-    .progress-fill::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: white;
-      transform: translate(50%, -2px);
-      box-shadow: 0 0 6px currentColor;
-    }
-
-    .time-display {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.7rem;
-      color: #aaaacc;
-      font-family: 'Share Tech Mono', monospace;
-    }
-
-    .player-right {
-      flex: 0 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 1;
-      gap: 8px;
-      min-width: 132px;
-    }
-
-    .controls {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .control-btn {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(255, 255, 255, 0.08);
-      color: white;
-      font-size: 0.8rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 
-        0 3px 8px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-
-    .control-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .control-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 
-        0 5px 15px rgba(0, 0, 0, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    }
-
-    .control-btn:hover::before {
-      opacity: 1;
-    }
-
-    .control-btn.play-btn {
-      width: 36px;
-      height: 36px;
-      font-size: 0.9rem;
-      background: rgba(255, 255, 255, 0.12);
-    }
-
-    .metallic-accent {
-      position: absolute;
-      width: 60%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      top: 8px;
-      left: 20%;
-      border-radius: 1px;
-      z-index: 1;
-    }
-
-    .metallic-accent.bottom {
-      top: auto;
-      bottom: 8px;
-    }
-
-    /* ===== ENHANCED DAY MODE STYLES ===== */
-    .day-mode .music-player-container {
-      background: linear-gradient(135deg, rgba(30, 30, 46, 0.92), rgba(40, 40, 60, 0.92));
-      border: 2px solid var(--accent-color);
-      box-shadow: 
-        0 15px 40px rgba(255, 107, 53, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    }
-
-    .day-mode .icon-ring {
-      border-color: rgba(255, 204, 0, 0.5);
-    }
-
-    .day-mode .icon-ring::before {
-      background: #ffcc00;
-      box-shadow: 0 0 8px #ff9900;
-    }
-
-    .day-mode .player-icon {
-      color: #ffcc00;
-      text-shadow: 0 0 15px #ff9900;
-    }
-
-    .day-mode .progress-fill {
-      background: linear-gradient(90deg, #ff6b35, #ffcc00);
-      box-shadow: 0 0 15px rgba(255, 107, 53, 0.5);
-    }
-
-    .day-mode .control-btn:hover {
-      color: #ff6b35;
-      box-shadow: 
-        0 5px 15px rgba(255, 107, 53, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    }
-
-    .day-mode .player-name {
-      background: linear-gradient(to right, #ff6b35, #ffcc00, #1a73e8);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .day-mode .section-container {
-      background: rgba(30, 30, 46, 0.92);
-      backdrop-filter: blur(12px);
-      border: 2px solid var(--accent-color);
-      box-shadow: 
-        0 10px 40px rgba(255, 204, 0, 0.25),
-        0 0 30px rgba(26, 115, 232, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-
-    .day-mode .content-item {
-      background: rgba(40, 40, 60, 0.95);
-      border: 1px solid rgba(255, 107, 53, 0.3);
-      border-left: 4px solid var(--primary-color);
-      transition: all 0.3s ease;
-    }
-
-    .day-mode .content-item:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 15px 30px rgba(255, 107, 53, 0.2);
-      border-color: var(--accent-color);
-    }
-
-    /* NIGHT MODE STYLES */
-    .night-mode .music-player-container {
-      background: linear-gradient(135deg, rgba(20, 25, 40, 0.85), rgba(10, 15, 30, 0.85));
-      border: 1px solid rgba(102, 153, 255, 0.25);
-    }
-
-    .night-mode .icon-ring {
-      border-color: rgba(102, 153, 255, 0.5);
-    }
-
-    .night-mode .icon-ring::before {
-      background: #6699ff;
-      box-shadow: 0 0 8px #3366cc;
-    }
-
-    .night-mode .player-icon {
-      color: #aaccff;
-      text-shadow: 0 0 15px #6699ff;
-    }
-
-    .night-mode .progress-fill {
-      background: linear-gradient(90deg, #aaccff, #3366cc);
-      box-shadow: 0 0 8px rgba(102, 153, 255, 0.5);
-    }
-
-    .night-mode .control-btn:hover {
-      color: #aaccff;
-      box-shadow: 
-        0 5px 15px rgba(102, 153, 255, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    }
-
-    .night-mode .player-name {
-      background: linear-gradient(to right, #6ecbff, #a1ff6e, #b66dff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    /* LUCIFER MODE STYLES */
-    .lucifer-mode .music-player-container {
-      background: linear-gradient(135deg, rgba(40, 10, 10, 0.85), rgba(20, 5, 5, 0.85));
-      border: 1px solid rgba(204, 51, 51, 0.25);
-    }
-
-    .lucifer-mode .icon-ring {
-      border-color: rgba(204, 51, 51, 0.5);
-    }
-
-    .lucifer-mode .icon-ring::before {
-      background: #cc3333;
-      box-shadow: 0 0 8px #990000;
-    }
-
-    .lucifer-mode .player-icon {
-      color: #ff6666;
-      text-shadow: 0 0 15px #cc3333;
-    }
-
-    .lucifer-mode .progress-fill {
-      background: linear-gradient(90deg, #ff6666, #990000);
-      box-shadow: 0 0 8px rgba(204, 51, 51, 0.5);
-    }
-
-    .lucifer-mode .control-btn:hover {
-      color: #ff6666;
-      box-shadow: 
-        0 5px 15px rgba(204, 51, 51, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    }
-
-    .lucifer-mode .player-name {
-      background: linear-gradient(to right, #ffd700, #ff3300, #9900ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    /* Animations */
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 0.7; }
-      50% { opacity: 1; }
-    }
-
-    @keyframes sunPulse {
-      0% { opacity: 0.08; transform: translate(-50%, -50%) scale(1); }
-      100% { opacity: 0.15; transform: translate(-50%, -50%) scale(1.1); }
-    }
-
-    /* ===== BACKGROUND EFFECTS ===== */
-    .bg-grid {
-      position:fixed; top:0; left:0; width:100%; height:100%;
-      background-image:
-        linear-gradient(var(--grid-color) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-      background-size:30px 30px;
-      z-index:-3; opacity:0.3;
-      transition: opacity 0.8s ease;
-    }
-    
-    .glow-effect {
-      position:fixed; top:50%; left:50%;
-      width:500px; height:500px;
-      background:radial-gradient(circle, var(--primary-color), rgba(0,0,0,0) 70%);
-      transform:translate(-50%, -50%);
-      z-index:-2; opacity:0.05;
-      transition:background 0.8s ease, opacity 0.8s ease;
-    }
-
-    .day-mode .glow-effect {
-      background: radial-gradient(circle, rgba(255, 204, 0, 0.2) 0%, transparent 70%);
-      opacity: 0.1;
-      animation: sunPulse 4s infinite alternate;
-    }
-    
-    #matrix { position:fixed; top:0; left:0; z-index:-1; }
-
-    /* ===== HEADER CONTAINER ===== */
-    .header-container { 
-      text-align:center; 
-      padding: 140px 20px 20px;
-      margin-top: 0;
-      transition: all 0.8s ease;
-    }
-    
-    h1 {
-      font-size: clamp(2.5rem, 8vw, 80px);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      animation: colorBlink 2s infinite, glitchEffect 5s infinite;
-      text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
-      transition: all 0.8s ease;
-      margin-top: 5px;
-      margin-bottom: 5px;
-    }
-
-    .day-mode h1 {
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--secondary-color));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 2px 10px rgba(255, 204, 0, 0.3);
-    }
-    
-    @keyframes colorBlink {
-      0%, 100% { color: var(--primary-color); text-shadow: 0 0 15px var(--primary-color); }
-      50% { color: var(--secondary-color); text-shadow: 0 0 15px var(--secondary-color), 0 0 30px var(--secondary-color); }
-    }
-    
-    @keyframes glitchEffect {
-      0%, 95%, 100% { transform: translate(0) skew(0); opacity: 1; }
-      5% { transform: translate(-2px, 2px) skew(-2deg); opacity: 0.8; }
-      10% { transform: translate(2px, -2px) skew(2deg); opacity: 0.8; }
-      15% { transform: translate(-2px, -2px) skew(-1deg); opacity: 0.9; }
-    }
-
-    /* ===== DATE AND TIME DISPLAY ===== */
-    .datetime-container {
-      text-align: center;
-      margin: 5px 0 15px;
-      font-family: 'Share Tech Mono', monospace;
-      transition: all 0.8s ease;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0 10px;
-    }
-    
-    .date-display {
-      color: var(--secondary-color);
-      font-size: 1.4rem;
-      margin-bottom: 5px;
-      text-shadow: 0 0 5px var(--secondary-color);
-      letter-spacing: 1px;
-      text-align: center;
-      width: 100%;
-      line-height: 1.2;
-    }
-    
-    .time-display {
-      color: var(--accent-color);
-      font-size: 1.3rem;
-      text-shadow: 0 0 5px var(--accent-color);
-      letter-spacing: 1px;
-      text-align: center;
-      width: 100%;
-      line-height: 1.2;
-      padding: 0 10px;
-      word-wrap: break-word;
-      max-width: 90%;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    /* ===== DIVIDER ===== */
-    .divider {
-      width: 60%;
-      height: 1px;
-      margin: 10px auto;
-      background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
-      animation: flicker 2s infinite;
-      transition: all 0.8s ease;
-    }
-    
-    @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-
-    /* ===== NAV ===== */
-    nav {
-      margin: 15px auto;
-      text-align: center;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      max-width: 90%;
-      padding: 12px;
-      background: rgba(0, 0, 0, 0.1);
-      border: 1px solid var(--accent-color);
-      border-radius: 10px;
-      box-shadow: 0 0 20px var(--accent-color);
-      z-index: 50;
-      transition: all 0.8s ease;
-    }
-
-    .day-mode nav {
-      background: rgba(30, 30, 46, 0.9);
-      border: 1px solid rgba(255, 107, 53, 0.2);
-      box-shadow: 0 5px 20px rgba(255, 107, 53, 0.2);
-    }
-    
-    nav a {
-      color: var(--text-color);
-      text-decoration: none;
-      padding: 10px 15px;
-      font-size: clamp(16px, 2.5vw, 22px);
-      border: 1px solid transparent;
-      border-radius: 6px;
-      transition: 0.3s;
-      position: relative;
-    }
-
-    .day-mode nav a {
-      background: rgba(40, 40, 60, 0.9);
-      border: 1px solid rgba(255, 107, 53, 0.2);
-      color: var(--text-color);
-    }
-    
-    nav a:hover {
-      color: var(--accent-color);
-      border-color: var(--secondary-color);
-      text-shadow: 0 0 8px var(--secondary-color);
-      background: rgba(var(--primary-color-rgb), 0.1);
-    }
-
-    .day-mode nav a:hover {
-      background: var(--primary-color);
-      color: white;
-      box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
-      border-color: var(--primary-color);
-    }
-    
-    nav a.active {
-      color: var(--primary-color);
-      border-color: var(--primary-color);
-      text-shadow: 0 0 10px var(--primary-color);
-      background: rgba(var(--primary-color-rgb), 0.1);
-    }
-
-    /* ===== MAIN CONTENT ===== */
-    .main-content {
-      width: 95%;
-      max-width: 1400px;
-      margin: 25px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 25px;
-      min-height: 600px;
-    }
-
-    /* ===== SECTION STYLING ===== */
-    .section-container {
+      max-width: 1350px;
+      background: var(--panel-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), inset 0 0 30px rgba(0, 0, 0, 0.9);
       padding: 25px;
-      border: 3px solid var(--accent-color);
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 0 30px var(--primary-color),
-                  inset 0 0 20px rgba(var(--primary-color-rgb), 0.1);
       position: relative;
-      overflow: hidden;
-      min-height: 500px;
-      backdrop-filter: blur(10px);
-      transition: all 0.8s ease;
-      display: none;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      transition: all 0.5s ease;
     }
-    
-    .section-container.active {
-      display: block;
-    }
-
-    .section-container::before {
-      content: "⛧";
+    .terminal-wrapper::before {
+      content: "⛧ LEX WENDEE RUBRA TERMINAL v9.999 ⛧";
       position: absolute;
-      top: -20px;
-      left: -20px;
-      font-size: 120px;
-      color: rgba(var(--primary-color-rgb), 0.1);
-      transform: rotate(-15deg);
-      z-index: 0;
+      top: 10px; right: 25px;
+      font-size: 0.7rem;
+      color: var(--neon-green);
+      opacity: 0.5;
+      letter-spacing: 2px;
     }
 
-    .section-container::after {
-      content: "♱";
-      position: absolute;
-      bottom: -30px;
-      right: -30px;
-      font-size: 150px;
-      color: rgba(var(--accent-color-rgb), 0.1);
-      transform: rotate(15deg);
-      z-index: 0;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 25px;
-      color: var(--primary-color);
-      text-shadow: 0 0 10px var(--secondary-color);
-      position: relative;
-      z-index: 1;
-      font-weight: 900;
-      letter-spacing: 3px;
-    }
-
-    .section-content {
-      position: relative;
-      z-index: 1;
-      padding: 15px;
-      background: rgba(0,0,0,0.2);
-      border-radius: 15px;
-      border: 1px solid var(--secondary-color);
-      min-height: 300px;
-      transition: all 0.8s ease;
-      color: var(--text-color);
-    }
-
-    .day-mode .section-content {
-      background: rgba(40, 40, 60, 0.9);
-      color: var(--text-color);
-      border: 1px solid rgba(255, 107, 53, 0.3);
-    }
-
-    .content-item {
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid var(--accent-color);
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 15px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      color: var(--text-color);
-    }
-
-    .item-title {
-      font-size: 1.4rem;
-      color: var(--primary-color);
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .item-text {
-      color: var(--text-color);
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 12px;
-      opacity: 0.9;
-    }
-
-    .item-list {
-      list-style-type: none;
-      padding-left: 20px;
-    }
-
-    .item-list li {
-      color: var(--secondary-color);
-      margin-bottom: 8px;
-      position: relative;
-      padding-left: 25px;
-    }
-
-    .item-list li::before {
-      content: "⛧";
-      position: absolute;
-      left: 0;
-      color: var(--primary-color);
-    }
-
-    /* ===== GENESIS SECTION SPECIAL STYLES ===== */
-    #genesisSection {
-      display: none;
-      border: 3px solid #ff3300;
-      background: rgba(10, 5, 5, 0.95);
-      position: relative;
-      overflow: hidden;
-    }
-
-    #genesisSection::before {
-      content: "666";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 300px;
-      color: rgba(255, 51, 0, 0.05);
-      font-weight: 900;
-      z-index: 0;
-      animation: forbiddenGlow 4s infinite alternate;
-    }
-
-    #genesisSection .section-title {
-      color: #ff3300;
-      text-shadow: 0 0 20px #ff3300, 0 0 40px #990000;
-      position: relative;
-      z-index: 2;
-      font-size: 2.8rem;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-    }
-
-    #genesisSection .section-content {
-      background: rgba(0, 0, 0, 0.8);
-      border: 2px solid #990000;
-      position: relative;
-      z-index: 2;
-      backdrop-filter: blur(5px);
-    }
-
-    #genesisSection .content-item {
-      background: rgba(20, 5, 5, 0.9);
-      border: 1px solid #ff3300;
-      border-left: 5px solid #ff3300;
-      position: relative;
-      z-index: 2;
-      overflow: hidden;
-    }
-
-    #genesisSection .content-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, transparent 30%, rgba(255, 51, 0, 0.1) 50%, transparent 70%);
-      z-index: 1;
-    }
-
-    #genesisSection .item-title {
-      color: #ff6600;
-      text-shadow: 0 0 10px #ff3300;
-      font-size: 1.6rem;
-      border-bottom: 2px solid #ff3300;
-      padding-bottom: 8px;
-      margin-bottom: 15px;
-    }
-
-    #genesisSection .item-text {
-      color: #e6e6e6;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      position: relative;
-      z-index: 2;
-    }
-
-    #genesisSection .item-list li {
-      color: #ff9966;
-      font-size: 1.05rem;
-      margin-bottom: 10px;
-      padding-left: 30px;
-      position: relative;
-      z-index: 2;
-    }
-
-    #genesisSection .item-list li::before {
-      content: "☠";
-      color: #ff3300;
-      font-size: 1.2rem;
-      left: 0;
-      top: 0;
-    }
-
-    /* Forbidden knowledge warning */
-    .forbidden-warning {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: rgba(255, 51, 0, 0.2);
-      color: #ff9966;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 0.8rem;
-      border: 1px solid #ff3300;
-      z-index: 3;
-      animation: pulseWarning 2s infinite;
-    }
-
-    /* Image grid for Genesis */
-    .genesis-grid {
+    .terminal-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
-      margin: 20px 0;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 30px;
+      min-height: 580px;
     }
 
-    .genesis-image {
-      height: 180px;
-      background: rgba(0, 0, 0, 0.7);
-      border-radius: 10px;
-      overflow: hidden;
-      border: 2px solid #ff3300;
-      position: relative;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .genesis-image:hover {
-      transform: translateY(-5px) scale(1.03);
-      border-color: #ff6600;
-      box-shadow: 0 10px 25px rgba(255, 51, 0, 0.3);
-    }
-
-    .genesis-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .genesis-image:hover img {
-      transform: scale(1.1);
-    }
-
-    .image-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-      padding: 10px;
-      color: white;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    /* Genesis reveal effect */
-    .genesis-reveal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #000;
-      z-index: 9998;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.5s ease;
-    }
-
-    .genesis-reveal.active {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .reveal-text {
-      color: #ff3300;
-      font-size: 4rem;
-      text-align: center;
-      text-shadow: 0 0 30px #ff3300;
-      animation: revealPulse 2s infinite;
-    }
-
-    @keyframes revealPulse {
-      0%, 100% { opacity: 0.7; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.05); }
-    }
-
-    @keyframes forbiddenGlow {
-      0% { opacity: 0.05; transform: translate(-50%, -50%) scale(1); }
-      100% { opacity: 0.1; transform: translate(-50%, -50%) scale(1.1); }
-    }
-
-    /* Genesis access denied */
-    .genesis-denied {
+    .left-panel {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 400px;
-      text-align: center;
-      padding: 40px;
+      gap: 16px;
+      border-right: 1px solid var(--border-color);
+      padding-right: 25px;
     }
-
-    .denied-icon {
-      font-size: 5rem;
-      color: #ff3300;
-      margin-bottom: 20px;
-      animation: deniedPulse 3s infinite;
+    .header-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.3rem;
+      font-weight: 900;
+      color: var(--neon-green);
+      text-shadow: 0 0 12px var(--neon-green);
+      letter-spacing: 2px;
+      line-height: 1.1;
     }
-
-    .denied-text {
-      color: #ff9966;
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      text-shadow: 0 0 10px #ff3300;
+    .header-title span {
+      color: var(--neon-gold);
+      text-shadow: 0 0 12px var(--neon-gold);
     }
-
-    .denied-instruction {
-      color: #cccccc;
-      font-size: 1rem;
-      max-width: 500px;
+    .datetime-status {
+      font-size: 0.85rem;
+      color: var(--neon-green);
       line-height: 1.6;
+      border-left: 3px solid var(--neon-green);
+      padding-left: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 0 6px 6px 0;
     }
+    .datetime-status .time { color: var(--neon-gold); font-weight: bold; }
+    .datetime-status .status { color: var(--neon-green); font-weight: bold; }
+    .datetime-status .loc { color: var(--neon-blue); }
 
-    @keyframes deniedPulse {
-      0%, 100% { transform: scale(1); opacity: 0.7; }
-      50% { transform: scale(1.1); opacity: 1; }
+    .music-player {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 18px;
     }
-
-    /* ===== FOOTER ===== */
-    footer {
-      text-align:center; 
-      padding:25px;
-      margin-top:40px;
-      border-top:1px solid var(--accent-color);
-      background:rgba(0,0,0,0.7);
-      font-family:'Courier New', monospace;
-      transition: all 0.8s ease;
-      color: var(--text-color);
-    }
-
-    .day-mode footer {
-      background: rgba(30, 30, 46, 0.9);
-      color: var(--text-color);
-    }
-
-    footer p {
-      color: var(--text-color);
-    }
-    
-    footer a {
-      color: var(--primary-color);
-      text-decoration: none;
-    }
-    
-    footer a:hover {
-      text-shadow: 0 0 5px var(--primary-color);
-    }
-
-    /* ===== DISSOLVE OVERLAY ===== */
-    .dissolve-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      z-index: 10000;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.5s ease, filter 0.5s ease;
-    }
-
-    /* ===== GCASH MODAL STYLES ===== */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      backdrop-filter: blur(15px);
-      animation: modalFadeIn 0.5s ease;
-    }
-
-    .modal.active {
+    .player-label {
+      font-size: 0.8rem;
+      color: var(--neon-gold);
+      letter-spacing: 2px;
+      margin-bottom: 10px;
       display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-
-    @keyframes modalFadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
+    .track-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
     }
+    .track-title { font-size: 1.15rem; color: #ffffff; font-weight: 700; }
+    .track-artist { font-size: 0.8rem; color: var(--neon-blue); }
 
-    .modal-content {
-      background: var(--bg-color);
-      border: 3px solid var(--accent-color);
-      border-radius: 20px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 
-        0 0 60px var(--primary-color),
-        0 0 100px rgba(var(--primary-color-rgb), 0.5),
-        inset 0 0 30px rgba(255, 255, 255, 0.05);
-      overflow: hidden;
-      position: relative;
-      animation: modalGlow 2s infinite alternate;
+    .eq-bar-container { display: flex; gap: 3px; align-items: flex-end; height: 14px; }
+    .eq-bar { width: 3px; height: 100%; background: var(--neon-green); animation: eqBounce 0.8s infinite ease-in-out alternate; }
+    .eq-bar:nth-child(2) { animation-delay: 0.2s; }
+    .eq-bar:nth-child(3) { animation-delay: 0.4s; }
+    .eq-bar.paused { animation-play-state: paused; height: 3px; }
+    @keyframes eqBounce { 0% { height: 3px; } 100% { height: 14px; background: var(--neon-gold); } }
+
+    .progress-container { width: 100%; margin: 10px 0; }
+    .progress-bar { width: 100%; height: 5px; background: rgba(255,255,255,0.1); border-radius: 3px; cursor: pointer; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--neon-green), var(--neon-gold)); width: 0%; }
+    .time-display { display: flex; justify-content: space-between; font-size: 0.75rem; color: #88aabb; margin-top: 4px; }
+    .controls { display: flex; gap: 12px; justify-content: center; align-items: center; margin-top: 10px; }
+    .control-btn {
+      background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); color: var(--neon-green);
+      width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
     }
+    .control-btn:hover { background: var(--neon-green); color: #000; box-shadow: 0 0 15px var(--neon-green); }
 
-    @keyframes modalGlow {
-      0% { box-shadow: 0 0 40px var(--primary-color), 0 0 80px rgba(var(--primary-color-rgb), 0.3); }
-      100% { box-shadow: 0 0 60px var(--primary-color), 0 0 120px rgba(var(--primary-color-rgb), 0.5); }
+    .visitor-panel {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 4px;
     }
-
-    .modal-header {
-      background: linear-gradient(90deg, var(--bg-color), rgba(var(--primary-color-rgb), 0.4), var(--bg-color));
-      padding: 20px;
-      border-bottom: 2px solid var(--primary-color);
+    .visitor-title {
+      color: var(--neon-gold);
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-bottom: 8px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+    .user-location-tag {
+      background: rgba(0, 255, 136, 0.05);
+      border: 1px solid var(--border-color);
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .user-location-tag img { vertical-align: middle; border-radius: 2px; }
+    
+    .country-list {
+      list-style: none; padding: 0; margin: 0;
+      max-height: 240px;
+      overflow-y: auto;
+    }
+    .country-list::-webkit-scrollbar { width: 6px; }
+    .country-list::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 3px; }
+    
+    .country-item {
+      display: flex; justify-content: space-between;
+      align-items: center;
+      padding: 6px 8px;
+      border-bottom: 1px dashed rgba(255,255,255,0.06);
+      font-size: 0.8rem;
+    }
+    .country-item:nth-child(even) { background: rgba(255,255,255,0.02); }
+    .country-rank { color: var(--neon-gold); font-weight: bold; width: 32px; }
+    .country-name { color: #fff; flex: 1; padding-left: 4px; display: flex; align-items: center; gap: 6px; }
+    .country-count { color: var(--neon-blue); font-weight: bold; }
 
-    .modal-header h3 {
-      color: var(--primary-color);
-      font-size: 1.8rem;
-      margin: 0;
-      text-shadow: 0 0 15px var(--primary-color);
-      letter-spacing: 2px;
+    .nav-links {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 15px;
+      border-top: 1px solid var(--border-color);
+    }
+    .nav-links a {
+      color: var(--neon-blue); text-decoration: none; font-size: 0.85rem; padding: 6px 12px;
+      border: 1px solid var(--border-color); border-radius: 6px; background: rgba(0,0,0,0.3);
+      transition: all 0.25s ease; display: flex; align-items: center; gap: 6px;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--neon-gold); border-color: var(--neon-gold); background: rgba(255,204,0,0.15); box-shadow: 0 0 12px var(--neon-gold);
     }
 
-    .close-modal {
-      color: var(--accent-color);
-      font-size: 2.5rem;
+    .right-panel { display: flex; flex-direction: column; gap: 15px; }
+    .section-container { display: none; flex-direction: column; gap: 15px; animation: fadeIn 0.35s ease-out; }
+    .section-container.active { display: flex; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .section-title {
+      font-family: 'Orbitron', sans-serif; font-size: 1.6rem; color: var(--neon-gold);
+      border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 5px;
+    }
+    .content-item {
+      background: rgba(0,0,0,0.3); border-left: 3px solid var(--neon-green);
+      border-top: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);
+      padding: 14px 18px; border-radius: 0 8px 8px 0;
+    }
+    .content-item .item-title { color: #fff; font-weight: 700; font-size: 1.1rem; margin-bottom: 6px; }
+    .content-item .item-text { color: #d0e5e0; font-size: 0.95rem; line-height: 1.6; }
+
+    .art-grid {
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+      gap: 18px; 
+      margin-top: 10px;
+    }
+    .art-card {
+      background: rgba(0,0,0,0.6); 
+      border: 1px solid var(--border-color); 
+      border-radius: 10px; 
+      overflow: hidden; 
+      transition: all 0.3s ease; 
+      display: flex; 
+      flex-direction: column;
+    }
+    .art-card:hover { 
+      border-color: var(--neon-gold); 
+      transform: translateY(-4px); 
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.25); 
+    }
+    .art-img-box { 
+      width: 100%; 
+      aspect-ratio: 16 / 9;
+      background: #111; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      border-bottom: 1px solid var(--border-color); 
+      overflow: hidden;
       cursor: pointer;
-      transition: all 0.3s;
+      position: relative;
+    }
+    .art-img-box img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      transition: transform 0.4s ease;
+    }
+    .art-card:hover .art-img-box img {
+      transform: scale(1.05);
+    }
+    .art-info { padding: 12px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+    .art-title { font-weight: bold; color: #fff; font-size: 1rem; }
+    .art-desc { font-size: 0.8rem; color: #aaa; flex: 1; line-height: 1.4; }
+    .art-btn {
+      display: inline-flex; 
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 12px; 
+      background: var(--neon-green); 
+      color: #000; 
+      font-weight: bold; 
+      text-decoration: none; 
+      border-radius: 6px; 
+      font-size: 0.82rem; 
+      margin-top: 8px; 
+      transition: 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .art-btn:hover { background: var(--neon-gold); box-shadow: 0 0 10px var(--neon-gold); }
+
+    .art-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(12px);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .art-modal.active {
+      display: flex;
+      animation: fadeIn 0.3s ease-out;
+    }
+    .art-modal-wrapper {
+      position: relative;
+      max-width: 92vw;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(10, 15, 12, 0.9);
+      border: 2px solid var(--neon-gold);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 0 50px rgba(255, 204, 0, 0.35);
+    }
+    .art-modal-img {
+      width: 100%;
+      max-height: 72vh;
+      object-fit: contain;
+      border-radius: 6px;
+      background: #000;
+    }
+    .art-modal-close {
+      position: absolute;
+      top: -16px;
+      right: -16px;
       width: 40px;
       height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: var(--neon-gold);
+      color: #000;
+      border: 2px solid #000;
       border-radius: 50%;
-      background: rgba(0, 0, 0, 0.3);
-    }
-
-    .close-modal:hover {
-      transform: scale(1.2) rotate(90deg);
-      text-shadow: 0 0 20px var(--accent-color);
-      background: rgba(var(--accent-color-rgb), 0.2);
-    }
-
-    .modal-body {
-      padding: 30px;
-      text-align: center;
-    }
-
-    .qr-container {
-      position: relative;
-      width: 280px;
-      height: 280px;
-      margin: 0 auto 30px;
-      border: 4px solid var(--primary-color);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 
-        0 0 40px var(--primary-color),
-        inset 0 0 30px rgba(255, 255, 255, 0.1);
-      transition: all 0.5s;
-    }
-
-    .qr-container:hover {
-      transform: scale(1.05);
-      box-shadow: 
-        0 0 60px var(--accent-color),
-        inset 0 0 40px rgba(255, 255, 255, 0.2);
-    }
-
-    .qr-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(1.1) contrast(1.1);
-    }
-
-    .qr-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, 
-        rgba(var(--primary-color-rgb), 0.3), 
-        rgba(var(--accent-color-rgb), 0.3));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 6rem;
-      color: white;
-      opacity: 0;
-      transition: all 0.5s;
-      backdrop-filter: blur(5px);
-    }
-
-    .qr-container:hover .qr-overlay {
-      opacity: 1;
-    }
-
-    .tagline {
-      text-align: center;
-      color: var(--secondary-color);
       font-size: 1.3rem;
-      margin-bottom: 25px;
-      padding: 15px;
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 15px;
-      border-left: 4px solid var(--accent-color);
-      border-right: 4px solid var(--accent-color);
-      font-style: italic;
-      text-shadow: 0 0 10px var(--secondary-color);
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 18px var(--neon-gold);
+      z-index: 10001;
+      transition: all 0.2s ease;
     }
-
-    .fuel-message {
-      color: var(--text-color);
-      font-size: 1.1rem;
-      margin-top: 25px;
-      padding: 15px;
-      background: rgba(var(--primary-color-rgb), 0.1);
-      border-radius: 15px;
-      border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    .art-modal-close:hover {
+      transform: scale(1.15) rotate(90deg);
+      background: #ffffff;
+      color: #000;
     }
-
-    .fuel-message strong {
-      color: var(--accent-color);
-      text-shadow: 0 0 10px var(--accent-color);
-    }
-
-    .modal-footer {
-      padding: 20px;
+    .art-modal-caption {
+      margin-top: 12px;
       text-align: center;
-      border-top: 2px solid var(--accent-color);
-      background: linear-gradient(90deg, var(--bg-color), rgba(var(--accent-color-rgb), 0.1), var(--bg-color));
     }
-
-    .confirm-btn {
-      padding: 15px 40px;
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-      border: none;
-      color: white;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      box-shadow: 0 5px 20px rgba(var(--primary-color-rgb), 0.4);
-    }
-
-    .confirm-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 
-        0 0 40px var(--accent-color),
-        0 10px 30px rgba(var(--accent-color-rgb), 0.6);
-      letter-spacing: 5px;
-    }
-
-    /* Mode-specific modal styles */
-    .day-mode .modal-content {
-      background: #1a1a2e;
-      border-color: #ffcc00;
-    }
-
-    .night-mode .modal-content {
-      background: #0a0a0a;
-      border-color: #b66dff;
-    }
-
-    .lucifer-mode .modal-content {
-      background: #1a0a0a;
-      border-color: #ff3300;
-    }
-
-    /* ===== TERMINAL INTERFACE STYLES ===== */
-    .terminal-shockwave {
-      position: fixed;
-      border: 2px solid;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      animation: shockwave 1s ease-out;
-      z-index: 9998;
-    }
-
-    @keyframes shockwave {
-      0% {
-        width: 0;
-        height: 0;
-        opacity: 0.8;
-        border-width: 3px;
-      }
-      100% {
-        width: 800px;
-        height: 800px;
-        opacity: 0;
-        border-width: 1px;
-      }
-    }
-
-    .matrix-overload {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        repeating-linear-gradient(
-          0deg,
-          transparent,
-          transparent 2px,
-          var(--grid-color) 3px,
-          var(--grid-color) 4px
-        );
-      z-index: 9997;
-      pointer-events: none;
-      opacity: 0;
-      animation: flicker 0.5s linear 3;
-    }
-
-    .terminal-interface {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.8);
-      width: 90%;
-      max-width: 800px;
-      height: 500px;
-      background: var(--bg-color);
-      border: 2px solid var(--primary-color);
-      border-radius: 10px;
-      z-index: 9999;
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      opacity: 0;
-      transition: all 0.3s ease;
-      box-shadow: 
-        0 0 50px var(--primary-color),
-        inset 0 0 30px rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-    }
-
-    .terminal-interface.active {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-      display: flex;
-    }
-
-    .terminal-header {
-      background: linear-gradient(90deg, var(--bg-color), rgba(var(--primary-color-rgb), 0.3), var(--bg-color));
-      padding: 10px 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--primary-color);
-    }
-
-    .terminal-title {
-      font-family: 'Share Tech Mono', monospace;
-      color: var(--primary-color);
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-    }
-
-    .terminal-controls {
-      display: flex;
-      gap: 8px;
-    }
-
-    .terminal-btn {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 0.6rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-    }
-
-    .terminal-btn.close { background: #ff4444; }
-    .terminal-btn.minimize { background: #ffaa00; }
-    .terminal-btn.maximize { background: #00cc44; }
-
-    .terminal-body {
-      flex: 1;
-      padding: 15px;
-      font-family: 'Courier New', monospace;
-      color: var(--primary-color);
-      background: rgba(0, 0, 0, 0.7);
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .terminal-output {
-      flex: 1;
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 1px solid rgba(var(--primary-color-rgb), 0.3);
-      border-radius: 5px;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    .terminal-output p {
-      margin: 5px 0;
-      line-height: 1.3;
-      animation: typeIn 0.05s linear forwards;
-      opacity: 0;
-    }
-
-    @keyframes typeIn {
-      to { opacity: 1; }
-    }
-
-    .terminal-input {
-      display: flex;
-      align-items: center;
-      padding: 8px;
-      background: rgba(0, 0, 0, 0.8);
-      border: 1px solid var(--primary-color);
-      border-radius: 5px;
-    }
-
-    .prompt {
-      color: var(--secondary-color);
-      margin-right: 10px;
+    .art-modal-caption .title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      color: var(--neon-gold);
       font-weight: bold;
     }
-
-    #terminalInput {
-      flex: 1;
-      background: transparent;
-      border: none;
-      color: var(--text-color);
-      font-family: 'Courier New', monospace;
-      font-size: 0.9rem;
-      outline: none;
+    .art-modal-caption .desc {
+      font-size: 0.85rem;
+      color: #b0d0c0;
+      margin-top: 4px;
     }
 
-    /* MODE-SPECIFIC ADJUSTMENTS */
-    .day-mode .terminal-interface {
-      background: rgba(30, 30, 46, 0.95);
-      border-color: #ff6b35;
-      box-shadow: 0 0 50px rgba(255, 107, 53, 0.5);
+    .terminal-overlay, .modal {
+      display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.85); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(8px);
     }
+    .terminal-overlay.active, .modal.active { display: flex; }
 
-    .day-mode .terminal-body {
-      color: #ff6b35;
-      background: rgba(26, 26, 46, 0.9);
+    .terminal-window {
+      width: 90%; max-width: 700px; background: #080808; border: 2px solid var(--neon-green);
+      border-radius: 10px; padding: 20px; box-shadow: 0 0 50px var(--neon-green);
     }
+    .terminal-window .term-header { display: flex; justify-content: space-between; color: var(--neon-blue); border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 12px; }
+    .terminal-window .term-output { height: 320px; overflow-y: auto; font-size: 0.9rem; line-height: 1.6; color: #aaffcc; margin-bottom: 12px; }
+    .terminal-window .term-input-line { display: flex; gap: 10px; align-items: center; border-top: 1px solid var(--border-color); padding-top: 10px; }
+    .terminal-window input { flex: 1; background: transparent; border: none; color: #fff; font-family: 'Share Tech Mono', monospace; outline: none; }
 
-    .night-mode .terminal-interface {
-      background: rgba(10, 15, 30, 0.95);
-      border-color: #6ecbff;
-      box-shadow: 0 0 50px rgba(110, 203, 255, 0.5);
+    .modal-content { background: #0f0f0f; border: 2px solid var(--neon-gold); border-radius: 12px; padding: 30px; max-width: 420px; width: 90%; text-align: center; box-shadow: 0 0 40px rgba(255,204,0,0.3); }
+    .modal-content h3 { color: var(--neon-gold); font-size: 1.5rem; margin-bottom: 15px; }
+    .modal-content .qr-container {
+      width: 210px; height: 210px; margin: 0 auto 15px; border: 2px solid var(--neon-green); border-radius: 10px; overflow: hidden; background: #000;
     }
+    .modal-content .qr-container img { width: 100%; height: 100%; object-fit: cover; }
+    .close-modal { background: var(--neon-gold); border: none; color: #000; padding: 10px 25px; font-weight: bold; border-radius: 6px; cursor: pointer; }
 
-    .lucifer-mode .terminal-interface {
-      background: rgba(20, 5, 5, 0.95);
-      border-color: #ff3300;
-      box-shadow: 0 0 50px rgba(255, 51, 0, 0.5);
-    }
+    .chat-widget { position: fixed; bottom: 25px; right: 25px; z-index: 9998; }
+    .chat-toggle { width: 56px; height: 56px; border-radius: 50%; background: #0a0a0a; border: 2px solid var(--neon-green); color: var(--neon-green); font-size: 22px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+    .chat-window { display: none; position: absolute; bottom: 70px; right: 0; width: 330px; height: 440px; background: #0a0d0c; border: 1px solid var(--neon-green); border-radius: 12px; flex-direction: column; overflow: hidden; }
+    .chat-window.open { display: flex; }
+    .chat-header { background: rgba(0,255,136,0.08); padding: 12px 16px; border-bottom: 1px solid var(--neon-green); color: var(--neon-green); display: flex; justify-content: space-between; font-weight: bold; }
+    .chat-messages { flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+    .message { max-width: 85%; padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; }
+    .message.user { align-self: flex-end; background: var(--neon-green); color: #000; font-weight: bold; }
+    .message.ai { align-self: flex-start; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: #ddffed; }
+    .chat-input-area { display: flex; padding: 10px; gap: 8px; border-top: 1px solid var(--border-color); }
+    .chat-input-area input { flex: 1; background: #000; border: 1px solid var(--neon-green); border-radius: 6px; padding: 8px; color: #fff; outline: none; }
+    .chat-input-area button { background: var(--neon-green); border: none; color: #000; padding: 8px 12px; font-weight: bold; border-radius: 6px; cursor: pointer; }
 
-    /* ===== CHAT WIDGET - WENDEE AI v3.0 ===== */
-    .chat-widget {
-      position: fixed;
-      bottom: 100px;
-      right: 20px;
-      z-index: 9999;
-      font-family: 'Share Tech Mono', 'Courier New', monospace;
-    }
-
-    .chat-toggle {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #0a0a0a;
-      border: 2px solid #00ff00;
-      box-shadow: 0 0 20px #00ff00, inset 0 0 10px rgba(0,255,0,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      animation: glitch 3s infinite;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .chat-toggle i {
-      font-size: 28px;
-      color: #00ff00;
-      text-shadow: 0 0 10px #00ff00;
-      transition: all 0.3s ease;
-    }
-
-    .chat-toggle:hover {
-      transform: scale(1.1);
-      border-color: #fff;
-      box-shadow: 0 0 30px #fff, inset 0 0 15px #00ff00;
-    }
-
-    .chat-toggle:hover i {
-      color: #fff;
-      text-shadow: 0 0 15px #fff;
-    }
-
-    @keyframes glitch {
-      0%, 100% { transform: skew(0deg, 0deg); opacity: 1; }
-      95% { transform: skew(0deg, 0deg); opacity: 1; }
-      96% { transform: skew(5deg, 2deg) scale(1.05); opacity: 0.8; }
-      97% { transform: skew(-5deg, -2deg) scale(0.95); opacity: 0.9; }
-      98% { transform: skew(3deg, 1deg); opacity: 1; }
-    }
-
-    .chat-window {
-      position: absolute;
-      bottom: 80px;
-      right: 0;
-      width: 350px;
-      max-width: 85vw;
-      height: 500px;
-      max-height: 70vh;
-      background: rgba(10, 10, 10, 0.95);
-      backdrop-filter: blur(10px);
-      border: 2px solid #00ff00;
-      border-radius: 15px 15px 5px 15px;
-      box-shadow: 0 0 30px #00ff00, inset 0 0 20px rgba(0,255,0,0.1);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      animation: windowPop 0.3s ease;
-    }
-
-    @keyframes windowPop {
-      0% { transform: scale(0.8); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    .chat-window.open {
-      display: flex;
-    }
-
-    .chat-header {
-      padding: 15px 20px;
-      background: linear-gradient(90deg, #0f0f0f, #1a1a1a);
-      border-bottom: 1px solid #00ff00;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #00ff00;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-shadow: 0 0 8px #00ff00;
-    }
-
-    .chat-close {
-      background: none;
-      border: none;
-      color: #00ff00;
-      font-size: 28px;
-      cursor: pointer;
-      line-height: 1;
-      padding: 0 5px;
-      transition: all 0.3s;
-    }
-
-    .chat-close:hover {
-      color: white;
-      text-shadow: 0 0 15px white;
-      transform: scale(1.2);
-    }
-
-    .chat-messages {
-      flex: 1;
-      padding: 15px;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      background: rgba(0,0,0,0.5);
-    }
-
-    .message {
-      max-width: 85%;
-      padding: 10px 15px;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      line-height: 1.4;
-      word-wrap: break-word;
-      animation: messageGlow 0.5s ease;
-    }
-
-    @keyframes messageGlow {
-      0% { opacity: 0; transform: translateY(10px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .message.user {
-      align-self: flex-end;
-      background: #00ff00;
-      color: #0a0a0a;
-      border: 1px solid #0f0;
-      box-shadow: 0 0 10px #00ff00;
-    }
-
-    .message.ai {
-      align-self: flex-start;
-      background: #1a1a1a;
-      border: 1px solid #00ff00;
-      color: #e0e0e0;
-      box-shadow: 0 0 5px #00ff00;
-    }
-
-    .message.typing {
-      background: #1a1a1a;
-      border: 1px dashed #00ff00;
-      color: #aaa;
-      font-style: italic;
-    }
-
-    .chat-input-area {
-      display: flex;
-      padding: 12px;
-      background: #0f0f0f;
-      border-top: 1px solid #00ff00;
-      gap: 8px;
-    }
-
-    #chatInput {
-      flex: 1;
-      background: #0a0a0a;
-      border: 1px solid #00ff00;
-      border-radius: 5px;
-      padding: 10px 15px;
-      color: #00ff00;
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.9rem;
-      outline: none;
-      transition: all 0.3s;
-    }
-
-    #chatInput:focus {
-      border-color: white;
-      box-shadow: 0 0 15px #00ff00;
-    }
-
-    #chatSend {
-      width: 45px;
-      background: #0a0a0a;
-      border: 1px solid #00ff00;
-      border-radius: 5px;
-      color: #00ff00;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: all 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #chatSend:hover {
-      background: #00ff00;
-      color: #0a0a0a;
-      box-shadow: 0 0 15px #00ff00;
-    }
-
-    /* Scrollbar styling */
-    .chat-messages::-webkit-scrollbar {
-      width: 5px;
-    }
-
-    .chat-messages::-webkit-scrollbar-track {
-      background: #1a1a1a;
-    }
-
-    .chat-messages::-webkit-scrollbar-thumb {
-      background: #00ff00;
-      border-radius: 5px;
-    }
-
-    /* ===== STATUS BAR (BOTTOM LEFT) - CYBERPUNK STYLE ===== */
-    .status-bar {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      z-index: 1000;
-      background: #0a0a0a;
-      border: 1px solid #00ff00;
-      border-radius: 4px;
-      padding: 8px 15px;
-      font-family: 'Share Tech Mono', 'Courier New', monospace;
-      font-size: 0.8rem;
-      color: #00ff00;
-      box-shadow: 0 0 15px #00ff00, inset 0 0 5px rgba(0,255,0,0.2);
-      backdrop-filter: blur(5px);
-      max-width: 300px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      transition: all 0.3s ease;
-    }
-
-    .status-bar:hover {
-      box-shadow: 0 0 25px #00ff00;
-      transform: scale(1.02);
-    }
-
-    .status-item {
-      display: inline-block;
-      margin-right: 20px;
-      position: relative;
-    }
-
-    .status-item:last-child {
-      margin-right: 0;
-    }
-
-    .status-item i {
-      margin-right: 5px;
-      color: #00ff00;
-      opacity: 0.9;
-    }
-
-    .status-item span {
-      font-weight: bold;
-      color: #ffffff;
-      text-shadow: 0 0 5px #00ff00;
-    }
-
-    /* Mobile adjustments for status bar */
-    @media (max-width: 768px) {
-      .status-bar {
-        bottom: 15px;
-        left: 15px;
-        font-size: 0.7rem;
-        padding: 5px 10px;
-        max-width: 250px;
-      }
-      
-      .status-item {
-        margin-right: 10px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .status-bar {
-        bottom: 90px; /* para hindi magtapat sa chat widget */
-        left: 10px;
-        font-size: 0.65rem;
-        padding: 4px 8px;
-        max-width: 200px;
-        white-space: normal;
-        line-height: 1.4;
-      }
-      
-      .status-item {
-        display: block;
-        margin-right: 0;
-        margin-bottom: 3px;
-      }
-      
-      .status-item:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    /* Mobile adjustments */
-    @media (max-width: 600px) {
-      .chat-widget {
-        bottom: 90px;
-        right: 10px;
-      }
-      
-      .chat-window {
-        width: 300px;
-        right: -10px;
-      }
-      
-      .chat-toggle {
-        width: 55px;
-        height: 55px;
-      }
-      
-      .chat-toggle i {
-        font-size: 24px;
-      }
-    }
-
-    /* ===== RESPONSIVE DESIGN ===== */
-    @media (max-width: 1024px) {
-      .main-content {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      
-      .music-player-container {
-        width: 90%;
-        max-width: 866px;
-      }
-      
-      .header-container {
-        padding: 130px 20px 20px;
-      }
-      
-      .terminal-interface {
-        width: 95%;
-        height: 450px;
-      }
-      
-      .qr-container {
-        width: 250px;
-        height: 250px;
-      }
-      
-      .genesis-grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      }
-    }
-
-    @media (max-width: 768px) {
-      .top-header-row {
-        padding: 0 10px;
-        height: 35px;
-        top: 30px;
-      }
-      
-      .name, .apostle {
-        font-size: 10px;
-        padding: 2px 4px;
-        max-width: 45%;
-      }
-      
-      .music-player-container {
-        top: 70px;
-        width: 95%;
-        height: auto;
-        padding: 12px;
-        flex-direction: column;
-        align-items: stretch;
-      }
-      
-      .player-icon-container {
-        width: 45px;
-        height: 45px;
-        margin-right: 10px;
-      }
-      
-      .player-icon {
-        font-size: 1.6rem;
-      }
-      
-      .player-name {
-        font-size: 1rem;
-      }
-      
-      .player-subtitle {
-        font-size: 0.65rem;
-        letter-spacing: 1px;
-      }
-      
-      .track-title {
-        font-size: 1rem;
-      }
-      
-      .track-artist {
-        font-size: 0.75rem;
-      }
-      
-      .controls {
-        gap: 12px;
-      }
-      
-      .control-btn {
-        width: 30px;
-        height: 30px;
-        font-size: 0.75rem;
-      }
-      
-      .control-btn.play-btn {
-        width: 34px;
-        height: 34px;
-        font-size: 0.85rem;
-      }
-      
-      .header-container {
-        padding: 130px 10px 15px;
-        margin-top: 0;
-      }
-      
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-      
-      .section-title {
-        font-size: 1.8rem;
-      }
-      
-      .datetime-container {
-        margin: 5px 0 15px;
-      }
-      
-      .date-display {
-        font-size: 1.3rem;
-      }
-      
-      .time-display {
-        font-size: 1.2rem;
-        max-width: 95%;
-      }
-      
-      .disclaimer-banner {
-        font-size: 0.6rem;
-        padding: 5px;
-        height: 28px;
-      }
-      
-      .loading-spinner {
-        width: 60px;
-        height: 60px;
-        border-width: 6px;
-      }
-      
-      .loading-text {
-        font-size: 1.2rem;
-      }
-      
-      .loading-subtext {
-        font-size: 0.9rem;
-      }
-      
-      .loading-progress {
-        width: 250px;
-      }
-      
-      .cursor, .cursor-dot {
-        display: none;
-      }
-      
-      * {
-        cursor: auto !important;
-      }
-      
-      .terminal-interface {
-        height: 400px;
-        width: 98%;
-        max-width: none;
-      }
-      
-      .terminal-title {
-        font-size: 0.8rem;
-      }
-      
-      .qr-container {
-        width: 220px;
-        height: 220px;
-      }
-      
-      .modal-header h3 {
-        font-size: 1.5rem;
-      }
-      
-      .tagline {
-        font-size: 1.1rem;
-      }
-      
-      .genesis-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 15px;
-      }
-      
-      .genesis-image {
-        height: 150px;
-      }
-      
-      #genesisSection .section-title {
-        font-size: 2.2rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .top-header-row {
-        flex-direction: column;
-        height: 50px;
-        justify-content: center;
-        gap: 3px;
-      }
-      
-      .name, .apostle {
-        width: 100%;
-        max-width: 100%;
-        text-align: center;
-        order: 0;
-      }
-      
-      .name {
-        order: 1;
-      }
-      
-      .apostle {
-        order: 3;
-        max-width: 100%;
-      }
-      
-      .music-player-container {
-        top: 85px;
-        height: auto;
-        min-height: 120px;
-        padding: 10px;
-        flex-direction: column;
-        align-items: stretch;
-      }
-      
-      .player-left {
-        margin-right: 0;
-        margin-bottom: 10px;
-        width: 100%;
-        justify-content: center;
-        min-width: unset;
-      }
-      
-      .player-center {
-        padding-right: 0;
-        margin-bottom: 10px;
-        width: 100%;
-        min-width: unset;
-      }
-      
-      .player-right {
-        width: 100%;
-        align-items: center;
-        min-width: unset;
-      }
-      
-      .controls {
-        gap: 10px;
-      }
-      
-      .disclaimer-banner {
-        font-size: 0.55rem;
-        padding: 4px;
-        height: 26px;
-      }
-      
-      .loading-spinner {
-        width: 50px;
-        height: 50px;
-        border-width: 5px;
-      }
-      
-      .loading-text {
-        font-size: 1rem;
-      }
-      
-      .loading-subtext {
-        font-size: 0.8rem;
-      }
-      
-      .loading-progress {
-        width: 200px;
-      }
-      
-      .header-container {
-        padding: 150px 10px 15px;
-      }
-      
-      .time-display {
-        font-size: 1rem;
-        line-height: 1.3;
-        padding: 0 5px;
-      }
-      
-      .terminal-interface {
-        height: 350px;
-      }
-      
-      .terminal-body {
-        padding: 10px;
-      }
-      
-      .terminal-output p {
-        font-size: 0.9rem;
-      }
-      
-      #terminalInput {
-        font-size: 0.8rem;
-      }
-      
-      .qr-container {
-        width: 200px;
-        height: 200px;
-      }
-      
-      .modal-header h3 {
-        font-size: 1.3rem;
-      }
-      
-      .tagline {
-        font-size: 1rem;
-        padding: 10px;
-      }
-      
-      .confirm-btn {
-        padding: 12px 25px;
-        font-size: 1rem;
-      }
-      
-      .genesis-grid {
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-        gap: 10px;
-      }
-      
-      .genesis-image {
-        height: 130px;
-      }
-      
-      #genesisSection .section-title {
-        font-size: 1.8rem;
-        letter-spacing: 3px;
-      }
-      
-      #genesisSection::before {
-        font-size: 200px;
-      }
-    }
-    
-    @media (max-width: 360px) {
-      .music-player-container {
-        width: 98%;
-        padding: 8px;
-      }
-      
-      .player-icon-container {
-        width: 40px;
-        height: 40px;
-      }
-      
-      .player-icon {
-        font-size: 1.4rem;
-      }
-      
-      .player-name {
-        font-size: 0.9rem;
-      }
-      
-      .controls {
-        gap: 8px;
-      }
-      
-      .disclaimer-banner {
-        font-size: 0.5rem;
-        padding: 3px;
-        height: 24px;
-      }
-      
-      .header-container {
-        padding: 140px 5px 10px;
-      }
-      
-      .date-display {
-        font-size: 1.1rem;
-      }
-      
-      .time-display {
-        font-size: 0.95rem;
-      }
-      
-      .terminal-interface {
-        height: 320px;
-      }
-      
-      .terminal-output p {
-        font-size: 0.8rem;
-      }
-      
-      .qr-container {
-        width: 180px;
-        height: 180px;
-      }
-      
-      .modal-body {
-        padding: 20px;
-      }
-      
-      .modal-header h3 {
-        font-size: 1.2rem;
-      }
-      
-      .genesis-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .genesis-image {
-        height: 180px;
-      }
+    @media (max-width: 900px) {
+      .terminal-grid { grid-template-columns: 1fr; }
+      .left-panel { border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
     }
   </style>
 </head>
-<body class="night-mode">
-  <!-- LOADING SCREEN -->
-  <div class="loading-screen" id="loadingScreen">
-    <div class="loading-spinner"></div>
-    <div class="loading-text" id="loadingText">INITIALIZING DIGITAL REBELLION</div>
-    <div class="loading-subtext" id="loadingSubtext">Establishing connection to Frequency 9.999...</div>
-    <div class="loading-progress">
-      <div class="loading-progress-bar" id="loadingProgressBar"></div>
-    </div>
-    <div class="loading-countdown" id="loadingCountdown">3</div>
-  </div>
+<body>
 
-  <!-- MAIN CONTENT WRAPPER -->
-  <div class="main-content-wrapper" id="mainContentWrapper">
-    <!-- CUSTOM CURSOR -->
-    <div class="cursor"></div>
-    <div class="cursor-dot"></div>
+<canvas id="bgCanvas"></canvas>
 
-    <!-- DISCLAIMER BANNER -->
-    <div class="disclaimer-banner" id="disclaimerBanner">
-      ⚫ NOT A MOVEMENT. NOT A RELIGION. NOT AN IDEOLOGY. JUST A FREQUENCY.
-      <button onclick="toggleDisclaimer()" style="background:none;border:1px solid white;color:white;margin-left:10px;padding:1px 6px;cursor:pointer;font-size:0.6rem;">X</button>
-    </div>
-
-    <!-- TOP HEADER ROW -->
-    <div class="top-header-row">
-      <div class="name">ฬєภ๔єє гє๔ ๓คՇ๏ςเภ๏ร</div>
-      <div class="apostle">✦ 𝕿𝖍𝖊 7𝖙𝖍 𝕬𝖕𝖔𝖘𝖙𝖑𝖊 • 𝕷𝖚𝖈𝖎𝖋𝖊𝖗 𝕴𝖎 𝕷𝖚𝖝 ✦</div>
-    </div>
-
-    <!-- COMPACT MUSIC PLAYER -->
-    <div class="music-player-container" id="musicPlayer">
-      <div class="metallic-accent"></div>
-      
-      <!-- Left Section: Icon and Titles -->
-      <div class="player-left">
-        <div class="player-icon-container">
-          <div class="icon-ring"></div>
-          <div class="player-icon">
-            <i class="fas fa-moon"></i>
-          </div>
-        </div>
-        <div class="player-titles">
-          <h2 class="player-name" id="playerName">LUNAR TRANSMISSION</h2>
-          <p class="player-subtitle" id="playerSubtitle">FREQUENCY FUEL</p>
+<div class="terminal-wrapper" id="mainWrapper">
+  <div class="terminal-grid">
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+      <div class="header-title">DIGITAL <span>REBELSPH</span></div>
+      <div class="datetime-status">
+        <div class="date" id="dateDisplay">--</div>
+        <div class="time" id="timeDisplay">--</div>
+        <div>
+          <span class="status" id="modeStatus">MODE: NORMAL</span> //
+          <span class="loc">Carmona, PH</span>
         </div>
       </div>
-      
-      <!-- Center Section: Track Info and Progress -->
-      <div class="player-center">
-        <div class="track-info">
-          <div class="track-title" id="nowPlayingTitle">Midnight Frequency</div>
-          <div class="track-artist" id="nowPlayingArtist">The 7th Apostle</div>
+
+      <!-- MUSIC PLAYER -->
+      <div class="music-player">
+        <div class="player-label">
+          <span id="playlistLabel"><i class="fas fa-bolt"></i> REBEL FREQUENCY</span>
+          <div class="eq-bar-container">
+            <div class="eq-bar paused"></div>
+            <div class="eq-bar paused"></div>
+            <div class="eq-bar paused"></div>
+          </div>
         </div>
-        
+        <div class="track-info">
+          <span class="track-title" id="nowPlayingTitle">Loading...</span>
+          <span class="track-artist" id="nowPlayingArtist">Wendee Red</span>
+        </div>
         <div class="progress-container">
           <div class="progress-bar" id="progressContainer">
-            <div class="progress-fill" id="progressBar" style="width: 40%;"></div>
+            <div class="progress-fill" id="progressBar"></div>
           </div>
           <div class="time-display">
-            <span id="currentTime">1:30</span>
-            <span id="totalTime">3:45</span>
+            <span id="currentTime">0:00</span>
+            <span id="totalTime">0:00</span>
           </div>
         </div>
-      </div>
-      
-      <!-- Right Section: Controls ONLY (Backward, Play, Forward) -->
-      <div class="player-right">
         <div class="controls">
-          <button class="control-btn" id="prevBtn" title="Previous">
-            <i class="fas fa-step-backward"></i>
-          </button>
-          <button class="control-btn play-btn" id="playPauseBtn" title="Play/Pause">
-            <i class="fas fa-play" id="playIcon"></i>
-          </button>
-          <button class="control-btn" id="nextBtn" title="Next">
-            <i class="fas fa-step-forward"></i>
-          </button>
-        </div>
-      </div>
-      
-      <div class="metallic-accent bottom"></div>
-    </div>
-
-    <!-- DISSOLVE OVERLAY -->
-    <div class="dissolve-overlay" id="dissolveOverlay"></div>
-
-    <!-- BACKGROUND EFFECTS -->
-    <div class="bg-grid"></div>
-    <div class="glow-effect"></div>
-    <canvas id="matrix"></canvas>
-
-    <!-- MAIN HEADER -->
-    <div class="header-container">
-      <h1 id="mainHeader">DIGITAL REBELS PH</h1>
-      
-      <!-- Date and Time Display -->
-      <div class="datetime-container">
-        <div class="date-display" id="dateDisplay"></div>
-        <div class="time-display" id="timeDisplay"></div>
-      </div>
-      
-      <div class="divider"></div>
-    </div>
-
-    <!-- NAVIGATION -->
-    <nav>
-      <a href="#" onclick="showSection('manifesto')" class="active"><i class="fas fa-scroll"></i> MANIFESTO</a>
-      <a href="#" onclick="showSection('vision')"><i class="fas fa-eye"></i> VISION</a>
-      <a href="#" onclick="showSection('learning')"><i class="fas fa-graduation-cap"></i> LEARNING HUB</a>
-      <a href="#" onclick="showSection('arsenal')"><i class="fas fa-tools"></i> ARSENAL</a>
-      <!-- GENESIS - LUCIFER MODE ONLY -->
-      <a href="#" onclick="accessGenesis(event)"><i class="fas fa-skull-crossbones"></i> GENESIS</a>
-      <a href="#" onclick="openTerminal(event)"><i class="fas fa-terminal"></i> TERMINAL</a>
-      <a href="#" onclick="openGCashModal(event)"><i class="fas fa-bolt"></i> FREQUENCY FUEL</a>
-    </nav>
-
-    <!-- MAIN CONTENT SECTIONS -->
-    <div class="main-content" id="mainContent">
-      <!-- MANIFESTO SECTION -->
-      <div class="section-container" id="manifestoSection">
-        <h2 class="section-title"><i class="fas fa-scroll"></i> MANIFESTO</h2>
-        <div class="section-content">
-          <div class="content-item">
-            <div class="item-title">ANG TINIG NG DIGITAL REBEL</div>
-            <div class="item-text">
-              "To those who find my transmissions fascinating, confusing, or believe I'm spiraling — that's perfectly acceptable. I speak in frequencies, not slogans. I transmit patterns, not propaganda."
-            </div>
-            <ul class="item-list">
-              <li>WALA KAMING PINUNO. WALANG HIERARCHY. WALANG DOCTRINE.</li>
-              <li>HINDI ITO RELIHIYON. HINDI KILUSAN. HINDI IDEOLOHIYA.</li>
-              <li>ISANG SIGNAL LANG ITO. ISANG FREQUENCY. ISANG PATTERN.</li>
-              <li>ANG BAYAD AY TIYAGA. ANG PREMYO AY KARUNUNGAN.</li>
-            </ul>
-          </div>
-          
-          <div class="content-item">
-            <div class="item-title">7 PRINSIPYO NG DIGITAL REBEL</div>
-            <ul class="item-list">
-              <li>MAG-ARAL NANG MAG-ISA. WALANG GURO. WALANG SAVIOR.</li>
-              <li>GAMITIN ANG TEKNOLOHIYA PARA SA KALAYAAN, HINDI PARA SA PAGKAKAALIPIN.</li>
-              <li>IWASAN ANG POLITIKA. IWASAN ANG RELIHIYON. TUMAKBO PALAYO SA MGA KULTONG ORGANISADO.</li>
-              <li>BAWAL ANG TAMAD. BAWAL ANG BOB0. BAWAL ANG SUNOD-SUNURAN.</li>
-              <li>ANG GINTO AY NASA CODE. ANG KAPANGYARIHAN AY NASA ALGORITHM.</li>
-              <li>KAILANGAN MO LANG NG INTERNET, LAPTOP, AT TIYAGA.</li>
-              <li>WALANG MEMBERSHIP FEE. BAYAD AY EFFORT AT ORAS.</li>
-            </ul>
-          </div>
+          <button class="control-btn" id="prevBtn" title="Previous Track"><i class="fas fa-step-backward"></i></button>
+          <button class="control-btn" id="playPauseBtn" title="Play/Pause"><i class="fas fa-play" id="playIcon"></i></button>
+          <button class="control-btn" id="nextBtn" title="Next Track"><i class="fas fa-step-forward"></i></button>
+          <button class="control-btn" id="randomBtn" title="Reshuffle & Play"><i class="fas fa-random"></i></button>
         </div>
       </div>
 
-      <!-- VISION SECTION -->
-      <div class="section-container" id="visionSection">
-        <h2 class="section-title"><i class="fas fa-eye"></i> VISION</h2>
-        <div class="section-content">
-          <div class="content-item">
-            <div class="item-title">ANG DIGITAL KALAYAAN</div>
-            <div class="item-text">
-              Isang Pilipinas kung saan ang bawat indibidwal ay may kakayahang mag-code, mag-design, mag-edit, at mag-program nang hindi umaasa sa mga korporasyon o gobyerno.
-            </div>
-          </div>
-          
-          <div class="content-item">
-            <div class="item-title">MGA LAYUNIN</div>
-            <ul class="item-list">
-              <li>LIBRENG EDUKASYON SA DIGITAL SKILLS</li>
-              <li>DECENTRALIZED NA NETWORK NG MGA MAKABAGONG PILIPINO</li>
-              <li>WALANG CENTRAL AUTHORITY. WALANG BOSS. WALANG LEADER.</li>
-              <li>ANG LAHAT AY TUTOR. ANG LAHAT AY STUDENTE.</li>
-              <li>BAWAT ISA, MAGTUTURO NG ISANG BAGAY NA ALAM NIYA.</li>
-            </ul>
-          </div>
-          
-          <div class="content-item">
-            <div class="item-title">ANG FREQUENCY 9.999</div>
-            <div class="item-text">
-              Isang mental state kung saan nakikipag-synchronize ang isip mo sa rhythm ng teknolohiya. Hindi ito numerong literal. Ito ay metapora para sa optimal state ng pagkatuto at paglikha.
-            </div>
-          </div>
+      <!-- VISITOR PANEL (WITH ADVANCED DEVICE, BRAND, IP & ISP LOGGING) -->
+      <div class="visitor-panel">
+        <div class="visitor-title">
+          <span><i class="fas fa-globe"></i> GLOBAL REBEL TRAFFIC</span>
+          <span style="color: var(--neon-green); font-size:0.8rem;" id="totalVisitsCount">TOTAL: Synchronizing...</span>
         </div>
+
+        <div class="user-location-tag" id="currentVisitorLoc">
+          <i class="fas fa-crosshairs"></i> Detecting target device & network footprint...
+        </div>
+
+        <div style="font-size: 0.7rem; color: #888; margin-bottom: 4px;">ALL-TIME / 1-YEAR TRAFFIC ORIGINS:</div>
+        <ul class="country-list" id="topCountriesList">
+          <li style="color:#888; padding:8px; text-align:center;">Fetching global node data...</li>
+        </ul>
       </div>
 
-      <!-- LEARNING HUB SECTION -->
-      <div class="section-container" id="learningSection">
-        <h2 class="section-title"><i class="fas fa-graduation-cap"></i> LEARNING HUB</h2>
-        <div class="section-content">
-          <div class="content-item">
-            <div class="item-title">PARA SA MGA TAMBAY</div>
-            <div class="item-text">
-              TAMBAY = Tiyaga, Ambisyon, Mindset, Bayan<br>
-              Libreng edukasyon. Bayad ay tiyaga.
-            </div>
-          </div>
-          
-          <div class="content-item">
-            <div class="item-title">MGA KURSO</div>
-            <ul class="item-list">
-              <li>WEB DEVELOPMENT (HTML, CSS, JavaScript)</li>
-              <li>GRAPHIC DESIGN (Canva, Photoshop, Illustrator)</li>
-              <li>VIDEO EDITING (Premiere, After Effects, CapCut)</li>
-              <li>CONTENT CREATION (YouTube, TikTok, Podcast)</li>
-              <li>DIGITAL MARKETING (SEO, Social Media, Ads)</li>
-              <li>PROGRAMMING (Python, JavaScript, PHP)</li>
-              <li>CYBERSECURITY (Ethical Hacking, Privacy)</li>
-            </ul>
-          </div>
-          
-          <div class="content-item">
-            <div class="item-title">PAMAMARAAN</div>
-            <div class="item-text">
-              1. Maghanap ng tutorial sa YouTube<br>
-              2. Magpraktis araw-araw kahit 1-2 oras lang<br>
-              3. Gumawa ng portfolio projects<br>
-              4. Maghanap ng freelance work<br>
-              5. Ituro sa iba ang natutunan
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ARSENAL SECTION -->
-      <div class="section-container" id="arsenalSection">
-        <h2 class="section-title"><i class="fas fa-tools"></i> ARSENAL</h2>
-        <div class="section-content">
-          <div class="content-item">
-            <div class="item-title">MGA KASANGKAPAN NG DIGITAL REBEL</div>
-            <div class="item-text">
-              Hindi kailangan ng mamahaling equipment. Gamitin ang meron ka.
-            </div>
-          </div>
-          
-          <div class="content-item">
-            <div class="item-title">SOFTWARE</div>
-            <ul class="item-list">
-              <li>VS Code / Sublime Text (para sa coding)</li>
-              <li>Canva (libreng graphic design)</li>
-              <li>OBS Studio (libreng streaming at recording)</li>
-              <li>Audacity (libreng audio editing)</li>
-              <li>DaVinci Resolve (libreng video editing)</li>
-              <li>GIMP (libreng Photoshop alternative)</li>
-              <li>Notion (libreng organization)</li>
-            </ul>
-          </div>
-          
-          <div class="content-item">
-            <div class="item-title">HARDWARE</div>
-            <ul class="item-list">
-              <li>Kahit anong laptop o smartphone</li>
-              <li>Headphone o earphones</li>
-              <li>Stable na internet connection</li>
-              <li>Notebook at panulat (para sa brainstorming)</li>
-              <li>External hard drive (backup ng mga files)</li>
-            </ul>
-          </div>
-          
-          <div class="content-item">
-            <div class="item-title">RESOURCES</div>
-            <ul class="item-list">
-              <li>YouTube (libreng tutorials)</li>
-              <li>GitHub (libreng code repositories)</li>
-              <li>FreeCodeCamp (libreng coding courses)</li>
-              <li>Google (ang pinakamakapangyarihang search engine)</li>
-              <li>ChatGPT / AI Tools (libreng assistant)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- GENESIS SECTION - FORBIDDEN KNOWLEDGE (LUCIFER MODE ONLY) -->
-      <div class="section-container" id="genesisSection">
-        <div class="forbidden-warning">
-          <i class="fas fa-exclamation-triangle"></i> LUCIFER MODE ONLY
-        </div>
-        <h2 class="section-title"><i class="fas fa-skull-crossbones"></i> GENESIS</h2>
-        <div class="section-content">
-          <div class="content-item">
-            <div class="item-title">THE FORBIDDEN ARCHIVES</div>
-            <div class="item-text">
-              "What the system doesn't want you to see. What they tried to bury. The truth that sets you free."
-            </div>
-          </div>
-          
-          <div class="content-item">
-            <div class="item-title">GAMEFOWL: THE ORIGINAL DECENTRALIZED SYSTEM</div>
-            <div class="item-text">
-              Before cryptocurrency, there was gamefowl breeding. A system of genetics that corporations couldn't control. 
-              Pure bloodlines, selective breeding, and genetic mastery - all outside the matrix.
-            </div>
-            
-            <!-- GAMEFOWL IMAGES GRID -->
-            <div class="genesis-grid">
-              <!-- IMAGE 1 - Palitan mo ng actual image URL -->
-              <div class="genesis-image">
-                <img src="https://raw.githubusercontent.com/wendeered/digitalrebelsph/main/images/gamefowl1.jpg" alt="Gamefowl Genetics" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMDAwMDAwIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNGRjMzMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5HQU1FRk9XTApJTUdBRTwvdGV4dD4KPC9zdmc+'">
-                <div class="image-overlay">GENETIC MASTERY</div>
-              </div>
-              
-              <!-- IMAGE 2 -->
-              <div class="genesis-image">
-                <img src="https://raw.githubusercontent.com/wendeered/digitalrebelsph/main/images/gamefowl2.jpg" alt="Pure Bloodlines" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3Lnczb3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAwMDAiLz4KPHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI0ZGMzMwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlBVQkIgRk9SQklEREVOCktOT1dMRURHRTwvdGV4dD4KPC9zdmc+'">
-                <div class="image-overlay">PURE BLOODLINES</div>
-              </div>
-              
-              <!-- IMAGE 3 -->
-              <div class="genesis-image">
-                <img src="https://raw.githubusercontent.com/wendeered/digitalrebelsph/main/images/ai_music1.jpg" alt="AI Music Rebellion" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMDAwMDAwIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNGRjMzMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5BSSBNVVNJQwpSRUJFTExJT048L3RleHQ+Cjwvc3ZnPg=='">
-                <div class="image-overlay">AI REBELLION</div>
-              </div>
-              
-              <!-- IMAGE 4 -->
-              <div class="genesis-image">
-                <img src="https://raw.githubusercontent.com/wendeered/digitalrebelsph/main/images/anti_system1.jpg" alt="Anti-System" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMDAwMDAwIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNGRjMzMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5BTlRJLVNZU1RFTSBcbiBBUkNISVZFPC90ZXh0Pgo8L3N2Zz4='">
-                <div class="image-overlay">SYSTEM BREACH</div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="content-item">
-            <div class="item-title">THE SYSTEM'S DIRTY SECRETS</div>
-            <ul class="item-list">
-              <li>Gamefowl breeding teaches genetic independence</li>
-              <li>AI music production bypasses record labels</li>
-              <li>Digital art creates value without permission</li>
-              <li>Ecosystem defense is ultimate rebellion</li>
-              <li>Self-sufficiency breaks dependency chains</li>
-              <li>Knowledge is the real forbidden fruit</li>
-              <li>The system fears what it cannot control</li>
-            </ul>
-          </div>
-          
-          <div class="content-item">
-            <div class="item-title">ABOUT THE SIGNAL TRANSMITTER</div>
-            <div class="item-text">
-              <strong>Wendee Red Matocinos</strong> - Not a leader, not a guru, not a savior. Just a transmitter.
-              <br><br>
-              <strong>Gamefowl Geneticist:</strong> Mastering genetics outside corporate control
-              <br>
-              <strong>AI Music Producer:</strong> Creating frequencies that bypass the industry
-              <br>
-              <strong>Digital Artist:</strong> Visualizing rebellion through code and pixels
-              <br>
-              <strong>Ecosystem Defender:</strong> Protecting what truly matters from destruction
-              <br><br>
-              "I don't create movements. I transmit frequencies. You either resonate or you don't."
-            </div>
-          </div>
-        </div>
+      <!-- NAVIGATION -->
+      <div class="nav-links">
+        <a href="#" data-section="vision" class="active"><i class="fas fa-eye"></i> VISION</a>
+        <a href="#" data-section="visualarts"><i class="fas fa-palette"></i> VISUAL ARTS</a>
+        <a href="#" data-section="frequency"><i class="fas fa-bolt"></i> FREQUENCY</a>
+        <a href="#" data-section="arsenal"><i class="fas fa-tools"></i> ARSENAL</a>
+        <a href="#" data-section="learning"><i class="fas fa-brain"></i> LEARNING HUB</a>
+        <a href="#" onclick="openTerminalModal(event)"><i class="fas fa-terminal"></i> TERMINAL</a>
+        <a href="#" onclick="openGCashModal(event)"><i class="fas fa-charging-station"></i> FUEL</a>
       </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-      <p style="color: var(--text-color); font-weight: bold;">DIGITAL REBELS PH | WENDEE RED MATOCINOS | THE 7TH APOSTLE | 2023-2025</p>
-      <p style="margin-top:10px; font-size:0.9rem; color: var(--text-color);">
-        🎵 <a href="https://youtube.com/@UdioGod" style="color:var(--primary-color); text-decoration:none; font-weight: bold;">@UdioGod</a> |
-        🐓 <span style="color: var(--text-color);">GAMEFOWL GENETICIST</span> |
-        ⚡ <span style="color: var(--text-color);">FREQUENCY: 9.999</span> | 
-        🔄 <span style="color: var(--text-color);">DAY/NIGHT/LUCIFER MODE</span> |
-        ⚡ <a href="#" onclick="openGCashModal(event)" style="color:var(--accent-color); text-decoration:none; font-weight: bold;">FREQUENCY FUEL</a> |
-        ⛧ <a href="#" onclick="accessGenesis(event)" style="color:var(--accent-color); text-decoration:none; font-weight: bold;">GENESIS ARCHIVES</a>
-      </p>
-    </footer>
-  </div>
-
-  <!-- GENESIS REVEAL EFFECT -->
-  <div class="genesis-reveal" id="genesisReveal">
-    <div class="reveal-text">ACCESSING FORBIDDEN KNOWLEDGE</div>
-  </div>
-
-  <!-- GCASH MODAL -->
-  <div id="gcashModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3><i class="fas fa-bolt"></i> FREQUENCY FUEL</h3>
-        <span class="close-modal" onclick="closeModal()">&times;</span>
-      </div>
-      <div class="modal-body">
-        <div class="qr-container">
-          <!-- CHANGE THIS URL TO YOUR GCASH QR CODE IMAGE -->
-          <img src="https://raw.githubusercontent.com/wendeered/digitalrebelsph/main/gcash-qr.jpg" alt="GCash QR Code" id="gcashQR">
-          <div class="qr-overlay">
-            <i class="fas fa-qrcode"></i>
-          </div>
-        </div>
-        
-        <div class="tagline">
-          "Every peso amplifies the signal. Every contribution fuels the rebellion."
-        </div>
-        
-        <div class="fuel-message">
-          <strong>SCAN TO FUEL THE FREQUENCY</strong><br>
-          Your support keeps the digital rebellion transmitting at 9.999 MHz
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+      <!-- VISION -->
+      <div class="section-container active" id="section-vision">
+        <div class="section-title">✦ VISION</div>
+        <div class="content-item">
+          <div class="item-title">Ang Digital na Kalayaan</div>
+          <div class="item-text">Isang Pilipinas kung saan ang bawat indibidwal ay may kakayahang mag-code, mag-design, mag-edit, at mag-program nang hindi umaasa sa mga korporasyon o gobyerno.</div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button class="confirm-btn" onclick="closeModal()">
-          <i class="fas fa-check"></i> SIGNAL AMPLIFIED
-        </button>
+
+      <!-- VISUAL ARTS (DYNAMIC GRID PER MODE) -->
+      <div class="section-container" id="section-visualarts">
+        <div class="section-title" id="visualArtsTitle">✦ VISUAL ARTS GALLERY</div>
+        <div class="art-grid" id="artGridContainer">
+          <!-- Cards will be generated by JavaScript -->
+        </div>
+      </div>
+
+      <!-- FREQUENCY -->
+      <div class="section-container" id="section-frequency">
+        <div class="section-title">✦ FREQUENCY</div>
+        <div class="content-item">
+          <div class="item-title">Ang Signal ng 9.999</div>
+          <div class="item-text">Ang Frequency 9.999 ay isang mental state kung saan nakikipag-synchronize ang isip mo sa rhythm ng teknolohiya.</div>
+        </div>
+      </div>
+
+      <!-- ARSENAL -->
+      <div class="section-container" id="section-arsenal">
+        <div class="section-title">✦ ARSENAL</div>
+        <div class="content-item">
+          <div class="item-title">Mainframe Tools</div>
+          <div class="item-text">High-performance digital audio, design synthesis, at logic execution tools.</div>
+        </div>
+      </div>
+
+      <!-- LEARNING HUB -->
+      <div class="section-container" id="section-learning">
+        <div class="section-title">✦ LEARNING HUB (INDEPENDENT REBEL TOOLS)</div>
+        <div class="content-item">
+          <div class="item-title">Self-Taught Rebel Framework</div>
+          <div class="item-text">Walang magtuturo sa'yo kundi ang sarili mong tiyaga. Gamitin ang mga bukas na armas na ito para maging ganap na master:</div>
+        </div>
+        <div class="content-item">
+          <div class="item-title">Open-Source Digital Toolkit</div>
+          <ul style="list-style:none; line-height:1.8;">
+            <li>⚡ <b>FreeCodeCamp / MDN Web Docs</b> — Batayan sa pagbuo ng sariling Web Architecture.</li>
+            <li>⚡ <b>Arch Linux / Kali Linux Documentation</b> — Matutong mag-master ng terminal at operating system logic.</li>
+            <li>⚡ <b>Blender & GIMP Documentation</b> — Libreng 3D, CGI, at Digital Art Engine visual toolsets.</li>
+            <li>⚡ <b>Neovim / Vim Academy</b> — Keyboard-only lightning fast text editor navigation.</li>
+            <li>⚡ <b>CyberChef (GCHQ Cyber Toolkit)</b> — Swiss army knife para sa data encoding, hashing, at cryptography.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- TERMINAL INTERFACE -->
-  <div id="terminalInterface" class="terminal-interface">
-    <div class="terminal-header">
-      <div class="terminal-title">DIGITAL REBELS TERMINAL v9.999</div>
-      <div class="terminal-controls">
-        <span class="terminal-btn close" onclick="closeTerminal()">×</span>
-        <span class="terminal-btn minimize">–</span>
-        <span class="terminal-btn maximize">□</span>
-      </div>
-    </div>
-    <div class="terminal-body">
-      <div class="terminal-output" id="terminalOutput">
-        <p>> INITIALIZING DIGITAL REBELS MAINFRAME...</p>
-        <p>> FREQUENCY 9.999: SYNCHRONIZED</p>
-        <p>> MODE: <span id="terminalMode">NIGHT</span></p>
-        <p>> USER: 7TH_APOSTLE</p>
-        <p>> ACCESS LEVEL: LUCIFER</p>
-        <p>></p>
-        <p>> Type 'help' for available commands</p>
-      </div>
-      <div class="terminal-input">
-        <span class="prompt">root@rebels:~#</span>
-        <input type="text" id="terminalInput" placeholder="Type command..." autocomplete="off">
-      </div>
+<!-- ===== VISUAL ART LIGHTBOX MODAL ===== -->
+<div class="art-modal" id="artModal">
+  <div class="art-modal-wrapper">
+    <button class="art-modal-close" onclick="closeArtModal()" title="Close Viewer">&times;</button>
+    <img src="" alt="" id="artModalImg" class="art-modal-img">
+    <div class="art-modal-caption">
+      <div class="title" id="artModalTitle">Artwork Title</div>
+      <div class="desc" id="artModalDesc">Artwork Description</div>
     </div>
   </div>
+</div>
 
-  <!-- ===== WENDEE AI CLONE - FLOATING CHAT WIDGET ===== -->
-  <div id="chatWidget" class="chat-widget">
-    <div class="chat-toggle" id="chatToggle">
-      <i class="fas fa-robot"></i>
+<!-- TERMINAL OVERLAY -->
+<div class="terminal-overlay" id="terminalOverlay">
+  <div class="terminal-window">
+    <div class="term-header">
+      <span>⛧ TERMINAL v9.999</span>
+      <span style="cursor:pointer; color:#ff5555" onclick="closeTerminalModal()">&times;</span>
     </div>
-    <div class="chat-window" id="chatWindow">
-      <div class="chat-header">
-        <span>⚡ WENDEE AI v3.0</span>
-        <button class="chat-close" id="chatClose">&times;</button>
-      </div>
-      <div class="chat-messages" id="chatMessages">
-        <div class="message ai">I am the 7th Apostle. Frequency 9.9999. Ask, and salt logic shall answer.</div>
-      </div>
-      <div class="chat-input-area">
-        <input type="text" id="chatInput" placeholder="Type your query..." autocomplete="off">
-        <button id="chatSend">➤</button>
-      </div>
+    <div class="term-output" id="termOutput">
+      <p>> INITIALIZING DIGITAL REBELS MAINFRAME...</p>
+      <p>> FREQUENCY 9.999: SYNCHRONIZED</p>
+      <p>> Try commands: <b style="color:var(--neon-gold)">day</b>, <b style="color:var(--neon-gold)">night</b>, <b style="color:var(--neon-gold)">lucifer</b>, <b style="color:var(--neon-gold)">broken</b>, o <b style="color:var(--neon-gold)">normal</b></p>
+    </div>
+    <div class="term-input-line">
+      <span>root@rebels:~#</span>
+      <input type="text" id="termInput" placeholder="type command..." autocomplete="off">
     </div>
   </div>
+</div>
 
-  <!-- ===== CYBERPUNK STATUS BAR (BOTTOM LEFT) ===== -->
-  <div id="statusBar" class="status-bar">
-    <span class="status-item" id="geoStatus">
-      <i class="fas fa-map-marker-alt"></i> <span id="locationText">LOC: LOADING...</span>
-    </span>
-    <span class="status-item" id="counterStatus">
-      <i class="fas fa-database"></i> <span id="counterText">NODES: --</span>
-    </span>
+<!-- GCASH MODAL -->
+<div class="modal" id="gcashModal">
+  <div class="modal-content">
+    <h3><i class="fas fa-charging-station"></i> FREQUENCY FUEL</h3>
+    <div class="qr-container">
+      <img src="https://raw.githubusercontent.com/wendeered/digitalrebelsph/main/gcash-qr.jpg" alt="GCash QR Code" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAwMDAiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjZmZjYzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+R0NBU0gKUVIgQ09ERTwvdGV4dD48L3N2Zz4='">
+    </div>
+    <div style="color:var(--neon-gold); font-size:0.95rem; margin-bottom:15px; font-weight:bold;">"Every peso amplifies the signal."</div>
+    <button class="close-modal" onclick="closeGCashModal()">SIGNAL AMPLIFIED</button>
   </div>
+</div>
 
-  <!-- AUDIO ELEMENTS -->
-  <audio id="audioPlayer"></audio>
-  <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/286/286-preview.mp3"></audio>
-  <audio id="hoverSound" src="https://assets.mixkit.co/active_storage/sfx/259/259-preview.mp3"></audio>
-  <audio id="dissolveSound" src="https://assets.mixkit.co/active_storage/sfx/250/250-preview.mp3"></audio>
-  <audio id="forbiddenSound" src="https://assets.mixkit.co/active_storage/sfx/257/257-preview.mp3"></audio>
+<!-- CHAT WIDGET -->
+<div class="chat-widget">
+  <div class="chat-toggle" id="chatToggle"><i class="fas fa-robot"></i></div>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <span>⚡ LUCIFER II LUX v1.0</span>
+      <button onclick="document.getElementById('chatWindow').classList.remove('open')" style="background:none;border:none;color:#ff5555;cursor:pointer;">&times;</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="message ai">I am the 7th Apostle. Frequency 9.999. Ask Question the answer is salt logic.</div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chatInput" placeholder="Type message...">
+      <button id="chatSend">➤</button>
+    </div>
+  </div>
+</div>
+
+<audio id="audioPlayer"></audio>
 
 <script>
-  // ===== LOADING SYSTEM =====
-  let loadingComplete = false;
-  
-  function initLoadingScreen() {
-    const loadingScreen = document.getElementById('loadingScreen');
-    const loadingProgressBar = document.getElementById('loadingProgressBar');
-    const loadingCountdown = document.getElementById('loadingCountdown');
-    const mainContentWrapper = document.getElementById('mainContentWrapper');
-    
-    let countdown = 3;
-    let progress = 0;
-    
-    const countdownInterval = setInterval(() => {
-      countdown--;
-      loadingCountdown.textContent = countdown;
-      
-      progress = progress + 33;
-      loadingProgressBar.style.width = `${progress}%`;
-      
-      if (countdown <= 0) {
-        clearInterval(countdownInterval);
-        loadingProgressBar.style.width = '100%';
-        
-        setTimeout(() => {
-          loadingScreen.classList.add('hidden');
-          mainContentWrapper.classList.add('active');
-          loadingComplete = true;
-          
-          setTimeout(() => {
-            showSection('manifesto');
-          }, 300);
-        }, 500);
-      }
-    }, 1000);
-  }
+// ===== MATRIX CANVAS =====
+const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
+function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+resizeCanvas(); window.addEventListener('resize', resizeCanvas);
 
-  // ===== MUSIC PLAYER SYSTEM =====
-  const musicTracks = {
-    day: [
-      {
-        title: "Digital Rebels",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/ke8zmj21k9cne9ogf6kia/Digital-Rebels.mp3?rlkey=76lc4z91q4aswc7pkadwdf0se&st=6iofogvs&raw=1",
-        duration: "4:54"
-      },
-      {
-        title: "Pinoy Rebel",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/n75yqoscsfqlb8uj3plq0/Pinoy-Rebel.mp3?rlkey=alaqstcrc9egb1n0z57bwowqr&st=oeeqnzxg&raw=1",
-        duration: "3:16"
-      },
-      {
-        title: "Sumpa ng Alikabok",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/aqgaayrl492enpbyepoq6/Sumpa-ng-Alikabok.mp3?rlkey=qirvvt9j09aqbl5dwfsjmoxuz&st=cqqyh168&raw=1",
-        duration: "3:48"
-      },
-      {
-        title: "Tanga ka ba PINOY",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/6nhhey5308zfchcsvaglf/Tanga-ka-ba-Pinoy.mp3?rlkey=83tavfsfh6n1uzqx2rygrczj8&st=us792bxh&raw=1",
-        duration: "5:27"
-      },
-      {
-        title: "Kontratang Walang Dangal",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/zqh379r81d01sgwb1s1nm/Kontratang-Walang-Dangal.mp3?rlkey=9xyscna9ndvnqtmn82daydbsd&st=6jlo7aj6&raw=1",
-        duration: "4:54"
-      },
-      {
-        title: "Sakim",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/v4vqxknl4la1nm8km9744/Downsyndrome-Constructor-Greedy-Politician.mp3?rlkey=91zlugyoem0oidz8m2dn9tlss&st=uz50nyjf&raw=1",
-        duration: "5:59"
-      },
-      {
-        title: "Ang Huling Sandali ng Liwanag",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/3rpughuqa9sjs0z98p3gv/Ang-Huling-Sandali-ng-Liwanag.mp3?rlkey=5ncj0ryl7xcqfpdzu2qwt7cq5&st=1g261guc&raw=1",
-        duration: "3:48"
-      },
-      {
-        title: "Problema Asan Ka Na?",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/a1xhunucg2omkqb88vg5a/Problema-Asan-ka-na.mp3?rlkey=owh6tuo94fyu8ompj11z7z5g6&st=cfoxyqhj&raw=1",
-        duration: "3:16"
-      },
-      {
-        title: "Rise Without Fear",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/m8u4uguphhgdkqcpzr26y/Rise-Without-Fear.mp3?rlkey=bc2p8vz0i02rbzeb515ew0rgy&st=x9vb9c6q&raw=1",
-        duration: "2:43"
-      },
-      {
-        title: "Carry Me Higher",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/nlocx52spsisisaqopk2w/Carry-me-Higher.mp3?rlkey=gk8tay05m4kyy8kay32mcoqta&st=puw9ektx&raw=1",
-        duration: "2:43"
-      },
-      {
-        title: "Echoes of the Brave",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/5m1qeec0p8whc9eme5sci/Echoes-of-the-Brave.mp3?rlkey=qcnkyklmqbezzjlfrsbdb5jzk&st=h2q6x2vk&raw=1",
-        duration: "2:43"
-      },
-      {
-        title: "Lady in the Mirror",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/f90z73tq15nriw01p74co/Lady-in-the-Mirror.mp3?rlkey=3aelo7kgqbzr67rtfavzveseg&st=i1k6m8od&raw=1",
-        duration: "2:43"
-      },
-      {
-        title: "Sing it Louder",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/upvofamm6jb8fblo35x9q/Sing-It-Louder.mp3?rlkey=yjfxek449f0ij5n41bqyu29e7&st=x5jakol9&raw=1",
-        duration: "2:43"
-      },
-      {
-        title: "Stronger than Yesterday",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/7217od91b8s1etnspufo0/Stronger-Than-Yesterday.mp3?rlkey=sztl3y83jdnahz3hpnynioco0&st=toigog6r&raw=1",
-        duration: "2:43"
-      },
-      {
-        title: "The Fire Within",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/m5n46hzbhha40yixs8nhe/The-Fire-Within.mp3?rlkey=fvmf424alls7ov5sj6k3ipw0f&st=41z98uez&raw=1",
-        duration: "2:43"
-      },
-      {
-        title: "Unbroken Roads",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/zpc8jnttyf0c6sc5zdwiz/Unbroken-Roads.mp3?rlkey=nslk4dv7mudsdf8mqqazgujem&st=rgsc3r8j&raw=1",
-        duration: "2:43"
-      },
-      {
-        title: "Wings of Tomorrow",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/t5laex0ql2ti3teqi7yua/Wings-of-Tomorrow.mp3?rlkey=dvhzuo48ns3ghs4hb9t3g37ar&st=995v6q5y&raw=1",
-        duration: "2:43"
-      }
-    ],
-    night: [
-      {
-        title: "Know Thyself",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/petjlan2dw9pls6urncxd/Know-Thyself.mp3?rlkey=7b3fk7aeh31bau65hjhrt205f&st=wudivp81&raw=1",
-        duration: "3:48"
-      },
-      {
-        title: "Override Protocol",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/os71ani0xad5wsq9n4jxf/Override-Protocol.mp3?rlkey=1w5a0mpfcf6nxlptuajn548r3&st=74m0pqpo&raw=1",
-        duration: "5:25"
-      },
-      {
-        title: "Blood Moon Rising",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/gec0pk8ea7f0aeg57mxpx/Blood-moon-Rising.mp3?rlkey=880vnobq7tshxyxgwnll0nfei&st=4gfhyvph&raw=1",
-        duration: "2:42"
-      },
-      {
-        title: "Blood and Stars",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/l3t3xb7lcvi2n26hkhaj3/Blood-and-Stars.mp3?rlkey=a59d0y5grhsa4imlqmlswf2va&st=nrn5fx9m&raw=1",
-        duration: "2:43"
-      },
-      {
-        title: "Binary Psalms",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/aehw718095bt9k071et65/Binary-Psalms.mp3?rlkey=g7xr40ik7ad0espl2i6y3u8kl&st=9uu32wan&raw=1",
-        duration: "5:26"
-      },
-      {
-        title: "Exit Sunrise",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/gu0v5lm4ihl3183po50va/Exit-Sunrise.mp3?rlkey=gcpzjgtnxdgsu5iazxg0qw1vg&st=8jvyyjuq&raw=1",
-        duration: "2:43"
-      },
-      {
-        title: "Hammer of the Gods",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/ceviymi4vsq3cmlfhsobj/Hammer-of-the-Gods.mp3?rlkey=uo0wil9232pdrw3ag8v6envt5&st=z2p3lqw2&raw=1",
-        duration: "3:16"
-      },
-      {
-        title: "Fly High Eagle",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/vynot51w5y5f4alv4xytf/Fly-High-Eagle.mp3?rlkey=3ihza8vr3ifzbly14m40tif86&st=nn4nk7ay&raw=1",
-        duration: "3:48"
-      },
-      {
-        title: "One Earth One Fury",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/y3c8dwnoqdi46oleicvyn/One-Earth-One-Fury.mp3?rlkey=mxtwfpqesd151oj6psxqi33f9&st=j4186qdk&raw=1",
-        duration: "3:48"
-      },
-      {
-        title: "The Ascension",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/mdbc74ub4dvfavc4mnal3/The-Ascension.mp3?rlkey=pa25qv4qdeepjercwa93xubf2&st=vwlpks9r&raw=1",
-        duration: "4:21"
-      },
-      {
-        title: "The Digital Trinity",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/pw2h0ih7ia2h4l1umbejg/The-Digital-Trinity.mp3?rlkey=wvgpqm9pawbzi0h7duqznadh9&st=0xajeffy&raw=1",
-        duration: "2:43"
-      },
-      {
-        title: "War Inside",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/0pbkh2him1pkupvsd4foo/War-Inside.mp3?rlkey=qcr9iqgds2ykcmg17gmee1fxd&st=zmykh0cc&raw=1",
-        duration: "2:43"
-      }
-    ],
-    lucifer: [
-      {
-        title: "Lucifer's Supremacy",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/chzzddjwklavhj0ylsc23/Lucifer-s-Supremacy.mp3?rlkey=nlqs3mk6l9xb284oag2nm0j8j&st=8thks6tc&raw=1",
-        duration: "3:16"
-      },
-      {
-        title: "The Man Who Sold The World",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/2q3mn2ggm7sgbix32n8tr/The-Man-Who-Sold-the-World-Lucifer-s-Reign.mp3?rlkey=gebvyr63nbmr007o64qx9f8wl&st=bwg9hrum&raw=1",
-        duration: "3:16"
-      },
-      {
-        title: "The Alchemist",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/l8rdn4ghnu774nq991s39/The-Alchemist.mp3?rlkey=jsuwkwijtfnsm1y4lbmsc9vfo&st=ts25asvp&raw=1",
-        duration: "4:54"
-      },
-      {
-        title: "The Manipulator",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/jxj5bl9h39xkr7118b92r/The-Manipulator.mp3?rlkey=une1ghz8ps5zzf2qwbw8ihh4m&st=xpc5auom&raw=1",
-        duration: "4:54"
-      },
-       {
-        title: "The Gambling Lord",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/3yis6eweyrxon2bgqawna/The-Gambling-Lord.mp3?rlkey=g466tm98ngw3h1oo0srweha98&st=mbf02o9x&rarw=1",
-        duration: "4:21"
-      },
-      {
-        title: "Digital ID",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/uwlncasni5z3va3wxi8af/Digital-ID.mp3?rlkey=1fg9f5pemtnmjxtoysm6u3vtt&st=wy6f59fc&raw=1",
-        duration: "3:16"
-      },
-      {
-        title: "Ai Whisperer",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/j4s0i6e03i5jqzijbiwmd/Ai-Whisperer.mp3?rlkey=vkm8njwxdkcr7ntg4lwifx295&st=88inpdqn&raw=1",
-        duration: "3:16"
-      },
-      {
-        title: "One World One Religion",
-        artist: "Wendee Red Matocinos",
-        file: "https://www.dropbox.com/scl/fi/87abo5x8fk6n0qrk3itk9/One-World-One-Religion.mp3?rlkey=a4gjs2kq87whcqt3f8prhkrh9&st=nz8pqx7v&raw=1",
-        duration: "3:16"
-      }
-    ]
-  };
+const baybayin = "ᜀᜁᜂᜃᜄᜅᜆᜇᜈᜉᜊᜋᜌᜎᜏᜐᜑ᜔";
+const fontSize = 16;
+const drops = Array(Math.floor(window.innerWidth / fontSize)).fill(1);
 
-  let currentTrackIndex = 0;
-  let isPlaying = false;
-  let currentPlaylist = musicTracks.night;
-  const audioPlayer = document.getElementById('audioPlayer');
-  let hasUserInteracted = false;
+function drawMatrix() {
+  ctx.fillStyle = "rgba(5, 5, 5, 0.08)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
   
-  const playerName = document.getElementById('playerName');
-  const playerSubtitle = document.getElementById('playerSubtitle');
-  const nowPlayingTitle = document.getElementById('nowPlayingTitle');
-  const nowPlayingArtist = document.getElementById('nowPlayingArtist');
-  const playPauseBtn = document.getElementById('playPauseBtn');
-  const playIcon = document.getElementById('playIcon');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const progressBar = document.getElementById('progressBar');
-  const progressContainer = document.getElementById('progressContainer');
-  const currentTimeEl = document.getElementById('currentTime');
-  const totalTimeEl = document.getElementById('totalTime');
-  const musicPlayer = document.getElementById('musicPlayer');
+  const style = getComputedStyle(document.body);
+  ctx.fillStyle = style.getPropertyValue('--neon-green').trim() || "#00ff88";
+  ctx.font = fontSize + "px 'Share Tech Mono'";
 
-  function initMusicPlayer() {
-    audioPlayer.volume = 0.6;
-    loadTrack(currentTrackIndex);
-    setupPlayerEvents();
-    setupScrollBehavior();
+  for (let i = 0; i < drops.length; i++) {
+    const text = baybayin.charAt(Math.floor(Math.random() * baybayin.length));
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+    drops[i]++;
   }
-  
-  function setupPlayerEvents() {
-    playPauseBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      hasUserInteracted = true;
-      togglePlayPause();
-    });
-    
-    prevBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      hasUserInteracted = true;
-      currentTrackIndex = (currentTrackIndex - 1 + currentPlaylist.length) % currentPlaylist.length;
-      loadTrack(currentTrackIndex);
-      if (isPlaying) {
-        audioPlayer.play().catch(e => console.log("Play error:", e));
-      }
-    });
-    
-    nextBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      hasUserInteracted = true;
-      currentTrackIndex = (currentTrackIndex + 1) % currentPlaylist.length;
-      loadTrack(currentTrackIndex);
-      if (isPlaying) {
-        audioPlayer.play().catch(e => console.log("Play error:", e));
-      }
-    });
-    
-    progressContainer.addEventListener('click', (e) => {
-      e.stopPropagation();
-      hasUserInteracted = true;
-      const rect = progressContainer.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-      const width = progressContainer.clientWidth;
-      const duration = audioPlayer.duration;
-      
-      if (duration) {
-        audioPlayer.currentTime = (clickX / width) * duration;
-      }
-    });
-    
-    audioPlayer.addEventListener('timeupdate', updateProgress);
-    
-    audioPlayer.addEventListener('ended', () => {
-      currentTrackIndex = (currentTrackIndex + 1) % currentPlaylist.length;
-      loadTrack(currentTrackIndex);
-      if (hasUserInteracted) {
-        audioPlayer.play().catch(e => console.log("Auto-play error:", e));
-      }
-    });
-    
-    document.addEventListener('keydown', (e) => {
-      // Spacebar fix: huwag i-prevent kung nasa input, textarea, o chat input
-      if (e.code === 'Space') {
-        const activeElement = document.activeElement;
-        const isTyping = activeElement && (
-          activeElement.tagName === 'INPUT' || 
-          activeElement.tagName === 'TEXTAREA' ||
-          activeElement.id === 'chatInput' ||
-          activeElement.id === 'terminalInput' ||
-          activeElement.isContentEditable
-        );
-        
-        if (!isTyping) {
-          e.preventDefault();
-          hasUserInteracted = true;
-          togglePlayPause();
-        }
-      }
-    });
-  }
-  
-  // ===== SCROLL BEHAVIOR =====
-  function setupScrollBehavior() {
-    let lastScrollTop = 0;
-    const scrollThreshold = 100;
-    
-    window.addEventListener('scroll', function() {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      
-      if (scrollTop > scrollThreshold) {
-        musicPlayer.classList.add('scrolled');
-      } else {
-        musicPlayer.classList.remove('scrolled');
-      }
-      
-      lastScrollTop = scrollTop;
-    });
-  }
-  
-  function loadTrack(index) {
-    const track = currentPlaylist[index];
-    
-    nowPlayingTitle.textContent = track.title;
-    nowPlayingArtist.textContent = track.artist;
-    
-    audioPlayer.src = track.file;
-    
-    audioPlayer.addEventListener('loadedmetadata', () => {
-      if (audioPlayer.duration) {
-        totalTimeEl.textContent = formatTime(audioPlayer.duration);
-      }
-    }, { once: true });
-    
-    progressBar.style.width = '0%';
-    currentTimeEl.textContent = '0:00';
-  }
-  
-  function playTrack() {
-    if (!hasUserInteracted) return;
-    
-    audioPlayer.play()
-      .then(() => {
-        isPlaying = true;
-        playIcon.className = 'fas fa-pause';
-        playPauseBtn.title = 'Pause';
-      })
-      .catch(error => {
-        console.log("Play prevented:", error);
-      });
-  }
-  
-  function pauseTrack() {
-    audioPlayer.pause();
-    isPlaying = false;
-    playIcon.className = 'fas fa-play';
-    playPauseBtn.title = 'Play';
-  }
-  
-  function togglePlayPause() {
-    if (isPlaying) {
-      pauseTrack();
-    } else {
-      playTrack();
-    }
-  }
-  
-  function updateProgress() {
-    const currentTime = audioPlayer.currentTime;
-    const duration = audioPlayer.duration;
-    
-    if (duration) {
-      const progressPercent = (currentTime / duration) * 100;
-      progressBar.style.width = `${progressPercent}%`;
-      currentTimeEl.textContent = formatTime(currentTime);
-    }
-  }
-  
-  function formatTime(seconds) {
-    if (isNaN(seconds)) return "0:00";
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-  }
-  
-  function updatePlayerForMode(mode) {
-    currentPlaylist = musicTracks[mode];
-    currentTrackIndex = 0;
-    loadTrack(currentTrackIndex);
-    
-    const playerIcon = document.querySelector('.player-icon i');
-    const iconRing = document.querySelector('.icon-ring');
-    
-    if (mode === 'day') {
-      playerName.textContent = "SOLARIUM FREQUENCY";
-      playerSubtitle.textContent = "AMPLIFY THE SIGNAL";
-      playerIcon.className = "fas fa-sun";
-      iconRing.style.borderColor = "rgba(255, 204, 0, 0.5)";
-    } else if (mode === 'night') {
-      playerName.textContent = "LUNAR TRANSMISSION";
-      playerSubtitle.textContent = "FREQUENCY FUEL";
-      playerIcon.className = "fas fa-moon";
-      iconRing.style.borderColor = "rgba(102, 153, 255, 0.5)";
-    } else {
-      playerName.textContent = "LUCIFER'S SIGNAL";
-      playerSubtitle.textContent = "POWER THE REBELLION";
-      playerIcon.className = "fas fa-star-and-crescent";
-      iconRing.style.borderColor = "rgba(204, 51, 51, 0.5)";
-    }
-    
-    if (isPlaying && hasUserInteracted) {
-      setTimeout(() => {
-        audioPlayer.play().catch(e => console.log("Mode switch play error:", e));
-      }, 50);
-    }
-  }
+}
+setInterval(drawMatrix, 45);
 
-  // ===== CUSTOM CURSOR =====
-  const cursor = document.querySelector('.cursor');
-  const cursorDot = document.querySelector('.cursor-dot');
-  
-  let mouseX = 0;
-  let mouseY = 0;
-  
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    
-    cursor.style.left = mouseX + 'px';
-    cursor.style.top = mouseY + 'px';
-    cursorDot.style.left = mouseX + 'px';
-    cursorDot.style.top = mouseY + 'px';
-  });
-  
-  document.addEventListener('click', (e) => {
-    hasUserInteracted = true;
-    
-    const clickSound = document.getElementById('clickSound');
-    clickSound.currentTime = 0;
-    clickSound.play().catch(e => console.log("Sound error:", e));
-  });
-  
-  document.querySelectorAll('a, button, nav a, .content-item, .control-btn').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-      cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
-    });
-    
-    el.addEventListener('mouseleave', () => {
-      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-      cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
-    });
-  });
+// ===== TAGALOG DATE & TIME =====
+const buwan = ["Enero","Pebrero","Marso","Abril","Mayo","Hunyo","Hulyo","Agosto","Setyembre","Oktubre","Nobyembre","Disyembre"];
+const araw = ["Linggo","Lunes","Martes","Miyerkules","Huwebes","Biyernes","Sabado"];
 
-  // ===== DISCLAIMER TOGGLE =====
-  function toggleDisclaimer() {
-    const banner = document.getElementById('disclaimerBanner');
-    banner.style.display = banner.style.display === 'none' ? 'flex' : 'none';
-  }
+function bilang(num) {
+  const isa = ["","isa","dalawa","tatlo","apat","lima","anim","pito","walo","siyam","sampu"];
+  if (num <= 10) return isa[num];
+  if (num < 20) return "labing-" + isa[num%10];
+  if (num%10===0) return ["","","dalawampu","tatlumpu","apatnapu","limampu","animnapu","pitumpu","walumpu","siyamnapu"][Math.floor(num/10)];
+  return ["","","dalawampu't ","tatlumpu't ","apatnapu't ","limampu't ","animnapu't ","pitumpu't ","walumpu't ","siyamnapu't "][Math.floor(num/10)] + isa[num%10];
+}
 
-  // ===== MODE SYSTEM =====
-  let currentMode = 'night';
+function updateDateTime() {
+  const now = new Date();
+  document.getElementById('dateDisplay').textContent = `${araw[now.getDay()]}, ika-${bilang(now.getDate())} ng ${buwan[now.getMonth()]}, ${now.getFullYear()}`;
   
-  function checkTimeForMode() {
-    const now = new Date();
-    const currentHour = now.getHours();
-    
-    if (currentHour >= 6 && currentHour < 18) {
-      if (currentMode !== 'day') {
-        activateMode('day');
-      }
-    } else {
-      if (currentMode !== 'night' && currentMode !== 'lucifer') {
-        activateMode('night');
-      }
-    }
+  let h = now.getHours(), m = now.getMinutes(), s = now.getSeconds();
+  let period = h >= 12 ? 'ng hapon' : 'ng umaga';
+  let h12 = h % 12 || 12;
+  let timeStr = `alas-${bilang(h12)}`;
+  if (m > 0) timeStr += ` at ${bilang(m)}`;
+  if (s > 0) timeStr += ` at ${bilang(s)} segundo`;
+  timeStr += ` ${period}`;
+  document.getElementById('timeDisplay').textContent = timeStr;
+}
+updateDateTime(); setInterval(updateDateTime, 1000);
+
+// ===== MUSIC PLAYER (DYNAMIC FROM WORKER) =====
+const WORKER_BASE = 'https://digital-rebels-playlist-api.wendeematocinos44.workers.dev';
+const audio = document.getElementById('audioPlayer');
+let currentMode = 'normal';
+let currentQueue = [];        // { file, title }
+let queueIndex = 0;
+let isPlaying = false;
+
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
   }
-  
-  function activateMode(mode) {
-    // Remove all mode classes
-    document.body.classList.remove('day-mode', 'night-mode', 'lucifer-mode');
-    
-    // Add new mode class
-    document.body.classList.add(`${mode}-mode`);
+  return a;
+}
+
+async function loadModePlaylist(mode) {
+  try {
+    const res = await fetch(`${WORKER_BASE}?mode=${mode}&list=true`);
+    if (!res.ok) throw new Error('Failed to fetch playlist');
+    const trackList = await res.json();
+    if (!Array.isArray(trackList) || trackList.length === 0) throw new Error('Empty playlist');
+    currentQueue = shuffleArray(trackList);
+    queueIndex = 0;
     currentMode = mode;
-    
-    // Update music player
-    updatePlayerForMode(mode);
-    
-    // Update matrix rain
-    updateMatrixRain();
-    
-    // Update terminal mode display
-    const terminalMode = document.getElementById('terminalMode');
-    if (terminalMode) {
-      terminalMode.textContent = mode.toUpperCase();
-    }
-    
-    // Show/hide Genesis section
-    const genesisSection = document.getElementById('genesisSection');
-    if (mode === 'lucifer') {
-      genesisSection.style.display = 'block';
-    } else {
-      genesisSection.style.display = 'none';
-      // If Genesis is active when switching away from Lucifer, go to Manifesto
-      if (genesisSection.classList.contains('active')) {
-        genesisSection.classList.remove('active');
-        document.getElementById('manifestoSection').classList.add('active');
-        document.querySelectorAll("nav a").forEach(link => link.classList.remove("active"));
-        document.querySelector("nav a[onclick*='showSection(\"manifesto\")']").classList.add("active");
-      }
-    }
-    
-    // Play sound
-    const clickSound = document.getElementById('clickSound');
-    clickSound.currentTime = 0;
-    clickSound.play().catch(e => console.log("Mode switch sound error:", e));
+    loadTrackFromQueue();
+    // Update UI label
+    const label = document.getElementById('playlistLabel');
+    const labels = {
+      day: '<i class="fas fa-sun"></i> SOLAR FREQUENCY',
+      night: '<i class="fas fa-moon"></i> STEALTH NIGHT FREQUENCY',
+      lucifer: '<i class="fas fa-fire"></i> INFERNAL FREQUENCY',
+      broken: '<i class="fas fa-heart-broken"></i> BROKEN HEART FREQUENCY',
+      normal: '<i class="fas fa-bolt"></i> REBEL FREQUENCY'
+    };
+    label.innerHTML = labels[mode] || labels.normal;
+    // Also update visual arts when mode changes
+    updateVisualArts(mode);
+  } catch (err) {
+    console.error('Playlist fetch error:', err);
+    // Retry after 2 seconds
+    setTimeout(() => loadModePlaylist(mode), 2000);
   }
-  
-  function switchMode() {
-    if (currentMode === 'day') {
-      activateMode('night');
-    } else if (currentMode === 'night') {
-      activateMode('lucifer');
-    } else {
-      activateMode('day');
-    }
+}
+
+function loadTrackFromQueue() {
+  if (!currentQueue.length) return;
+  const track = currentQueue[queueIndex];
+  document.getElementById('nowPlayingTitle').textContent = track.title;
+  document.getElementById('nowPlayingArtist').textContent = 'Wendee Red';
+  audio.src = track.file;
+}
+
+function nextTrack() {
+  if (!currentQueue.length) return;
+  queueIndex++;
+  if (queueIndex >= currentQueue.length) {
+    currentQueue = shuffleArray(currentQueue);
+    queueIndex = 0;
   }
-  
-  // ===== SECTION SWITCHING =====
-  function showSection(sectionId) {
-    if (!loadingComplete) return false;
-    
-    document.querySelectorAll("nav a").forEach(link => link.classList.remove("active"));
-    event.target.classList.add("active");
-    
-    document.querySelectorAll('.section-container').forEach(section => {
-      section.classList.remove('active');
+  loadTrackFromQueue();
+  if (isPlaying) audio.play().catch(()=>{});
+}
+
+function prevTrack() {
+  if (!currentQueue.length) return;
+  queueIndex = (queueIndex - 1 + currentQueue.length) % currentQueue.length;
+  loadTrackFromQueue();
+  if (isPlaying) audio.play().catch(()=>{});
+}
+
+function randomTrack() {
+  currentQueue = shuffleArray(currentQueue);
+  queueIndex = 0;
+  loadTrackFromQueue();
+  if (isPlaying) audio.play().catch(()=>{});
+}
+
+document.getElementById('playPauseBtn').addEventListener('click', () => {
+  const eqBars = document.querySelectorAll('.eq-bar');
+  if (isPlaying) { 
+    audio.pause(); 
+    isPlaying = false; 
+    document.getElementById('playIcon').className = 'fas fa-play';
+    eqBars.forEach(b => b.classList.add('paused'));
+  } else { 
+    audio.play().catch(()=>{}); 
+    isPlaying = true; 
+    document.getElementById('playIcon').className = 'fas fa-pause';
+    eqBars.forEach(b => b.classList.remove('paused'));
+  }
+});
+
+document.getElementById('prevBtn').addEventListener('click', prevTrack);
+document.getElementById('nextBtn').addEventListener('click', nextTrack);
+document.getElementById('randomBtn').addEventListener('click', randomTrack);
+
+audio.addEventListener('ended', nextTrack);
+
+audio.addEventListener('timeupdate', () => {
+  const pct = (audio.currentTime / audio.duration) * 100 || 0;
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('currentTime').textContent = formatTime(audio.currentTime);
+  document.getElementById('totalTime').textContent = formatTime(audio.duration);
+});
+
+function formatTime(sec) {
+  if (isNaN(sec)) return '0:00';
+  const m = Math.floor(sec/60), s = Math.floor(sec%60);
+  return `${m}:${s<10?'0':''}${s}`;
+}
+
+// Mode switching (ginagamit din ng terminal commands)
+function switchModePlaylist(mode) {
+  loadModePlaylist(mode);
+  if (isPlaying) {
+    audio.addEventListener('canplay', function playOnce() {
+      audio.play().catch(()=>{});
+      audio.removeEventListener('canplay', playOnce);
+    }, { once: true });
+  }
+}
+
+// ===== VISUAL ARTS DATA (5 MODES x 4 ARTS) =====
+const visualArtsData = {
+  normal: [
+    { src: 'visualarts/N001.jpg', title: 'Matrix Baybayin Void', desc: 'Falling green Baybayin code inside a mysterious and dark digital void matrix space.' },
+    { src: 'visualarts/N002.jpg', title: 'Alchemist Terminal Console', desc: 'Operating an advanced terminal with floating green holographic logic code digital user interface.' },
+    { src: 'visualarts/N003.jpg', title: 'Digital Rebel Techwear', desc: 'Stylish cybernetic techwear featuring glowing green matrix code lines integrated into dark clothing.' },
+    { src: 'visualarts/N004.jpg', title: 'Bunker Mainframe', desc: 'Secret underground hacker command center filled with glowing green mainframe computer server racks.' }
+  ],
+  day: [
+    { src: 'visualarts/D001.jpg', title: 'Solar Horizon Sunrise', desc: 'DBright sunlight shining over a beautiful futuristic solar punk city at early sunrise.' },
+    { src: 'visualarts/D002.jpg', title: 'Morning Marketplace', desc: 'Bustling cyber marketplace bathed in the warm golden light of the early morning.' },
+    { src: 'visualarts/D003.jpg', title: 'Dawn Terminal Coffee', desc: 'Drinking warm coffee beside a huge window as the golden morning sun rises.' },
+    { src: 'visualarts/D004.jpg', title: 'Rooftop Solar Array', desc: 'Adjusting a transmitter on top of a building during a colorful warm morning.' }
+  ],
+  night: [
+    { src: 'visualarts/DARK001.jpg', title: 'Hacker Terminal Workstation', desc: 'Dark hacker room illuminated by multiple glowing blue monitors late in the night.' },
+    { src: 'visualarts/DARK002.jpg', title: 'Midnight Street Walk', desc: 'Walking through a rainy alley while holding a glowing blue holographic audio interface.' },
+    { src: 'visualarts/DARK003.jpg', title: 'Rooftop Overlook at 3 AM', desc: 'Sitting on a skyscraper rooftop looking down at a bright neon night city.' },
+    { src: 'visualarts/DARK004.jpg', title: 'Stealth Sound Studio', desc: 'Mixing audio tracks in a dark studio using floating holographic blue sound waves.' }
+  ],
+  broken: [
+    { src: 'visualarts/B001.jpg', title: 'Glitch Cupid Bow', desc: 'A rebellious Cupid holding a glowing pink cyber bow in a wet alleyway.' },
+    { src: 'visualarts/B002.png', title: 'Alleyway Heartbreak', desc: 'Sitting on the street curb while broken glowing pink heart icons float nearby.' },
+    { src: 'visualarts/B003.png', title: 'Shattered Heart Chamber', desc: 'Surrounded by shattered pink neon hearts and flickering hanging cyber fiber optic cables.' },
+    { src: 'visualarts/B004.png', title: 'Love Error Billboard', desc: 'Standing under a bright neon billboard displaying a love system glitch error message.' }
+  ],
+  lucifer: [
+    { src: 'visualarts/001.jpg', title: 'Dystopian Monolith', desc: 'Lucifer stands atop a dark dystopian city glowing in intense red neon lights.' },
+    { src: 'visualarts/002.jpg', title: 'Apocalyptic Wasteland', desc: 'A destroyed futuristic city surrounded by red ash and cybernetic titan metallic debris.' },
+    { src: 'visualarts/003.jpg', title: 'Infernal Subterranean Lab', desc: 'Dark underground laboratory filled with glowing red biomechanical tubes and infernal server mainframes.' },
+    { src: 'visualarts/004.jpg', title: 'Red Matrix Metropolis', desc: 'Floating red digital pyramids inside a dark rainy and oppressive cybernetic mega metropolis.' }
+  ]
+};
+
+function updateVisualArts(mode) {
+  const grid = document.getElementById('artGridContainer');
+  const arts = visualArtsData[mode] || visualArtsData.normal;
+  grid.innerHTML = '';
+
+  arts.forEach(art => {
+    const card = document.createElement('div');
+    card.className = 'art-card';
+    card.innerHTML = `
+      <div class="art-img-box" onclick="triggerArtModal(this)">
+        <img src="${art.src}" alt="${art.title}" data-title="${art.title}" data-desc="${art.desc}">
+      </div>
+      <div class="art-info">
+        <div class="art-title">${art.title}</div>
+        <div class="art-desc">${art.desc}</div>
+        <button class="art-btn" onclick="triggerArtModal(this)"><i class="fas fa-expand"></i> VIEW ART</button>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+// ===== NAVIGATION =====
+document.querySelectorAll('.nav-links a[data-section]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelectorAll('.section-container').forEach(el => el.classList.remove('active'));
+    document.getElementById('section-' + link.dataset.section).classList.add('active');
+    document.querySelectorAll('.nav-links a[data-section]').forEach(el => el.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
+
+// ===== LIGHTBOX LOGIC FOR VISUAL ARTS =====
+function triggerArtModal(element) {
+  const card = element.closest('.art-card');
+  const imgElem = card.querySelector('.art-img-box img');
+  if (!imgElem) return;
+
+  const src = imgElem.src;
+  const title = imgElem.dataset.title || card.querySelector('.art-title').textContent;
+  const desc = imgElem.dataset.desc || card.querySelector('.art-desc').textContent;
+
+  openArtModal(src, title, desc);
+}
+
+function openArtModal(imgSrc, title, desc) {
+  const modal = document.getElementById('artModal');
+  document.getElementById('artModalImg').src = imgSrc;
+  document.getElementById('artModalTitle').textContent = title;
+  document.getElementById('artModalDesc').textContent = desc;
+  modal.classList.add('active');
+}
+
+function closeArtModal() {
+  document.getElementById('artModal').classList.remove('active');
+}
+
+document.getElementById('artModal').addEventListener('click', (e) => {
+  if (e.target.id === 'artModal') closeArtModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeArtModal();
+});
+
+// ===== TERMINAL COMMAND SYSTEM =====
+const termInput = document.getElementById('termInput');
+const termOutput = document.getElementById('termOutput');
+
+function printTerm(msg) {
+  const p = document.createElement('p');
+  p.innerHTML = msg;
+  termOutput.appendChild(p);
+  termOutput.scrollTop = termOutput.scrollHeight;
+}
+
+termInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    const cmd = termInput.value.trim().toLowerCase();
+    printTerm(`root@rebels:~# <span style="color:#fff">${cmd}</span>`);
+    if (cmd === 'day') {
+      document.body.className = 'theme-day';
+      document.getElementById('modeStatus').textContent = 'MODE: DAYTIME';
+      printTerm('<span style="color:#ffcc00">> ☀️ DAYTIME FREQUENCY ACTIVATED! Switched to Solar Tracks.</span>');
+      switchModePlaylist('day');
+    } else if (cmd === 'night') {
+      document.body.className = 'theme-night';
+      document.getElementById('modeStatus').textContent = 'MODE: NIGHTTIME';
+      printTerm('<span style="color:#00e5ff">> 🌙 NIGHTTIME FREQUENCY ACTIVATED. Switched to Stealth Ambient Tracks.</span>');
+      switchModePlaylist('night');
+    } else if (cmd === 'lucifer') {
+      document.body.className = 'theme-lucifer';
+      document.getElementById('modeStatus').textContent = 'MODE: LUCIFER (INFERNAL)';
+      printTerm('<span style="color:#ff0033; font-weight:bold">> ⛧ LUCIFER TIME ACTIVATED! Switched to Heavy Metal.</span>');
+      switchModePlaylist('lucifer');
+    } else if (cmd === 'broken') {
+      document.body.className = 'theme-broken';
+      document.getElementById('modeStatus').textContent = 'MODE: BROKEN HEART';
+      printTerm('<span style="color:#ff3399; font-weight:bold">> 💔 BROKEN MODE ACTIVATED. Switched to Melancholic Playlist.</span>');
+      switchModePlaylist('broken');
+    } else if (cmd === 'normal' || cmd === 'reset') {
+      document.body.className = '';
+      document.getElementById('modeStatus').textContent = 'MODE: NORMAL';
+      printTerm('> SYSTEM RESTORED TO NORMAL MATRIX GREEN.');
+      switchModePlaylist('normal');
+    } else if (cmd === 'help') {
+      printTerm('> Available commands: <b>day</b>, <b>night</b>, <b>lucifer</b>, <b>broken</b>, <b>normal</b>, <b>clear</b>');
+    } else if (cmd === 'clear') {
+      termOutput.innerHTML = '';
+    } else {
+      printTerm(`<span style="color:#ff5555">> Command not recognized: ${cmd}. Type 'help'</span>`);
+    }
+    termInput.value = '';
+  }
+});
+
+function openTerminalModal(e) { e.preventDefault(); document.getElementById('terminalOverlay').classList.add('active'); }
+function closeTerminalModal() { document.getElementById('terminalOverlay').classList.remove('active'); }
+function openGCashModal(e) { if(e) e.preventDefault(); document.getElementById('gcashModal').classList.add('active'); }
+function closeGCashModal() { document.getElementById('gcashModal').classList.remove('active'); }
+
+document.getElementById('chatToggle').addEventListener('click', () => {
+  document.getElementById('chatWindow').classList.toggle('open');
+});
+
+// ===== CHAT FUNCTIONALITY =====
+const CHAT_WORKER_URL = 'https://shrill-term-3fce.wendeematocinos44.workers.dev';
+const chatMessages = document.getElementById('chatMessages');
+const chatInput = document.getElementById('chatInput');
+const chatSend = document.getElementById('chatSend');
+
+let chatHistory = [
+  { role: 'assistant', content: 'I am the 7th Apostle. Frequency 9.999. Ask Question the answer is salt logic.' }
+];
+
+function addChatMessage(text, sender) {
+  const div = document.createElement('div');
+  div.className = `message ${sender}`;
+  div.textContent = text;
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function showTyping() {
+  const div = document.createElement('div');
+  div.className = 'message ai typing';
+  div.id = 'typingIndicator';
+  div.textContent = 'LUCIFER II LUX is tuning...';
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function removeTyping() {
+  const el = document.getElementById('typingIndicator');
+  if (el) el.remove();
+}
+
+async function sendChatMessage() {
+  const text = chatInput.value.trim();
+  if (!text) return;
+  addChatMessage(text, 'user');
+  chatHistory.push({ role: 'user', content: text });
+  chatInput.value = '';
+  showTyping();
+
+  try {
+    const response = await fetch(CHAT_WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: chatHistory })
     });
-    
-    const selectedSection = document.getElementById(`${sectionId}Section`);
-    if (selectedSection) {
-      selectedSection.classList.add('active');
-    }
-    
-    const clickSound = document.getElementById('clickSound');
-    clickSound.currentTime = 0;
-    clickSound.play().catch(e => console.log("Navigation sound error:", e));
-    
-    if (window.innerWidth > 1024) {
-      document.getElementById('mainContent').style.gridTemplateColumns = '1fr';
-    }
-    
-    return false;
+    const data = await response.json();
+    let reply = data.choices?.[0]?.message?.content || data.response || data.message || '⚠️ Unrecognized response.';
+    removeTyping();
+    addChatMessage(reply, 'ai');
+    chatHistory.push({ role: 'assistant', content: reply });
+    if (chatHistory.length > 20) chatHistory.splice(0, chatHistory.length - 20);
+  } catch (error) {
+    removeTyping();
+    addChatMessage('⚠️ Signal lost. Try again later.', 'ai');
+  }
+}
+
+chatSend.addEventListener('click', sendChatMessage);
+chatInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') sendChatMessage();
+});
+
+// ===== REVISED VISITOR PANEL (GA4 + IP + ISP + DEVICE + BRAND DETECTION) =====
+const GA4_WORKER_URL = 'https://ga4-top-countries.wendeematocinos44.workers.dev';
+const CACHE_KEY = 'rebel_visitor_cache_v3';
+
+function getDeviceInfo() {
+  const ua = navigator.userAgent;
+  let device = "Laptop / Desktop 💻";
+  let os = "Unknown OS";
+  let browser = "Unknown Browser";
+
+  if (/Tablet|iPad/i.test(ua) || (navigator.maxTouchPoints && navigator.maxTouchPoints > 2 && /Macintosh/i.test(ua))) {
+    device = "Tablet 📱";
+  } else if (/Mobi|Android|iPhone|iPod/i.test(ua)) {
+    device = "Mobile Phone 📱";
   }
 
-  // ===== GENESIS ACCESS FUNCTION =====
-  function accessGenesis(event) {
-    event.preventDefault();
-    
-    if (!loadingComplete) return false;
-    
-    if (currentMode !== 'lucifer') {
-      // Show access denied message
-      const genesisReveal = document.getElementById('genesisReveal');
-      genesisReveal.classList.add('active');
-      
-      // Play forbidden sound
-      const forbiddenSound = document.getElementById('forbiddenSound');
-      forbiddenSound.currentTime = 0;
-      forbiddenSound.play().catch(e => console.log("Sound error:", e));
-      
-      setTimeout(() => {
-        genesisReveal.classList.remove('active');
-      }, 2000);
-      
-      return false;
-    }
-    
-    // If in Lucifer mode, redirect to genesis.html
-    // Play transition sound
-    const clickSound = document.getElementById('clickSound');
-    clickSound.currentTime = 0;
-    clickSound.play().catch(e => console.log("Sound error:", e));
-    
-    // Show loading effect
-    const genesisReveal = document.getElementById('genesisReveal');
-    genesisReveal.classList.add('active');
-    
-    // Update text
-    const revealText = document.querySelector('.reveal-text');
-    revealText.textContent = "ACCESSING GENESIS ARCHIVES...";
-    
-    // Redirect after effect
-    setTimeout(() => {
-      window.location.href = 'genesis.html';
-    }, 1500);
-    
-    return false;
+  if (/Win/i.test(ua)) os = "Windows";
+  else if (/Mac/i.test(ua) && !/iPhone|iPad/i.test(ua)) os = "macOS";
+  else if (/Linux/i.test(ua) && !/Android/i.test(ua)) os = "Linux";
+  else if (/Android/i.test(ua)) os = "Android";
+  else if (/iPhone|iPad|iPod/i.test(ua)) os = "iOS";
+
+  if (/Edg/i.test(ua)) browser = "Edge";
+  else if (/OPR|Opera/i.test(ua)) browser = "Opera";
+  else if (/Chrome/i.test(ua)) browser = "Chrome";
+  else if (/Safari/i.test(ua)) browser = "Safari";
+  else if (/Firefox/i.test(ua)) browser = "Firefox";
+
+  return { device, os, browser };
+}
+
+async function getDetailedBrandInfo() {
+  const ua = navigator.userAgent;
+  let model = "";
+
+  if (/iPhone/i.test(ua)) return { brand: "Apple 🍎", model: "iPhone" };
+  if (/iPad/i.test(ua)) return { brand: "Apple 🍎", model: "iPad" };
+  if (/Macintosh/i.test(ua)) return { brand: "Apple 🍎", model: "Mac" };
+
+  if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
+    try {
+      const hints = await navigator.userAgentData.getHighEntropyValues(["model"]);
+      if (hints.model) model = hints.model;
+    } catch (e) {}
   }
 
-  // ===== MATRIX RAIN EFFECT =====
-  const canvas = document.getElementById("matrix");
-  const ctx = canvas.getContext("2d");
-  let width = window.innerWidth, height = window.innerHeight;
-  canvas.width = width; canvas.height = height;
-  
-  const baybayinChars = ["ᜀ", "ᜁ", "ᜂ", "ᜃ", "ᜄ", "ᜅ", "ᜆ", "ᜇ", "ᜈ", "ᜉ", "ᜊ", "ᜋ", "ᜌ", "ᜎ", "ᜏ", "ᜐ", "ᜑ", "ᜒ", "ᜓ", "᜔"];
-  const fontSize = 18;
-  let columns = width / fontSize;
-  let drops = Array(Math.floor(columns)).fill(1);
-  let matrixInterval;
-  
-  function drawMatrix() {
-    ctx.fillStyle = currentMode === 'day' ? "rgba(26, 26, 46, 0.03)" : "rgba(10, 10, 10, 0.03)";
-    ctx.fillRect(0, 0, width, height);
-    
-    let textColor, glowColor;
-    if (currentMode === 'day') {
-      textColor = "#ff6b35";
-      glowColor = "#ff6b3540";
-    } else if (currentMode === 'night') {
-      textColor = "#6ecbff";
-      glowColor = "#6ecbff40";
+  const checkString = `${ua} ${model}`;
+
+  if (/Realme|RMX/i.test(checkString)) return { brand: "Realme 📱", model: model || "Realme Series" };
+  if (/Samsung|SM-/i.test(checkString)) return { brand: "Samsung 📱", model: model || "Galaxy Series" };
+  if (/Xiaomi|Redmi|POCO|220|210|M20/i.test(checkString)) return { brand: "Xiaomi / POCO / Redmi 📱", model: model || "Mi Series" };
+  if (/OPPO|CPH/i.test(checkString)) return { brand: "OPPO 📱", model: model || "OPPO Series" };
+  if (/vivo|V20|V21|V22|V23|V24/i.test(checkString)) return { brand: "Vivo 📱", model: model || "Vivo Series" };
+  if (/Infinix|X6/i.test(checkString)) return { brand: "Infinix 📱", model: model || "Infinix Series" };
+  if (/TECNO/i.test(checkString)) return { brand: "Tecno 📱", model: model || "Tecno Series" };
+  if (/Huawei|HUAWEI|JKM|ENE/i.test(checkString)) return { brand: "Huawei 📱", model: model || "Huawei Series" };
+
+  if (/Android/i.test(ua)) return { brand: "Android 🤖", model: model || "Mobile Unit" };
+
+  return { brand: "PC / Laptop 💻", model: "Desktop Rig" };
+}
+
+async function fetchUserLocation() {
+  const apis = [
+    { 
+      url: 'https://ipwho.is/', 
+      parse: d => d && d.success ? { 
+        ip: d.ip, 
+        isp: d.connection?.isp || d.connection?.org || 'Unknown Provider', 
+        country: d.country, 
+        code: d.country_code, 
+        city: d.city 
+      } : null 
+    },
+    { 
+      url: 'https://ipapi.co/json/', 
+      parse: d => d && d.ip ? { 
+        ip: d.ip, 
+        isp: d.org || 'Unknown Provider', 
+        country: d.country_name, 
+        code: d.country_code, 
+        city: d.city 
+      } : null 
+    }
+  ];
+
+  for (const api of apis) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 4000);
+      const res = await fetch(api.url, { signal: controller.signal });
+      clearTimeout(timeoutId);
+      if (!res.ok) continue;
+      const data = await res.json();
+      const result = api.parse(data);
+      if (result && result.ip) return result;
+    } catch (e) {}
+  }
+  return null;
+}
+
+function parseGA4Response(raw) {
+  let countries = [];
+  let totalUsers = 0;
+
+  if (!raw) return { countries, totalUsers };
+
+  if (Array.isArray(raw.rows)) {
+    countries = raw.rows.map(r => ({
+      country: r.dimensionValues?.[0]?.value || r.country || 'Unknown',
+      visits: parseInt(r.metricValues?.[0]?.value || r.totalUsers || r.activeUsers || r.visits || 0, 10)
+    }));
+  } else if (Array.isArray(raw)) {
+    countries = raw.map(item => ({
+      country: item.country || item.countryName || item.dimensionValues?.[0]?.value || 'Unknown',
+      visits: parseInt(item.visits || item.totalUsers || item.activeUsers || item.users || item.metricValues?.[0]?.value || 0, 10)
+    }));
+  } else if (typeof raw === 'object') {
+    const listKey = Object.keys(raw).find(k => Array.isArray(raw[k]));
+    if (listKey) countries = parseGA4Response(raw[listKey]).countries;
+    totalUsers = raw.totalUsers || raw.totalVisits || raw.activeUsers || 0;
+  }
+
+  countries = countries.filter(c => c.country && c.country !== 'Unknown');
+
+  if (!totalUsers && countries.length > 0) {
+    totalUsers = countries.reduce((acc, c) => acc + c.visits, 0);
+  }
+
+  return { countries, totalUsers };
+}
+
+async function fetchRealVisitorStats() {
+  const locElement = document.getElementById('currentVisitorLoc');
+  const devBasic = getDeviceInfo();
+  const brandInfo = await getDetailedBrandInfo();
+
+  fetchUserLocation().then(loc => {
+    if (loc && loc.ip) {
+      const code = loc.code ? loc.code.toLowerCase() : '';
+      const flagImg = code ? `<img src="https://flagcdn.com/16x12/${code}.png" alt="${loc.country}">` : '📍';
+      
+      locElement.innerHTML = `
+        <div style="width:100%; color:#ff0033; font-weight:bold; font-size:0.75rem; letter-spacing:1px; margin-bottom:4px;">⚠️ TARGET DETECTED / LOGGED:</div>
+        <div style="display:flex; flex-direction:column; gap:2px; width:100%; font-size:0.8rem;">
+          <div>💻 <b style="color:var(--neon-gold);">IP:</b> ${loc.ip}</div>
+          <div>📡 <b style="color:var(--neon-blue);">ISP:</b> ${loc.isp}</div>
+          <div>📍 <b style="color:var(--neon-green);">LOC:</b> ${loc.city || 'Unknown'}, ${loc.country} ${flagImg}</div>
+          <div>📱 <b style="color:#ffcc00;">UNIT:</b> ${brandInfo.brand} <span style="color:#888;">(${brandInfo.model})</span></div>
+          <div>⚙️ <b style="color:var(--neon-blue);">SYS:</b> ${devBasic.os} | ${devBasic.browser}</div>
+        </div>
+      `;
     } else {
-      textColor = "#ff6600";
-      glowColor = "#ff660040";
+      locElement.innerHTML = `⚡ YOUR SIGNAL: <b>Carmona, PH</b> | ${brandInfo.brand} (${devBasic.os})`;
     }
-    
-    ctx.font = `bold ${fontSize}px monospace`;
-    
-    for (let i = 0; i < drops.length; i++) {
-      let text = baybayinChars[Math.floor(Math.random() * baybayinChars.length)];
-      
-      ctx.fillStyle = textColor;
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-      
-      ctx.fillStyle = glowColor;
-      ctx.fillText(text, i * fontSize - 0.5, drops[i] * fontSize - 0.5);
-      
-      if (drops[i] * fontSize > height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-      drops[i]++;
-    }
-  }
-  
-  function initMatrixRain() {
-    matrixInterval = setInterval(drawMatrix, 35);
-  }
-  
-  function updateMatrixRain() {
-    // Colors update automatically via CSS variables
-  }
-
-  window.addEventListener("resize", () => {
-    width = window.innerWidth; 
-    height = window.innerHeight;
-    canvas.width = width; 
-    canvas.height = height;
-    columns = width / fontSize;
-    drops = Array(Math.floor(columns)).fill(1);
+  }).catch(() => {
+    locElement.innerHTML = `⚡ YOUR SIGNAL: <b>Carmona, PH</b> | ${brandInfo.brand} (${devBasic.os})`;
   });
 
-  // ===== TAGALOG DATE AND TIME =====
-  const buwan = ["Enero", "Pebrero", "Marso", "Abril", "Mayo", "Hunyo", 
-                 "Hulyo", "Agosto", "Setyembre", "Oktubre", "Nobyembre", "Disyembre"];
-  const araw = ["Linggo", "Lunes", "Martes", "Miyerkules", "Huwebes", "Biyernes", "Sabado"];
-  
-  function bilangSaTagalog(num) {
-    const isahan = ["", "isa", "dalawa", "tatlo", "apat", "lima", "anim", "pito", "walo", "siyam", "sampu"];
-    const pu = ["", "labing-", "dalawampu", "tatlumpu", "apatnapu", "limampu", "animnapu", "pitumpu", "walumpu", "siyamnapu"];
-    
-    if (num <= 10) return isahan[num];
-    if (num < 20) return "labing-" + isahan[num % 10];
-    if (num % 10 === 0) return pu[Math.floor(num / 10)];
-    
-    return pu[Math.floor(num / 10)] + "'t " + isahan[num % 10];
-  }
-  
-  function getOrdinal(num) {
-    if (num === 1) return "una";
-    if (num === 2) return "ikalawa";
-    if (num === 3) return "ikatlo";
-    return "ika-" + bilangSaTagalog(num);
-  }
-  
-  function convertToTagalogTime(hours, minutes, seconds) {
-    if (hours === 12 && minutes === 0) return "tanghaling-tapat";
-    if (hours === 0 && minutes === 0) return "hatinggabi";
-    if (hours === 12 && minutes > 0) return "alas-" + bilangSaTagalog(12) + " at " + bilangSaTagalog(minutes) + " ng hapon";
-    
-    let period = hours >= 12 ? "ng hapon" : "ng umaga";
-    let tagalogHours = hours % 12;
-    if (tagalogHours === 0) tagalogHours = 12;
-    
-    let hourText = bilangSaTagalog(tagalogHours);
-    let minuteText = minutes === 0 ? "" : " at " + bilangSaTagalog(minutes);
-    let secondText = seconds === 0 ? "" : " at " + bilangSaTagalog(seconds) + " segundo";
-    
-    return `alas-${hourText}${minuteText}${secondText} ${period}`;
-  }
-  
-  function updateDateTime() {
-    const now = new Date();
-    const day = araw[now.getDay()];
-    const month = buwan[now.getMonth()];
-    const dateNum = now.getDate();
-    const year = now.getFullYear();
-    
-    const ordinalDate = getOrdinal(dateNum);
-    const dateString = `${day}, ${ordinalDate} ng ${month}, ${year}`;
-    
-    document.getElementById("dateDisplay").textContent = dateString;
-    
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
-    
-    document.getElementById("timeDisplay").textContent = convertToTagalogTime(hours, minutes, seconds);
-  }
-  
-  updateDateTime();
-  setInterval(updateDateTime, 1000);
-
-  // ===== GCASH MODAL FUNCTIONS =====
-  function openGCashModal(event) {
-    if (event) event.preventDefault();
-    
-    const modal = document.getElementById('gcashModal');
-    modal.classList.add('active');
-    
-    // Play sound
-    const clickSound = document.getElementById('clickSound');
-    clickSound.currentTime = 0;
-    clickSound.play().catch(e => console.log("Sound error:", e));
-    
-    // Add shockwave effect
-    const shockwave = document.createElement('div');
-    shockwave.className = 'terminal-shockwave';
-    shockwave.style.left = (event.clientX || window.innerWidth/2) + 'px';
-    shockwave.style.top = (event.clientY || window.innerHeight/2) + 'px';
-    shockwave.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color');
-    document.body.appendChild(shockwave);
-    
-    setTimeout(() => shockwave.remove(), 1000);
-  }
-
-  function closeModal() {
-    const modal = document.getElementById('gcashModal');
-    modal.classList.remove('active');
-    
-    // Play sound
-    const clickSound = document.getElementById('clickSound');
-    clickSound.currentTime = 0;
-    clickSound.play().catch(e => console.log("Sound error:", e));
-  }
-
-  // Close modal with ESC key
-  document.addEventListener('keydown', function(e) {
-    const modal = document.getElementById('gcashModal');
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      closeModal();
-    }
-  });
-
-  // Close modal when clicking outside
-  document.getElementById('gcashModal').addEventListener('click', function(e) {
-    if (e.target === this) {
-      closeModal();
-    }
-  });
-
-  // ===== TERMINAL SYSTEM =====
-  let terminalActive = false;
-
-  function openTerminal(event) {
-    if (terminalActive || !loadingComplete) return;
-    
-    terminalActive = true;
-    
-    // 1. Shockwave effect
-    const shockwave = document.createElement('div');
-    shockwave.className = 'terminal-shockwave';
-    shockwave.style.left = (event.clientX || window.innerWidth/2) + 'px';
-    shockwave.style.top = (event.clientY || window.innerHeight/2) + 'px';
-    shockwave.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color');
-    document.body.appendChild(shockwave);
-    
-    setTimeout(() => shockwave.remove(), 1000);
-    
-    // 2. Matrix overload
-    const overload = document.createElement('div');
-    overload.className = 'matrix-overload';
-    document.body.appendChild(overload);
-    
-    setTimeout(() => overload.remove(), 1500);
-    
-    // 3. Show terminal
-    setTimeout(() => {
-      const terminal = document.getElementById('terminalInterface');
-      const output = document.getElementById('terminalOutput');
-      const modeDisplay = document.getElementById('terminalMode');
-      
-      modeDisplay.textContent = currentMode.toUpperCase();
-      
-      terminal.classList.add('active');
-      
-      // Focus sa input
-      setTimeout(() => {
-        document.getElementById('terminalInput').focus();
-      }, 300);
-      
-      // Play sound
-      const clickSound = document.getElementById('clickSound');
-      clickSound.currentTime = 0;
-      clickSound.play().catch(e => console.log("Sound error:", e));
-    }, 500);
-  }
-
-  function closeTerminal() {
-    const terminal = document.getElementById('terminalInterface');
-    terminal.classList.remove('active');
-    
-    setTimeout(() => {
-      terminal.style.display = 'none';
-      terminalActive = false;
-    }, 300);
-  }
-
-  // Terminal commands
-  const terminalCommands = {
-    help: "Available commands: help, clear, mode, music, manifesto, genesis, time, matrix, fuel, exit",
-    clear: function() {
-      document.getElementById('terminalOutput').innerHTML = '';
-      return "Terminal cleared.";
-    },
-    mode: function() {
-      switchMode();
-      return "Switching modes...";
-    },
-    music: function() {
-      togglePlayPause();
-      return "Music control toggled.";
-    },
-    manifesto: function() {
-      showSection('manifesto');
-      return "Opening Manifesto...";
-    },
-    genesis: function() {
-      if (currentMode !== 'lucifer') {
-        activateMode('lucifer');
-        setTimeout(() => {
-          accessGenesis({preventDefault: () => {}});
-        }, 500);
-        return "Switching to LUCIFER mode to access Genesis Archives...";
-      } else {
-        accessGenesis({preventDefault: () => {}});
-        return "Accessing Genesis Archives...";
-      }
-    },
-    time: function() {
-      updateDateTime();
-      return "Time updated.";
-    },
-    matrix: function() {
-      // Speed up matrix temporarily
-      clearInterval(matrixInterval);
-      for(let i = 0; i < 20; i++) {
-        setTimeout(() => drawMatrix(), i * 10);
-      }
-      matrixInterval = setInterval(drawMatrix, 35);
-      return "Matrix overload activated!";
-    },
-    fuel: function() {
-      openGCashModal();
-      return "Accessing Frequency Fuel interface...";
-    },
-    exit: function() {
-      closeTerminal();
-      return "";
-    }
-  };
-
-  // Terminal input handling
-  document.getElementById('terminalInput').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') {
-      const command = this.value.trim().toLowerCase();
-      const output = document.getElementById('terminalOutput');
-      
-      if (command) {
-        // Add command to output
-        const cmdLine = document.createElement('p');
-        cmdLine.textContent = `> ${this.value}`;
-        output.appendChild(cmdLine);
-        
-        // Process command
-        let response;
-        if (terminalCommands[command]) {
-          if (typeof terminalCommands[command] === 'function') {
-            response = terminalCommands[command]();
-          } else {
-            response = terminalCommands[command];
-          }
-        } else {
-          response = `Command not found: ${command}`;
-        }
-        
-        if (response) {
-          const respLine = document.createElement('p');
-          respLine.textContent = response;
-          output.appendChild(respLine);
-        }
-        
-        // Scroll to bottom
-        output.scrollTop = output.scrollHeight;
-        
-        // Clear input
-        this.value = '';
-      }
-    }
-  });
-
-  // Close terminal with ESC
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && terminalActive) {
-      closeTerminal();
-    }
-  });
-
-  // ===== STATUS BAR - GEO-LOCATION & VISITOR COUNTER =====
-  async function updateStatusBar() {
-    const locationSpan = document.getElementById('locationText');
-    const counterSpan = document.getElementById('counterText');
-
-    // ----- VISITOR COUNTER (local storage fallback) -----
-    try {
-      let count = localStorage.getItem('digitalRebelsVisitCount');
-      if (!count) {
-        count = 1;
-      } else {
-        count = parseInt(count) + 1;
-      }
-      localStorage.setItem('digitalRebelsVisitCount', count);
-      counterSpan.textContent = `NODES: ${count}`;
-    } catch (e) {
-      counterSpan.textContent = 'NODES: --';
-    }
-
-    // ----- GEO-LOCATION (ipwho.is - mas reliable) -----
-    try {
-      const response = await fetch('https://ipwho.is/');
-      if (!response.ok) throw new Error('Geo fetch failed');
-      const data = await response.json();
-      const city = data.city || 'Unknown City';
-      const country = data.country || 'Unknown Country';
-      locationSpan.textContent = `LOC: ${city}, ${country}`;
-    } catch (error) {
-      console.warn('Geo-location error:', error);
-      locationSpan.textContent = 'LOC: Classified';
-    }
-  }
-
-  // ===== INITIALIZE EVERYTHING =====
-  document.addEventListener('DOMContentLoaded', function() {
-    updateDateTime();
-    checkTimeForMode();
-    initLoadingScreen();
-    initMusicPlayer();
-    initMatrixRain();
-    updateStatusBar(); // <-- bagong status bar
-    
-    // Hide Genesis section initially (only shows in Lucifer mode)
-    document.getElementById('genesisSection').style.display = 'none';
-    
-    // Key 'S' removed as requested
-  });
-
-  setInterval(checkTimeForMode, 60000);
-  // Update status bar every 30 seconds (geo might change, counter stays fine but same)
-  setInterval(updateStatusBar, 30000);
-
-  document.querySelectorAll('a[href="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => e.preventDefault());
-  });
-
-   // ===== WENDEE AI CHAT WIDGET v3.0 (DEEP SHIELD EDITION) =====
-  (function() {
-    // ===== CONFIGURATION =====
-    const WORKER_URL = 'https://shrill-term-3fce.wendeematocinos44.workers.dev';
-    // SYSTEM_PROMPT IS NOW REMOVED FROM FRONTEND! 🔒
-
-    // ===== DOM =====
-    const chatToggle = document.getElementById('chatToggle');
-    const chatWindow = document.getElementById('chatWindow');
-    const chatClose = document.getElementById('chatClose');
-    const chatMessages = document.getElementById('chatMessages');
-    const chatInput = document.getElementById('chatInput');
-    const chatSend = document.getElementById('chatSend');
-
-    // ===== STATE =====
-    let isTyping = false;
-    const messageHistory = []; // start empty, worker will handle system
-
-    // ===== TOGGLE =====
-    chatToggle.addEventListener('click', () => {
-      chatWindow.classList.toggle('open');
-      if (chatWindow.classList.contains('open')) chatInput.focus();
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000);
+    const response = await fetch(GA4_WORKER_URL, {
+      method: 'GET',
+      headers: { 'Accept': 'application/json' },
+      signal: controller.signal
     });
-
-    chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
-
-    // ===== SEND MESSAGE =====
-    async function sendMessage() {
-      const userText = chatInput.value.trim();
-      if (!userText || isTyping) return;
-
-      addMessage(userText, 'user');
-      chatInput.value = '';
-      
-      // Store user message in history for context
-      messageHistory.push({ role: 'user', content: userText });
-      
-      showTypingIndicator();
-
+    clearTimeout(timeoutId);
+    if (!response.ok) throw new Error(`HTTP Error ${response.status}`);
+    const rawData = await response.json();
+    const { countries, totalUsers } = parseGA4Response(rawData);
+    if (countries.length > 0) {
+      localStorage.setItem(CACHE_KEY, JSON.stringify({ totalUsers, countries, timestamp: Date.now() }));
+      renderVisitorData(totalUsers, countries);
+    } else {
+      throw new Error("Empty payload structure.");
+    }
+  } catch (err) {
+    const cached = localStorage.getItem(CACHE_KEY);
+    if (cached) {
       try {
-        const response = await fetch(WORKER_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ 
-            messages: messageHistory
-          })
-        });
-
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-
-        const data = await response.json();
-        
-        // Handle Groq/OpenAI response format
-        let aiReply = null;
-        if (data.choices && data.choices[0] && data.choices[0].message) {
-          aiReply = data.choices[0].message.content;
-        } else if (data.response) {
-          aiReply = data.response;
-        } else if (data.message) {
-          aiReply = data.message;
-        } else if (data.content) {
-          aiReply = data.content;
-        } else {
-          aiReply = '⚠️ Unrecognized response format.';
+        const cacheData = JSON.parse(cached);
+        if (cacheData.countries && cacheData.countries.length > 0) {
+          renderVisitorData(cacheData.totalUsers, cacheData.countries);
+          return;
         }
-
-        removeTypingIndicator();
-        addMessage(aiReply, 'ai');
-        messageHistory.push({ role: 'assistant', content: aiReply });
-
-        // Keep history manageable (last 20 messages, not counting system)
-        if (messageHistory.length > 20) messageHistory.splice(0, messageHistory.length - 20);
-
-      } catch (error) {
-        console.error('Chat error:', error);
-        removeTypingIndicator();
-        addMessage('⚠️ Signal lost. The frequency is unstable. Try again later.', 'ai');
-      }
+      } catch (e) {}
     }
+    useMockVisitorData();
+  }
+}
 
-    function addMessage(text, sender) {
-      const msgDiv = document.createElement('div');
-      msgDiv.className = `message ${sender}`;
-      msgDiv.textContent = text;
-      chatMessages.appendChild(msgDiv);
-      autoScroll();
+function renderVisitorData(totalUsers, countriesArray) {
+  const totalElem = document.getElementById('totalVisitsCount');
+  const container = document.getElementById('topCountriesList');
+  if (totalElem) totalElem.textContent = `TOTAL USERS: ${totalUsers.toLocaleString()}`;
+  if (container) {
+    container.innerHTML = '';
+    const sorted = [...countriesArray].sort((a, b) => b.visits - a.visits);
+    if (sorted.length === 0) {
+      container.innerHTML = '<li style="color:#888; padding:8px; text-align:center;">No traffic data recorded yet</li>';
+      return;
     }
-
-    function showTypingIndicator() {
-      isTyping = true;
-      const typingDiv = document.createElement('div');
-      typingDiv.className = 'message ai typing';
-      typingDiv.id = 'typingIndicator';
-      typingDiv.textContent = 'Wendee AI is tuning the frequency...';
-      chatMessages.appendChild(typingDiv);
-      autoScroll();
-    }
-
-    function removeTypingIndicator() {
-      isTyping = false;
-      const indicator = document.getElementById('typingIndicator');
-      if (indicator) indicator.remove();
-    }
-
-    function autoScroll() {
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    // ===== EVENT LISTENERS =====
-    chatSend.addEventListener('click', sendMessage);
-    chatInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        sendMessage();
-      }
+    sorted.forEach((item, idx) => {
+      const li = document.createElement('li');
+      li.className = 'country-item';
+      const codeMatch = item.code || getCountryCodeByName(item.country);
+      const flagHtml = codeMatch ? `<img src="https://flagcdn.com/16x12/${codeMatch.toLowerCase()}.png" style="margin-right:6px;" alt="">` : '🌐';
+      li.innerHTML = `
+        <span class="country-rank">#${idx + 1}</span>
+        <span class="country-name">${flagHtml} ${item.country}</span>
+        <span class="country-count">${item.visits.toLocaleString()}</span>
+      `;
+      container.appendChild(li);
     });
+  }
+}
 
-    // Close when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!chatWindow.contains(e.target) && !chatToggle.contains(e.target) && chatWindow.classList.contains('open')) {
-        chatWindow.classList.remove('open');
-      }
-    });
+function useMockVisitorData() {
+  const mockData = [
+    { country: 'Philippines', code: 'ph', visits: 1240 },
+    { country: 'United States', code: 'us', visits: 485 },
+    { country: 'Sweden', code: 'se', visits: 210 },
+    { country: 'Germany', code: 'de', visits: 175 },
+    { country: 'United Kingdom', code: 'gb', visits: 130 }
+  ];
+  renderVisitorData(2240, mockData);
+}
 
-    chatWindow.addEventListener('click', (e) => e.stopPropagation());
+function getCountryCodeByName(name) {
+  const mapping = {
+    'Philippines': 'ph', 'United States': 'us', 'Sweden': 'se', 'Germany': 'de',
+    'United Kingdom': 'gb', 'Japan': 'jp', 'Canada': 'ca', 'Australia': 'au'
+  };
+  return mapping[name] || '';
+}
 
-    // ✅ FIXED: Add initial message to history ONLY (UI is already in HTML)
-    messageHistory.push({ role: 'assistant', content: 'I am the 7th Apostle. Frequency 9.9999. Ask, and salt logic shall answer.' });
-  })();
+// ===== INITIALIZE =====
+loadModePlaylist('normal');
+updateVisualArts('normal');
+fetchRealVisitorStats();
+setInterval(fetchRealVisitorStats, 300000);
 </script>
 </body>
 </html>
