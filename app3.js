@@ -1,1 +1,429 @@
-function _0x2345(_0x3ef09e,_0x339803){_0x3ef09e=_0x3ef09e-0x178;const _0x23e8d7=_0x23e8();let _0x2345ff=_0x23e8d7[_0x3ef09e];return _0x2345ff;}function _0x23e8(){const _0x5c6b48=['6847323uifkxB','57483kzMzAq','click','toString','ctrlKey','size','<i\x20class=\x22fas\x20fa-check\x22></i>\x20Copied!','csProcessBtn','Error','textContent','appendChild','!function(){','Walang\x20output\x20na\x20ida-download.','...','📋\x20Output\x20copied\x20to\x20clipboard!','key','background','Processing\x20Error:','slice','message','.divine-tool-card','248230tjxgtB','(function','0\x20B','6UDnlrx','color','revokeObjectURL','processCodeShield','Cleared','#000','divine-tool-card','tool-codeshield','csCopyBtn','!function','csOriginalSize','max','replace','readyState','Ready.\x20Paste\x20your\x20code\x20and\x20click\x20Process\x20or\x20use\x20Ctrl+Enter.','addEventListener','CSS\x20Minifier\x20mode','input','Waiting\x20for\x20input...','catch','csModeCss','5883035skJeiJ','var(--neon-green)','error','css','minified.','csStatus','#fff','charCodeAt','loading','href','csOutput','select','div','🛡️\x20Container\x20found,\x20rendering\x20UI...','No\x20input\x20to\x20process.','value','preventDefault','writeText','1412103wDBIfP','className','csProcessedSize','querySelector','⚠️\x20Error\x20processing:\x20','trim','createObjectURL','createElement','var(--neon-gold)','style','JS\x20Obfuscation\x20Error:','includes','DOMContentLoaded','46QPNqTS','warn','var(--neon-red)','csDownloadBtn','metaKey','❌\x20Error:\x20','#$1$2$3','711TWIZIj','csCompression','csInputStats','csClearBtn','CSS\x20Minified','startsWith','csInput','JS\x20Obfuscator\x20mode','#csInput','Walang\x20output\x20na\x20kopyahin.','12534504qstjRk','2860112pTwzfi','🛡️\x20Container\x20not\x20found,\x20will\x20retry\x20on\x20DOM\x20ready...','csOutputStats','🛡️\x20Failed\x20to\x20initialize\x20Code\x20Shield\x20after\x20','🛡️\x20Code\x20Shield\x20container\x20not\x20found.\x20Will\x20retry...','pow','🛡️\x20Retrying\x20on\x20window\x20load...','CSS\x20Minification\x20Error:','log','minifyCSS','borderColor','copy','round','var(--neon-cyan)','length','JS\x20Obfuscated','clipboard','codeshield-container','🛡️\x20Init\x20attempt\x20','getElementById','innerHTML'];_0x23e8=function(){return _0x5c6b48;};return _0x23e8();}(function(_0x4b68e0,_0x466c36){const _0x5d276a=_0x2345,_0xdee526=_0x4b68e0();while(!![]){try{const _0x2a8e37=parseInt(_0x5d276a(0x1c5))/0x1+-parseInt(_0x5d276a(0x1d2))/0x2*(parseInt(_0x5d276a(0x187))/0x3)+-parseInt(_0x5d276a(0x1e4))/0x4+parseInt(_0x5d276a(0x1b3))/0x5+parseInt(_0x5d276a(0x19e))/0x6*(-parseInt(_0x5d276a(0x186))/0x7)+-parseInt(_0x5d276a(0x1e3))/0x8+parseInt(_0x5d276a(0x1d9))/0x9*(parseInt(_0x5d276a(0x19b))/0xa);if(_0x2a8e37===_0x466c36)break;else _0xdee526['push'](_0xdee526['shift']());}catch(_0x15298e){_0xdee526['push'](_0xdee526['shift']());}}}(_0x23e8,0xcf462),(function(){'use strict';const _0xda8b97=_0x2345;function _0x18353c(){const _0x350ce7=_0x2345;console['log']('🛡️\x20Code\x20Shield\x20Engine\x20initializing...'),!_0x5f1998()&&(console['log'](_0x350ce7(0x1e5)),document[_0x350ce7(0x1ab)]==='loading'?document[_0x350ce7(0x1ad)](_0x350ce7(0x1d1),function _0x5a610a(){_0x5f1998();}):setTimeout(_0x5f1998,0x64));}function _0x5f1998(){const _0x571e0a=_0x2345;let _0x230ca0=document[_0x571e0a(0x184)]('codeshield-container');if(!_0x230ca0){const _0x4a6d8c=document[_0x571e0a(0x184)](_0x571e0a(0x1a5));_0x4a6d8c&&(_0x230ca0=_0x4a6d8c[_0x571e0a(0x1c8)](_0x571e0a(0x19a)),!_0x230ca0&&(_0x230ca0=document[_0x571e0a(0x1cc)](_0x571e0a(0x1bf)),_0x230ca0[_0x571e0a(0x1c6)]=_0x571e0a(0x1a4),_0x230ca0['id']=_0x571e0a(0x182),_0x4a6d8c[_0x571e0a(0x190)](_0x230ca0),console[_0x571e0a(0x179)]('🛡️\x20Created\x20container\x20inside\x20panel.')));}if(!_0x230ca0)return console[_0x571e0a(0x1d3)](_0x571e0a(0x1e8)),![];return console['log'](_0x571e0a(0x1c0)),_0x4a81a1(_0x230ca0),_0x1d42bd(),!![];}function _0x4a81a1(_0x49d09d){const _0x52da4a=_0x2345;_0x49d09d[_0x52da4a(0x185)]='\x0a\x20\x20\x20\x20\x20\x20<h3><i\x20class=\x22fas\x20fa-shield-halved\x22></i>\x20Code\x20Shield\x20<span\x20class=\x22badge\x22>CSS\x20Minifier</span>\x20<span\x20class=\x22badge\x22\x20style=\x22background:var(--neon-red);\x22>JS\x20Obfuscator</span></h3>\x0a\x20\x20\x20\x20\x20\x20<p\x20class=\x22tool-desc\x22\x20style=\x22border-left-color:var(--neon-gold);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<b>⚡\x20CSS\x20Minifier:</b>\x20Bumabawas\x20ng\x20whitespaces,\x20linebreaks,\x20comments,\x20at\x20nag-o-optimize\x20ng\x20colors.<br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<b>🔒\x20JS\x20Obfuscator:</b>\x20Nag-e-encode\x20ng\x20strings\x20sa\x20Hex,\x20minify\x20lines,\x20at\x20nag-wrap\x20sa\x20IIFE\x20para\x20hindi\x20agad\x20mabasa\x20ang\x20logic.\x0a\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:flex;\x20gap:10px;\x20flex-wrap:wrap;\x20margin-bottom:12px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22divine-btn\x22\x20id=\x22csModeCss\x22\x20style=\x22background:var(--neon-blue);\x22><i\x20class=\x22fas\x20fa-css3\x22></i>\x20CSS\x20Minifier</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22divine-btn\x22\x20id=\x22csModeJs\x22\x20style=\x22background:var(--neon-red);\x22><i\x20class=\x22fas\x20fa-js\x22></i>\x20JS\x20Obfuscator</button>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:grid;\x20grid-template-columns:1fr\x201fr;\x20gap:15px;\x20min-height:300px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:flex;\x20flex-direction:column;\x20gap:6px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22color:#88aabb;\x20font-size:0.8rem;\x20display:flex;\x20justify-content:space-between;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span><i\x20class=\x22fas\x20fa-code\x22></i>\x20Input</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20id=\x22csInputStats\x22\x20style=\x22color:#666;\x20font-size:0.7rem;\x22>0\x20chars</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<textarea\x20id=\x22csInput\x22\x20style=\x22flex:1;\x20background:rgba(0,0,0,0.7);\x20border:1px\x20solid\x20var(--border-color);\x20border-radius:6px;\x20color:#d0e5e0;\x20font-family:\x27Share\x20Tech\x20Mono\x27,monospace;\x20padding:12px;\x20font-size:0.8rem;\x20resize:vertical;\x20min-height:300px;\x20line-height:1.6;\x20tab-size:2;\x22\x20placeholder=\x22Paste\x20your\x20CSS\x20or\x20JavaScript\x20here...\x22></textarea>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:flex;\x20flex-direction:column;\x20gap:6px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22color:#88aabb;\x20font-size:0.8rem;\x20display:flex;\x20justify-content:space-between;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span><i\x20class=\x22fas\x20fa-shield\x22></i>\x20Output</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20id=\x22csOutputStats\x22\x20style=\x22color:#666;\x20font-size:0.7rem;\x22>0\x20chars</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<textarea\x20id=\x22csOutput\x22\x20style=\x22flex:1;\x20background:rgba(0,0,0,0.7);\x20border:1px\x20solid\x20var(--neon-green);\x20border-radius:6px;\x20color:var(--neon-green);\x20font-family:\x27Share\x20Tech\x20Mono\x27,monospace;\x20padding:12px;\x20font-size:0.8rem;\x20resize:vertical;\x20min-height:300px;\x20line-height:1.6;\x20tab-size:2;\x22\x20readonly\x20placeholder=\x22Processed\x20output\x20will\x20appear\x20here...\x22></textarea>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:flex;\x20gap:12px;\x20flex-wrap:wrap;\x20margin-top:12px;\x20align-items:center;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22divine-btn\x22\x20id=\x22csProcessBtn\x22><i\x20class=\x22fas\x20fa-bolt\x22></i>\x20Process</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22divine-btn\x22\x20id=\x22csCopyBtn\x22\x20style=\x22background:var(--neon-blue);\x22><i\x20class=\x22fas\x20fa-copy\x22></i>\x20Copy\x20Output</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22divine-btn\x22\x20id=\x22csDownloadBtn\x22\x20style=\x22background:var(--neon-gold);\x20color:#000;\x22><i\x20class=\x22fas\x20fa-download\x22></i>\x20Download\x20.min</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22divine-btn\x22\x20id=\x22csClearBtn\x22\x20style=\x22background:#666;\x22><i\x20class=\x22fas\x20fa-trash\x22></i>\x20Clear</button>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:grid;\x20grid-template-columns:repeat(4,\x201fr);\x20gap:10px;\x20margin-top:12px;\x20background:rgba(0,0,0,0.3);\x20padding:12px\x2016px;\x20border-radius:6px;\x20border:1px\x20solid\x20var(--border-color);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22text-align:center;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22color:#666;\x20font-size:0.65rem;\x22>ORIGINAL</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22csOriginalSize\x22\x20style=\x22color:#fff;\x20font-size:1rem;\x20font-family:\x27Share\x20Tech\x20Mono\x27,monospace;\x22>0\x20B</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22text-align:center;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22color:#666;\x20font-size:0.65rem;\x22>PROCESSED</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22csProcessedSize\x22\x20style=\x22color:var(--neon-green);\x20font-size:1rem;\x20font-family:\x27Share\x20Tech\x20Mono\x27,monospace;\x22>0\x20B</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22text-align:center;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22color:#666;\x20font-size:0.65rem;\x22>COMPRESSION</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22csCompression\x22\x20style=\x22color:var(--neon-gold);\x20font-size:1rem;\x20font-family:\x27Share\x20Tech\x20Mono\x27,monospace;\x22>0%</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22text-align:center;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22color:#666;\x20font-size:0.65rem;\x22>STATUS</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22csStatus\x22\x20style=\x22color:var(--neon-cyan);\x20font-size:0.8rem;\x22>Ready</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20';}let _0x4275b2='css';function _0x1d42bd(){const _0x3547fe=_0x2345,_0x2b3ab5=document[_0x3547fe(0x184)](_0x3547fe(0x1b2)),_0x32bae1=document[_0x3547fe(0x184)]('csModeJs'),_0x55a4f2=document[_0x3547fe(0x184)](_0x3547fe(0x18d)),_0x53a987=document[_0x3547fe(0x184)](_0x3547fe(0x1a6)),_0x3bc410=document[_0x3547fe(0x184)](_0x3547fe(0x1d5)),_0x416965=document[_0x3547fe(0x184)](_0x3547fe(0x1dc)),_0x14ce25=document['getElementById'](_0x3547fe(0x1df)),_0x219306=document[_0x3547fe(0x184)]('csOutput');_0x2b3ab5&&_0x2b3ab5[_0x3547fe(0x1ad)]('click',function(){const _0x3d4947=_0x3547fe;_0x4275b2=_0x3d4947(0x1b6),this['style']['background']='var(--neon-blue)',this[_0x3d4947(0x1ce)][_0x3d4947(0x19f)]='#000';_0x32bae1&&(_0x32bae1[_0x3d4947(0x1ce)][_0x3d4947(0x196)]=_0x3d4947(0x1d4),_0x32bae1[_0x3d4947(0x1ce)][_0x3d4947(0x19f)]=_0x3d4947(0x1b9));_0x3fbae7(_0x3d4947(0x1ae));if(_0x14ce25&&_0x14ce25[_0x3d4947(0x1c2)][_0x3d4947(0x1ca)]())_0xe7d5b4();});_0x32bae1&&_0x32bae1['addEventListener']('click',function(){const _0x4da497=_0x3547fe;_0x4275b2='js',this[_0x4da497(0x1ce)][_0x4da497(0x196)]=_0x4da497(0x1d4),this[_0x4da497(0x1ce)][_0x4da497(0x19f)]=_0x4da497(0x1b9);_0x2b3ab5&&(_0x2b3ab5['style']['background']='',_0x2b3ab5['style'][_0x4da497(0x19f)]=_0x4da497(0x1a3));_0x3fbae7(_0x4da497(0x1e0));if(_0x14ce25&&_0x14ce25[_0x4da497(0x1c2)]['trim']())_0xe7d5b4();});if(_0x55a4f2)_0x55a4f2[_0x3547fe(0x1ad)](_0x3547fe(0x188),_0xe7d5b4);_0x53a987&&_0x53a987['addEventListener'](_0x3547fe(0x188),function(){const _0x151dfc=_0x3547fe;if(!_0x219306||!_0x219306[_0x151dfc(0x1c2)]){alert(_0x151dfc(0x1e2));return;}navigator[_0x151dfc(0x181)][_0x151dfc(0x1c4)](_0x219306[_0x151dfc(0x1c2)])['then'](()=>{const _0x1cd00b=_0x151dfc,_0x42c5b9=this[_0x1cd00b(0x185)];this[_0x1cd00b(0x185)]=_0x1cd00b(0x18c),this[_0x1cd00b(0x1ce)][_0x1cd00b(0x196)]=_0x1cd00b(0x1b4),setTimeout(()=>{const _0x272481=_0x1cd00b;this[_0x272481(0x185)]=_0x42c5b9,this[_0x272481(0x1ce)]['background']='var(--neon-blue)';},0x7d0);})[_0x151dfc(0x1b1)](()=>{const _0x156e94=_0x151dfc;_0x219306[_0x156e94(0x1be)](),document['execCommand'](_0x156e94(0x17c)),alert(_0x156e94(0x194));});});_0x3bc410&&_0x3bc410[_0x3547fe(0x1ad)](_0x3547fe(0x188),function(){const _0x4ee292=_0x3547fe;if(!_0x219306||!_0x219306[_0x4ee292(0x1c2)]){alert(_0x4ee292(0x192));return;}const _0x2a00d6=_0x4275b2==='css'?'css':'js',_0x4c985f=_0x4ee292(0x1b7)+_0x2a00d6,_0xdde5e3=new Blob([_0x219306['value']],{'type':'text/plain;charset=utf-8'}),_0x58bf5d=URL[_0x4ee292(0x1cb)](_0xdde5e3),_0x4f06db=document[_0x4ee292(0x1cc)]('a');_0x4f06db[_0x4ee292(0x1bc)]=_0x58bf5d,_0x4f06db['download']=_0x4c985f,document['body'][_0x4ee292(0x190)](_0x4f06db),_0x4f06db[_0x4ee292(0x188)](),document['body']['removeChild'](_0x4f06db),URL[_0x4ee292(0x1a0)](_0x58bf5d),_0x3fbae7('Downloaded\x20'+_0x4c985f);});_0x416965&&_0x416965[_0x3547fe(0x1ad)](_0x3547fe(0x188),function(){const _0xc9771a=_0x3547fe;if(_0x14ce25)_0x14ce25[_0xc9771a(0x1c2)]='';if(_0x219306)_0x219306['value']='';_0x1bcf51('',''),_0x3fbae7(_0xc9771a(0x1a2));const _0x30941b=document[_0xc9771a(0x184)](_0xc9771a(0x1a8)),_0x18c55d=document[_0xc9771a(0x184)](_0xc9771a(0x1c7)),_0x5016c1=document[_0xc9771a(0x184)](_0xc9771a(0x1da));if(_0x30941b)_0x30941b[_0xc9771a(0x18f)]='0\x20B';if(_0x18c55d)_0x18c55d[_0xc9771a(0x18f)]=_0xc9771a(0x19d);if(_0x5016c1)_0x5016c1[_0xc9771a(0x18f)]='0%';});let _0x59e34e;_0x14ce25&&(_0x14ce25[_0x3547fe(0x1ad)](_0x3547fe(0x1af),function(){clearTimeout(_0x59e34e),_0x59e34e=setTimeout(()=>{const _0x33bfe6=_0x2345;if(this[_0x33bfe6(0x1c2)][_0x33bfe6(0x1ca)]())_0xe7d5b4();else{if(_0x219306)_0x219306['value']='';_0x1bcf51('',''),_0x3fbae7(_0x33bfe6(0x1b0));}},0x258);}),_0x14ce25['addEventListener']('keydown',function(_0x46234f){const _0x3c0707=_0x3547fe;(_0x46234f[_0x3c0707(0x18a)]||_0x46234f[_0x3c0707(0x1d6)])&&_0x46234f[_0x3c0707(0x195)]==='Enter'&&(_0x46234f[_0x3c0707(0x1c3)](),_0xe7d5b4());})),_0x3fbae7(_0x3547fe(0x1ac));}function _0x21d4f9(_0x248443){const _0x110191=_0x2345;try{let _0x2e2665=_0x248443;return _0x2e2665=_0x2e2665[_0x110191(0x1aa)](/\/\*[\s\S]*?\*\//g,''),_0x2e2665=_0x2e2665[_0x110191(0x1aa)](/\s*([{}:;,])\s*/g,'$1'),_0x2e2665=_0x2e2665['replace'](/\s{2,}/g,'\x20'),_0x2e2665=_0x2e2665['replace'](/\n/g,''),_0x2e2665=_0x2e2665[_0x110191(0x1aa)](/\r/g,''),_0x2e2665=_0x2e2665['replace'](/;}/g,'}'),_0x2e2665=_0x2e2665['replace'](/#([a-f0-9])\1([a-f0-9])\2([a-f0-9])\3/gi,_0x110191(0x1d8)),_0x2e2665=_0x2e2665[_0x110191(0x1aa)](/[^{}]+{}\s*/g,''),_0x2e2665['trim']();}catch(_0x2d2945){return console[_0x110191(0x1b5)](_0x110191(0x178),_0x2d2945),_0x248443;}}function _0x38653a(_0x5ecee2){const _0x575cb9=_0x2345;try{let _0x26ec0e=_0x5ecee2;_0x26ec0e=_0x26ec0e[_0x575cb9(0x1aa)](/\/\/.*$/gm,''),_0x26ec0e=_0x26ec0e['replace'](/\/\*[\s\S]*?\*\//g,''),_0x26ec0e=_0x26ec0e[_0x575cb9(0x1aa)](/\s{2,}/g,'\x20'),_0x26ec0e=_0x26ec0e[_0x575cb9(0x1aa)](/\n/g,''),_0x26ec0e=_0x26ec0e[_0x575cb9(0x1aa)](/\r/g,''),_0x26ec0e=_0x26ec0e[_0x575cb9(0x1aa)](/;\s*/g,';'),_0x26ec0e=_0x26ec0e[_0x575cb9(0x1aa)](/{\s*/g,'{'),_0x26ec0e=_0x26ec0e[_0x575cb9(0x1aa)](/}\s*/g,'}'),_0x26ec0e=_0x26ec0e[_0x575cb9(0x1aa)](/\(\s*/g,'('),_0x26ec0e=_0x26ec0e[_0x575cb9(0x1aa)](/\s*\)/g,')'),_0x26ec0e=_0x26ec0e[_0x575cb9(0x1aa)](/,\s*/g,','),_0x26ec0e=_0x26ec0e[_0x575cb9(0x1aa)](/:\s*/g,':');const _0x1becab=/("(?:[^"\\]|\\.)*")|('(?:[^'\\]|\\.)*')/g;_0x26ec0e=_0x26ec0e[_0x575cb9(0x1aa)](_0x1becab,function(_0x4bb38d){const _0x1f1432=_0x575cb9,_0xe4e82b=_0x4bb38d[_0x1f1432(0x198)](0x1,-0x1);let _0x23aaff='';for(let _0x28e22a=0x0;_0x28e22a<_0xe4e82b['length'];_0x28e22a++){_0x23aaff+='\x5cx'+_0xe4e82b[_0x1f1432(0x1ba)](_0x28e22a)[_0x1f1432(0x189)](0x10)['padStart'](0x2,'0');}return'\x22'+_0x23aaff+'\x22';}),_0x26ec0e=_0x26ec0e[_0x575cb9(0x1aa)](/;}/g,'}');const _0x2a75a9=_0x26ec0e['trim']();return _0x2a75a9[_0x575cb9(0x17f)]>0x0&&!_0x2a75a9[_0x575cb9(0x1de)](_0x575cb9(0x19c))&&!_0x2a75a9[_0x575cb9(0x1de)](_0x575cb9(0x1a7))&&_0x2a75a9['length']>0xa&&(_0x26ec0e=_0x575cb9(0x191)+_0x26ec0e+'}();'),_0x26ec0e;}catch(_0x25c037){return console[_0x575cb9(0x1b5)](_0x575cb9(0x1cf),_0x25c037),_0x5ecee2;}}function _0xe7d5b4(){const _0x260271=_0x2345,_0x4479f9=document['getElementById'](_0x260271(0x1df)),_0x341514=document[_0x260271(0x184)](_0x260271(0x1bd));if(!_0x4479f9||!_0x341514)return;const _0x312af6=_0x4479f9[_0x260271(0x1c2)];if(!_0x312af6[_0x260271(0x1ca)]()){_0x341514[_0x260271(0x1c2)]='',_0x1bcf51('',''),_0x3fbae7(_0x260271(0x1c1));return;}let _0x11421b='',_0x14d485='';try{_0x4275b2==='css'?(_0x11421b=_0x21d4f9(_0x312af6),_0x14d485=_0x260271(0x1dd)):(_0x11421b=_0x38653a(_0x312af6),_0x14d485=_0x260271(0x180)),_0x341514[_0x260271(0x1c2)]=_0x11421b,_0x1bcf51(_0x312af6,_0x11421b),_0x3fbae7('✅\x20'+_0x14d485+'\x20successfully!'),_0x341514[_0x260271(0x1ce)][_0x260271(0x17b)]=_0x260271(0x1cd),setTimeout(()=>{const _0x24397e=_0x260271;_0x341514['style'][_0x24397e(0x17b)]=_0x24397e(0x1b4);},0x1f4);}catch(_0x15b7ab){_0x341514[_0x260271(0x1c2)]=_0x260271(0x1c9)+_0x15b7ab[_0x260271(0x199)],_0x3fbae7(_0x260271(0x1d7)+_0x15b7ab[_0x260271(0x199)]),console['error'](_0x260271(0x197),_0x15b7ab);}}function _0x1bcf51(_0x34bc41,_0x309b59){const _0xe4f7ed=_0x2345,_0x1e1a0e=document['getElementById'](_0xe4f7ed(0x1a8)),_0x2afaf8=document[_0xe4f7ed(0x184)](_0xe4f7ed(0x1c7)),_0x1351c7=document['getElementById'](_0xe4f7ed(0x1da)),_0x1e7dde=document[_0xe4f7ed(0x184)](_0xe4f7ed(0x1db)),_0x516015=document[_0xe4f7ed(0x184)](_0xe4f7ed(0x1e6)),_0x415b15=new Blob([_0x34bc41])[_0xe4f7ed(0x18b)],_0x1efbf0=new Blob([_0x309b59])['size'];if(_0x1e1a0e)_0x1e1a0e['textContent']=_0x2c085c(_0x415b15);if(_0x2afaf8)_0x2afaf8[_0xe4f7ed(0x18f)]=_0x2c085c(_0x1efbf0);if(_0x1351c7){if(_0x415b15>0x0){const _0x3021e6=(_0x415b15-_0x1efbf0)/_0x415b15*0x64,_0x54dd0b=Math[_0xe4f7ed(0x1a9)](0x0,Math[_0xe4f7ed(0x17d)](_0x3021e6));_0x1351c7[_0xe4f7ed(0x18f)]=_0x54dd0b+'%',_0x1351c7[_0xe4f7ed(0x1ce)]['color']=_0x54dd0b>0x32?_0xe4f7ed(0x1b4):_0x54dd0b>0x14?_0xe4f7ed(0x1cd):_0xe4f7ed(0x1d4);}else _0x1351c7[_0xe4f7ed(0x18f)]='0%';}if(_0x1e7dde)_0x1e7dde[_0xe4f7ed(0x18f)]=_0x415b15+'\x20B';if(_0x516015)_0x516015[_0xe4f7ed(0x18f)]=_0x1efbf0+'\x20B';}function _0x2c085c(_0x3e6521){const _0x1ed447=_0x2345;if(_0x3e6521===0x0)return _0x1ed447(0x19d);const _0x52e830=0x400,_0x48df84=['B','KB','MB','GB'],_0x57a035=Math['floor'](Math['log'](_0x3e6521)/Math[_0x1ed447(0x179)](_0x52e830));return parseFloat((_0x3e6521/Math[_0x1ed447(0x1e9)](_0x52e830,_0x57a035))['toFixed'](0x1))+'\x20'+_0x48df84[_0x57a035];}function _0x3fbae7(_0x46a8a6){const _0x278b95=_0x2345,_0x546d51=document['getElementById'](_0x278b95(0x1b8));_0x546d51&&(_0x546d51[_0x278b95(0x18f)]=_0x46a8a6,_0x546d51[_0x278b95(0x1ce)][_0x278b95(0x19f)]=_0x46a8a6['includes']('✅')||_0x46a8a6[_0x278b95(0x1d0)]('Ready')?_0x278b95(0x1b4):_0x46a8a6[_0x278b95(0x1d0)]('❌')||_0x46a8a6[_0x278b95(0x1d0)](_0x278b95(0x18e))?_0x278b95(0x1d4):_0x278b95(0x17e));}window[_0xda8b97(0x1a1)]=_0xe7d5b4,window[_0xda8b97(0x17a)]=_0x21d4f9,window['obfuscateJS']=_0x38653a,console[_0xda8b97(0x179)]('🛡️\x20Code\x20Shield\x20script\x20loaded.');let _0x107251=0x0;const _0x1fabe2=0xa;function _0x11dafc(){const _0x4e4add=_0xda8b97;_0x107251++,console[_0x4e4add(0x179)](_0x4e4add(0x183)+_0x107251+_0x4e4add(0x193));if(_0x5f1998()){console[_0x4e4add(0x179)]('🛡️\x20Code\x20Shield\x20initialized\x20successfully!');return;}_0x107251<_0x1fabe2?setTimeout(_0x11dafc,0xc8):console[_0x4e4add(0x1d3)](_0x4e4add(0x1e7)+_0x1fabe2+'\x20attempts.');}document[_0xda8b97(0x1ab)]===_0xda8b97(0x1bb)?document['addEventListener'](_0xda8b97(0x1d1),_0x11dafc):_0x11dafc(),window[_0xda8b97(0x1ad)]('load',function(){const _0x8d3568=_0xda8b97;_0x107251>0x0&&!document['getElementById'](_0x8d3568(0x182))?.[_0x8d3568(0x1c8)](_0x8d3568(0x1e1))&&(console[_0x8d3568(0x179)](_0x8d3568(0x1ea)),_0x5f1998());});}()));
+// ================================================================
+// app3.js – DIVINE TOOLS (PART 3)
+// Code Shield: CSS Minifier & JS Obfuscator
+// ================================================================
+
+(function() {
+  'use strict';
+
+  // ================================================================
+  // 1. INITIALIZATION – ROBUST VERSION
+  // ================================================================
+
+  function initApp3() {
+    console.log('🛡️ Code Shield Engine initializing...');
+    // Try to setup immediately
+    if (!setupCodeShield()) {
+      // If failed, try again after DOM is ready
+      console.log('🛡️ Container not found, will retry on DOM ready...');
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function retry() {
+          setupCodeShield();
+        });
+      } else {
+        // If DOM is already loaded, try again with a small delay
+        setTimeout(setupCodeShield, 100);
+      }
+    }
+  }
+
+  // ================================================================
+  // 2. SETUP CODE SHIELD – WITH FALLBACKS
+  // ================================================================
+
+  function setupCodeShield() {
+    // Try multiple ways to find the container
+    let container = document.getElementById('codeshield-container');
+    
+    // If not found, try to find the panel and look inside
+    if (!container) {
+      const panel = document.getElementById('tool-codeshield');
+      if (panel) {
+        container = panel.querySelector('.divine-tool-card');
+        // If still not found, create the container inside the panel
+        if (!container) {
+          container = document.createElement('div');
+          container.className = 'divine-tool-card';
+          container.id = 'codeshield-container';
+          panel.appendChild(container);
+          console.log('🛡️ Created container inside panel.');
+        }
+      }
+    }
+
+    if (!container) {
+      console.warn('🛡️ Code Shield container not found. Will retry...');
+      return false;
+    }
+
+    console.log('🛡️ Container found, rendering UI...');
+    renderCodeShieldUI(container);
+    bindCodeShieldEvents();
+    return true;
+  }
+
+  // ================================================================
+  // 3. RENDER UI
+  // ================================================================
+
+  function renderCodeShieldUI(container) {
+    container.innerHTML = `
+      <h3><i class="fas fa-shield-halved"></i> Code Shield <span class="badge">CSS Minifier</span> <span class="badge" style="background:var(--neon-red);">JS Obfuscator</span></h3>
+      <p class="tool-desc" style="border-left-color:var(--neon-gold);">
+        <b>⚡ CSS Minifier:</b> Bumabawas ng whitespaces, linebreaks, comments, at nag-o-optimize ng colors.<br>
+        <b>🔒 JS Obfuscator:</b> Nag-e-encode ng strings sa Hex, minify lines, at nag-wrap sa IIFE para hindi agad mabasa ang logic.
+      </p>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+        <button class="divine-btn" id="csModeCss" style="background:var(--neon-blue);"><i class="fas fa-css3"></i> CSS Minifier</button>
+        <button class="divine-btn" id="csModeJs" style="background:var(--neon-red);"><i class="fas fa-js"></i> JS Obfuscator</button>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; min-height:300px;">
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div style="color:#88aabb; font-size:0.8rem; display:flex; justify-content:space-between;">
+            <span><i class="fas fa-code"></i> Input</span>
+            <span id="csInputStats" style="color:#666; font-size:0.7rem;">0 chars</span>
+          </div>
+          <textarea id="csInput" style="flex:1; background:rgba(0,0,0,0.7); border:1px solid var(--border-color); border-radius:6px; color:#d0e5e0; font-family:'Share Tech Mono',monospace; padding:12px; font-size:0.8rem; resize:vertical; min-height:300px; line-height:1.6; tab-size:2;" placeholder="Paste your CSS or JavaScript here..."></textarea>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div style="color:#88aabb; font-size:0.8rem; display:flex; justify-content:space-between;">
+            <span><i class="fas fa-shield"></i> Output</span>
+            <span id="csOutputStats" style="color:#666; font-size:0.7rem;">0 chars</span>
+          </div>
+          <textarea id="csOutput" style="flex:1; background:rgba(0,0,0,0.7); border:1px solid var(--neon-green); border-radius:6px; color:var(--neon-green); font-family:'Share Tech Mono',monospace; padding:12px; font-size:0.8rem; resize:vertical; min-height:300px; line-height:1.6; tab-size:2;" readonly placeholder="Processed output will appear here..."></textarea>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; align-items:center;">
+        <button class="divine-btn" id="csProcessBtn"><i class="fas fa-bolt"></i> Process</button>
+        <button class="divine-btn" id="csCopyBtn" style="background:var(--neon-blue);"><i class="fas fa-copy"></i> Copy Output</button>
+        <button class="divine-btn" id="csDownloadBtn" style="background:var(--neon-gold); color:#000;"><i class="fas fa-download"></i> Download .min</button>
+        <button class="divine-btn" id="csClearBtn" style="background:#666;"><i class="fas fa-trash"></i> Clear</button>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; margin-top:12px; background:rgba(0,0,0,0.3); padding:12px 16px; border-radius:6px; border:1px solid var(--border-color);">
+        <div style="text-align:center;">
+          <div style="color:#666; font-size:0.65rem;">ORIGINAL</div>
+          <div id="csOriginalSize" style="color:#fff; font-size:1rem; font-family:'Share Tech Mono',monospace;">0 B</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="color:#666; font-size:0.65rem;">PROCESSED</div>
+          <div id="csProcessedSize" style="color:var(--neon-green); font-size:1rem; font-family:'Share Tech Mono',monospace;">0 B</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="color:#666; font-size:0.65rem;">COMPRESSION</div>
+          <div id="csCompression" style="color:var(--neon-gold); font-size:1rem; font-family:'Share Tech Mono',monospace;">0%</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="color:#666; font-size:0.65rem;">STATUS</div>
+          <div id="csStatus" style="color:var(--neon-cyan); font-size:0.8rem;">Ready</div>
+        </div>
+      </div>
+    `;
+  }
+
+  // ================================================================
+  // 4. BIND EVENTS – WITH NULL CHECKS
+  // ================================================================
+
+  let currentMode = 'css';
+
+  function bindCodeShieldEvents() {
+    const modeCss = document.getElementById('csModeCss');
+    const modeJs = document.getElementById('csModeJs');
+    const processBtn = document.getElementById('csProcessBtn');
+    const copyBtn = document.getElementById('csCopyBtn');
+    const downloadBtn = document.getElementById('csDownloadBtn');
+    const clearBtn = document.getElementById('csClearBtn');
+    const input = document.getElementById('csInput');
+    const output = document.getElementById('csOutput');
+
+    if (modeCss) {
+      modeCss.addEventListener('click', function() {
+        currentMode = 'css';
+        this.style.background = 'var(--neon-blue)';
+        this.style.color = '#000';
+        if (modeJs) {
+          modeJs.style.background = 'var(--neon-red)';
+          modeJs.style.color = '#fff';
+        }
+        updateStatus('CSS Minifier mode');
+        if (input && input.value.trim()) processCode();
+      });
+    }
+
+    if (modeJs) {
+      modeJs.addEventListener('click', function() {
+        currentMode = 'js';
+        this.style.background = 'var(--neon-red)';
+        this.style.color = '#fff';
+        if (modeCss) {
+          modeCss.style.background = '';
+          modeCss.style.color = '#000';
+        }
+        updateStatus('JS Obfuscator mode');
+        if (input && input.value.trim()) processCode();
+      });
+    }
+
+    if (processBtn) processBtn.addEventListener('click', processCode);
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function() {
+        if (!output || !output.value) { alert('Walang output na kopyahin.'); return; }
+        navigator.clipboard.writeText(output.value).then(() => {
+          const orig = this.innerHTML;
+          this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          this.style.background = 'var(--neon-green)';
+          setTimeout(() => { this.innerHTML = orig; this.style.background = 'var(--neon-blue)'; }, 2000);
+        }).catch(() => {
+          output.select();
+          document.execCommand('copy');
+          alert('📋 Output copied to clipboard!');
+        });
+      });
+    }
+
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', function() {
+        if (!output || !output.value) { alert('Walang output na ida-download.'); return; }
+        const ext = currentMode === 'css' ? 'css' : 'js';
+        const filename = `minified.${ext}`;
+        const blob = new Blob([output.value], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+        updateStatus(`Downloaded ${filename}`);
+      });
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', function() {
+        if (input) input.value = '';
+        if (output) output.value = '';
+        updateStats('', '');
+        updateStatus('Cleared');
+        const origSize = document.getElementById('csOriginalSize');
+        const procSize = document.getElementById('csProcessedSize');
+        const comp = document.getElementById('csCompression');
+        if (origSize) origSize.textContent = '0 B';
+        if (procSize) procSize.textContent = '0 B';
+        if (comp) comp.textContent = '0%';
+      });
+    }
+
+    let debounceTimer;
+    if (input) {
+      input.addEventListener('input', function() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          if (this.value.trim()) processCode();
+          else { if (output) output.value = ''; updateStats('', ''); updateStatus('Waiting for input...'); }
+        }, 600);
+      });
+      input.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); processCode(); }
+      });
+    }
+
+    updateStatus('Ready. Paste your code and click Process or use Ctrl+Enter.');
+  }
+
+  // ================================================================
+  // 5. CSS MINIFIER ENGINE
+  // ================================================================
+
+  function minifyCSS(css) {
+    try {
+      let min = css;
+      min = min.replace(/\/\*[\s\S]*?\*\//g, '');
+      min = min.replace(/\s*([{}:;,])\s*/g, '$1');
+      min = min.replace(/\s{2,}/g, ' ');
+      min = min.replace(/\n/g, '');
+      min = min.replace(/\r/g, '');
+      min = min.replace(/;}/g, '}');
+      min = min.replace(/#([a-f0-9])\1([a-f0-9])\2([a-f0-9])\3/gi, '#$1$2$3');
+      min = min.replace(/[^{}]+{}\s*/g, '');
+      return min.trim();
+    } catch (err) {
+      console.error('CSS Minification Error:', err);
+      return css;
+    }
+  }
+
+  // ================================================================
+  // 6. JS OBFUSCATOR ENGINE
+  // ================================================================
+
+  function obfuscateJS(code) {
+    try {
+      let obfuscated = code;
+      obfuscated = obfuscated.replace(/\/\/.*$/gm, '');
+      obfuscated = obfuscated.replace(/\/\*[\s\S]*?\*\//g, '');
+      obfuscated = obfuscated.replace(/\s{2,}/g, ' ');
+      obfuscated = obfuscated.replace(/\n/g, '');
+      obfuscated = obfuscated.replace(/\r/g, '');
+      obfuscated = obfuscated.replace(/;\s*/g, ';');
+      obfuscated = obfuscated.replace(/{\s*/g, '{');
+      obfuscated = obfuscated.replace(/}\s*/g, '}');
+      obfuscated = obfuscated.replace(/\(\s*/g, '(');
+      obfuscated = obfuscated.replace(/\s*\)/g, ')');
+      obfuscated = obfuscated.replace(/,\s*/g, ',');
+      obfuscated = obfuscated.replace(/:\s*/g, ':');
+
+      const stringRegex = /("(?:[^"\\]|\\.)*")|('(?:[^'\\]|\\.)*')/g;
+      obfuscated = obfuscated.replace(stringRegex, function(match) {
+        const content = match.slice(1, -1);
+        let hex = '';
+        for (let i = 0; i < content.length; i++) {
+          hex += '\\x' + content.charCodeAt(i).toString(16).padStart(2, '0');
+        }
+        return '"' + hex + '"';
+      });
+
+      obfuscated = obfuscated.replace(/;}/g, '}');
+      const trimmed = obfuscated.trim();
+      if (trimmed.length > 0 && !trimmed.startsWith('(function') && !trimmed.startsWith('!function') && trimmed.length > 10) {
+        obfuscated = `!function(){${obfuscated}}();`;
+      }
+      return obfuscated;
+    } catch (err) {
+      console.error('JS Obfuscation Error:', err);
+      return code;
+    }
+  }
+
+  // ================================================================
+  // 7. MAIN PROCESS FUNCTION
+  // ================================================================
+
+  function processCode() {
+    const input = document.getElementById('csInput');
+    const output = document.getElementById('csOutput');
+    if (!input || !output) return;
+
+    const raw = input.value;
+    if (!raw.trim()) { output.value = ''; updateStats('', ''); updateStatus('No input to process.'); return; }
+
+    let result = '';
+    let modeLabel = '';
+
+    try {
+      if (currentMode === 'css') {
+        result = minifyCSS(raw);
+        modeLabel = 'CSS Minified';
+      } else {
+        result = obfuscateJS(raw);
+        modeLabel = 'JS Obfuscated';
+      }
+      output.value = result;
+      updateStats(raw, result);
+      updateStatus(`✅ ${modeLabel} successfully!`);
+      output.style.borderColor = 'var(--neon-gold)';
+      setTimeout(() => { output.style.borderColor = 'var(--neon-green)'; }, 500);
+    } catch (err) {
+      output.value = '⚠️ Error processing: ' + err.message;
+      updateStatus('❌ Error: ' + err.message);
+      console.error('Processing Error:', err);
+    }
+  }
+
+  // ================================================================
+  // 8. STATS UPDATE
+  // ================================================================
+
+  function updateStats(original, processed) {
+    const origSize = document.getElementById('csOriginalSize');
+    const procSize = document.getElementById('csProcessedSize');
+    const comp = document.getElementById('csCompression');
+    const inputStats = document.getElementById('csInputStats');
+    const outputStats = document.getElementById('csOutputStats');
+
+    const origBytes = new Blob([original]).size;
+    const procBytes = new Blob([processed]).size;
+
+    if (origSize) origSize.textContent = formatBytes(origBytes);
+    if (procSize) procSize.textContent = formatBytes(procBytes);
+    if (comp) {
+      if (origBytes > 0) {
+        const saved = ((origBytes - procBytes) / origBytes) * 100;
+        const pct = Math.max(0, Math.round(saved));
+        comp.textContent = pct + '%';
+        comp.style.color = pct > 50 ? 'var(--neon-green)' : pct > 20 ? 'var(--neon-gold)' : 'var(--neon-red)';
+      } else { comp.textContent = '0%'; }
+    }
+    if (inputStats) inputStats.textContent = origBytes + ' B';
+    if (outputStats) outputStats.textContent = procBytes + ' B';
+  }
+
+  function formatBytes(bytes) {
+    if (bytes === 0) return '0 B';
+    const k = 1024;
+    const sizes = ['B', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+  }
+
+  function updateStatus(msg) {
+    const status = document.getElementById('csStatus');
+    if (status) {
+      status.textContent = msg;
+      status.style.color = msg.includes('✅') || msg.includes('Ready') ? 'var(--neon-green)' :
+        msg.includes('❌') || msg.includes('Error') ? 'var(--neon-red)' : 'var(--neon-cyan)';
+    }
+  }
+
+  // ================================================================
+  // 9. EXPOSE TO GLOBAL
+  // ================================================================
+
+  window.processCodeShield = processCode;
+  window.minifyCSS = minifyCSS;
+  window.obfuscateJS = obfuscateJS;
+
+  // ================================================================
+  // 10. START INITIALIZATION – WITH MULTIPLE ATTEMPTS
+  // ================================================================
+
+  console.log('🛡️ Code Shield script loaded.');
+
+  // Try to init immediately
+  let initAttempts = 0;
+  const maxAttempts = 10;
+
+  function attemptInit() {
+    initAttempts++;
+    console.log(`🛡️ Init attempt ${initAttempts}...`);
+    if (setupCodeShield()) {
+      console.log('🛡️ Code Shield initialized successfully!');
+      return;
+    }
+    if (initAttempts < maxAttempts) {
+      setTimeout(attemptInit, 200);
+    } else {
+      console.warn('🛡️ Failed to initialize Code Shield after ' + maxAttempts + ' attempts.');
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attemptInit);
+  } else {
+    attemptInit();
+  }
+
+  // Also try after window load for safety
+  window.addEventListener('load', function() {
+    if (initAttempts > 0 && !document.getElementById('codeshield-container')?.querySelector('#csInput')) {
+      console.log('🛡️ Retrying on window load...');
+      setupCodeShield();
+    }
+  });
+
+})();
