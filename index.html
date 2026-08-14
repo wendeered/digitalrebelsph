@@ -14,13 +14,14 @@
     gtag('config', 'G-TJ9X8BV4KM');
   </script>
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <!-- Fonts & Icons -->
+  <!-- EXIFr -->
+  <script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/lite.umd.js"></script>
+
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -64,11 +65,11 @@
             </div>
           </div>
           <div class="controls">
-            <button class="control-btn" id="prevBtn" title="Previous Track"><i class="fas fa-step-backward"></i></button>
-            <button class="control-btn" id="playPauseBtn" title="Play/Pause"><i class="fas fa-play" id="playIcon"></i></button>
-            <button class="control-btn" id="nextBtn" title="Next Track"><i class="fas fa-step-forward"></i></button>
-            <button class="control-btn" id="randomBtn" title="Reshuffle & Play"><i class="fas fa-random"></i></button>
-            <button class="control-btn" id="volumeBtn" title="Mute/Unmute"><i class="fas fa-volume-up" id="volumeIcon"></i></button>
+            <button class="control-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
+            <button class="control-btn" id="playPauseBtn"><i class="fas fa-play" id="playIcon"></i></button>
+            <button class="control-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
+            <button class="control-btn" id="randomBtn"><i class="fas fa-random"></i></button>
+            <button class="control-btn" id="volumeBtn"><i class="fas fa-volume-up" id="volumeIcon"></i></button>
           </div>
         </div>
 
@@ -78,11 +79,9 @@
             <span><i class="fas fa-globe"></i> GLOBAL REBEL TRAFFIC</span>
             <span style="color: var(--neon-green); font-size:0.8rem;" id="totalVisitsCount">TOTAL: Synchronizing...</span>
           </div>
-
           <div class="user-location-tag" id="currentVisitorLoc">
             <i class="fas fa-crosshairs"></i> Detecting target device & network footprint...
           </div>
-
           <div style="font-size: 0.7rem; color: #888; margin-bottom: 4px;">ALL-TIME / 1-YEAR TRAFFIC ORIGINS:</div>
           <ul class="country-list" id="topCountriesList">
             <li style="color:#888; padding:8px; text-align:center;">Fetching global node data...</li>
@@ -99,6 +98,7 @@
           <a href="#" onclick="openTerminalModal(event)"><i class="fas fa-terminal"></i> TERMINAL</a>
           <a href="#" onclick="openGCashModal(event)"><i class="fas fa-charging-station"></i> FUEL</a>
           <a href="#" id="forbiddenNavBtn" class="forbidden-btn" onclick="switchSection('forbiddentruth'); return false;"><i class="fas fa-biohazard"></i> FORBIDDEN TRUTH</a>
+          <a href="#" id="historyNavBtn" class="history-btn" onclick="switchSection('history'); return false;"><i class="fas fa-scroll"></i> HISTORY</a>
         </div>
       </div>
 
@@ -128,61 +128,275 @@
           </div>
         </div>
 
-        <!-- ARSENAL – GPS TRACKER -->
+        <!-- ARSENAL – DIVINE TOOLS -->
         <div class="section-container" id="section-arsenal">
-          <div class="section-title">✦ ARSENAL // WENDEEFY GPS TRACKER</div>
-          <div class="tracker-container">
-            <h3><i class="fas fa-satellite-dish"></i> Live Route Mapping</h3>
-            <div id="trackerMap"></div>
+          <div class="section-title">✦ ARSENAL // DIVINE TOOLS</div>
 
-            <!-- DASHBOARD -->
-            <div class="tracker-dashboard" id="trackerDashboard">
-              <div class="stat-item">
-                <span>⏱ DURATION</span>
-                <span class="stat-value cyan" id="statDuration">00:00:00</span>
-              </div>
-              <div class="stat-item">
-                <span>📏 DISTANCE</span>
-                <span class="stat-value gold" id="statDistance">0.00 km</span>
-              </div>
-              <div class="stat-item">
-                <span>🏃 PACE</span>
-                <span class="stat-value green" id="statPace">0:00 /km</span>
-              </div>
-              <div class="stat-item">
-                <span>⚡ AVG SPEED</span>
-                <span class="stat-value pink" id="statSpeed">0.0 km/h</span>
-              </div>
-            </div>
+          <div class="arsenal-tabs">
+            <button class="arsenal-tab active" data-tool="gps"><i class="fas fa-satellite-dish"></i> GPS Tracker</button>
+            <button class="arsenal-tab" data-tool="stego"><i class="fas fa-eye-slash"></i> LSB Steganography</button>
+            <button class="arsenal-tab" data-tool="dct"><i class="fas fa-wave-square"></i> DCT Steganography</button>
+            <button class="arsenal-tab" data-tool="exif"><i class="fas fa-shield-alt"></i> EXIF Cleaner</button>
+            <button class="arsenal-tab" data-tool="vault"><i class="fas fa-vault"></i> Encrypted Vault</button>
+            <button class="arsenal-tab" data-tool="hash"><i class="fas fa-fingerprint"></i> Crypto Hash</button>
+            <button class="arsenal-tab" data-tool="keygen"><i class="fas fa-key"></i> Quantum Key</button>
+            <button class="arsenal-tab" data-tool="freq"><i class="fas fa-music"></i> Frequency Synth</button>
+            <button class="arsenal-tab" data-tool="codeshield"><i class="fas fa-shield-halved"></i> Code Shield</button>
+          </div>
 
-            <!-- CONTROLS -->
-            <div class="tracker-controls">
-              <button id="startBtn" onclick="startTracking()"><i class="fas fa-play"></i> Start</button>
-              <button id="pauseBtn" onclick="pauseTracking()" disabled class="pause-btn"><i class="fas fa-pause"></i> Pause</button>
-              <button id="resumeBtn" onclick="resumeTracking()" disabled class="pause-btn" style="background:var(--neon-green);"><i class="fas fa-play"></i> Resume</button>
-              <button id="stopBtn" onclick="stopTracking()" disabled class="stop-btn"><i class="fas fa-stop"></i> Stop</button>
-              <button id="resetBtn" onclick="resetTracking()" class="reset-btn"><i class="fas fa-undo"></i> Reset</button>
-              <button id="exportGPXBtn" onclick="exportGPX()" disabled class="export-btn"><i class="fas fa-download"></i> GPX</button>
-              <button id="exportGeoJSONBtn" onclick="exportGeoJSON()" disabled class="export-btn"><i class="fas fa-download"></i> GeoJSON</button>
+          <!-- GPS Tracker -->
+          <div class="arsenal-tool-panel active" id="tool-gps">
+            <div class="tracker-container">
+              <h3><i class="fas fa-satellite-dish"></i> Live Route Mapping</h3>
+              <div id="trackerMap"></div>
+              <div class="tracker-dashboard">
+                <div class="stat-item"><span>⏱ DURATION</span><span class="stat-value cyan" id="statDuration">00:00:00</span></div>
+                <div class="stat-item"><span>📏 DISTANCE</span><span class="stat-value gold" id="statDistance">0.00 km</span></div>
+                <div class="stat-item"><span>🏃 PACE</span><span class="stat-value green" id="statPace">0:00 /km</span></div>
+                <div class="stat-item"><span>⚡ AVG SPEED</span><span class="stat-value pink" id="statSpeed">0.0 km/h</span></div>
+              </div>
+              <div class="tracker-controls">
+                <button id="startBtn" onclick="startTracking()"><i class="fas fa-play"></i> Start</button>
+                <button id="pauseBtn" onclick="pauseTracking()" disabled class="pause-btn"><i class="fas fa-pause"></i> Pause</button>
+                <button id="resumeBtn" onclick="resumeTracking()" disabled class="pause-btn"><i class="fas fa-play"></i> Resume</button>
+                <button id="stopBtn" onclick="stopTracking()" disabled class="stop-btn"><i class="fas fa-stop"></i> Stop</button>
+                <button id="resetBtn" onclick="resetTracking()" class="reset-btn"><i class="fas fa-undo"></i> Reset</button>
+                <button id="exportGPXBtn" onclick="exportGPX()" disabled class="export-btn"><i class="fas fa-download"></i> GPX</button>
+                <button id="exportGeoJSONBtn" onclick="exportGeoJSON()" disabled class="export-btn"><i class="fas fa-download"></i> GeoJSON</button>
+              </div>
             </div>
           </div>
+
+          <!-- LSB Steganography -->
+          <div class="arsenal-tool-panel" id="tool-stego">
+            <div class="divine-tool-card">
+              <h3><i class="fas fa-eye-slash"></i> LSB Steganography <span class="badge">PNG Only</span></h3>
+              <p class="tool-desc">Magtago ng secret text sa loob ng larawan gamit ang Least Significant Bit (LSB) modification. <b>⚠️ Gumagana lang ito sa PNG at nawawala ang message kapag na-compress sa JPEG.</b></p>
+              <div class="stego-grid">
+                <div class="stego-box">
+                  <h4>🔒 ENCODE</h4>
+                  <div class="stego-upload-area" id="stegoEncodeDrop">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>I-drop ang PNG image o mag-click para pumili</p>
+                    <input type="file" id="stegoEncodeFile" accept="image/png" hidden>
+                  </div>
+                  <div class="stego-preview" id="stegoEncodePreview" style="display:none;">
+                    <img id="stegoEncodeImg" alt="Preview">
+                    <button class="stego-remove-btn" onclick="stegoRemoveEncode()"><i class="fas fa-times"></i></button>
+                  </div>
+                  <textarea id="stegoSecretMsg" placeholder="Ilagay ang secret message..." rows="3"></textarea>
+                  <button class="divine-btn" id="stegoEncodeBtn" disabled onclick="stegoEncode()"><i class="fas fa-lock"></i> Encode & Download PNG</button>
+                </div>
+                <div class="stego-box">
+                  <h4>🔓 DECODE</h4>
+                  <div class="stego-upload-area" id="stegoDecodeDrop">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>I-drop ang stego image</p>
+                    <input type="file" id="stegoDecodeFile" accept="image/*" hidden>
+                  </div>
+                  <div class="stego-preview" id="stegoDecodePreview" style="display:none;">
+                    <img id="stegoDecodeImg" alt="Preview">
+                    <button class="stego-remove-btn" onclick="stegoRemoveDecode()"><i class="fas fa-times"></i></button>
+                  </div>
+                  <button class="divine-btn" id="stegoDecodeBtn" disabled onclick="stegoDecode()"><i class="fas fa-unlock"></i> Decode</button>
+                  <div id="stegoDecodeResult" class="stego-result"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DCT Steganography -->
+          <div class="arsenal-tool-panel" id="tool-dct">
+            <div class="divine-tool-card">
+              <h3><i class="fas fa-wave-square"></i> DCT Steganography <span class="badge">JPEG Robust</span></h3>
+              <p class="tool-desc" style="border-left-color:var(--neon-gold);">
+                <b>✅ JPEG-ROBUST:</b> Gumagamit ng Discrete Cosine Transform (DCT) para mag-embed ng data sa frequency domain. 
+                <b>Makatiis ito sa JPEG compression at social media re-encoding!</b>
+              </p>
+              <div class="stego-grid">
+                <div class="stego-box">
+                  <h4>🔒 DCT ENCODE (JPEG Output)</h4>
+                  <div class="stego-upload-area" id="dctEncodeDrop">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>I-drop ang image (PNG/JPEG)</p>
+                    <input type="file" id="dctEncodeFile" accept="image/*" hidden>
+                  </div>
+                  <div class="stego-preview" id="dctEncodePreview" style="display:none;">
+                    <img id="dctEncodeImg" alt="Preview">
+                    <button class="stego-remove-btn" onclick="dctRemoveEncode()"><i class="fas fa-times"></i></button>
+                  </div>
+                  <textarea id="dctSecretMsg" placeholder="Ilagay ang secret message (max 500 chars)" rows="3"></textarea>
+                  <button class="divine-btn" id="dctEncodeBtn" disabled onclick="dctEncode()"><i class="fas fa-lock"></i> Encode & Download JPEG</button>
+                </div>
+                <div class="stego-box">
+                  <h4>🔓 DCT DECODE</h4>
+                  <div class="stego-upload-area" id="dctDecodeDrop">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>I-drop ang stego image (PNG/JPEG)</p>
+                    <input type="file" id="dctDecodeFile" accept="image/*" hidden>
+                  </div>
+                  <div class="stego-preview" id="dctDecodePreview" style="display:none;">
+                    <img id="dctDecodeImg" alt="Preview">
+                    <button class="stego-remove-btn" onclick="dctRemoveDecode()"><i class="fas fa-times"></i></button>
+                  </div>
+                  <button class="divine-btn" id="dctDecodeBtn" disabled onclick="dctDecode()"><i class="fas fa-unlock"></i> Decode</button>
+                  <div id="dctDecodeResult" class="stego-result"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- EXIF Cleaner -->
+          <div class="arsenal-tool-panel" id="tool-exif">
+            <div class="divine-tool-card">
+              <h3><i class="fas fa-shield-alt"></i> EXIF Metadata Cleaner <span class="badge">Privacy</span></h3>
+              <p class="tool-desc">Tingnan at tanggalin ang mga nakatagong metadata (GPS, camera model, timestamp) sa iyong mga larawan.</p>
+              <div class="exif-grid">
+                <div class="exif-box">
+                  <h4>📷 Upload & Scan</h4>
+                  <div class="exif-upload-area" id="exifDrop">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>I-drop ang larawan</p>
+                    <input type="file" id="exifFile" accept="image/*" hidden>
+                  </div>
+                  <div class="exif-preview" id="exifPreview" style="display:none;">
+                    <img id="exifImg" alt="Preview">
+                    <button class="exif-remove-btn" onclick="exifRemove()"><i class="fas fa-times"></i></button>
+                  </div>
+                </div>
+                <div class="exif-box">
+                  <h4>📋 METADATA</h4>
+                  <div class="exif-terminal" id="exifOutput">
+                    <p style="color:#666;">Mag-upload ng larawan para makita ang metadata...</p>
+                  </div>
+                  <div class="exif-actions">
+                    <button class="divine-btn" id="exifStripBtn" onclick="exifStrip()" disabled><i class="fas fa-broom"></i> Strip & Download</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Encrypted Vault -->
+          <div class="arsenal-tool-panel" id="tool-vault">
+            <div class="divine-tool-card">
+              <h3><i class="fas fa-vault"></i> Encrypted Data Vault <span class="badge">AES-256-GCM</span></h3>
+              <p class="tool-desc">Secure offline notepad na naka-encrypt gamit ang Web Crypto API. Walang makakabasa kahit mag-Inspect Element.</p>
+              <div class="vault-grid">
+                <div class="vault-box">
+                  <h4>🔐 Encrypt & Save</h4>
+                  <input type="text" id="vaultTitleInput" placeholder="Note Title" style="width:100%; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:6px; padding:10px; color:#d0e5e0; margin-bottom:8px; font-family:'Share Tech Mono',monospace;">
+                  <textarea id="vaultContentInput" placeholder="Ilagay ang iyong secret notes dito..." rows="4" style="width:100%; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:6px; color:#d0e5e0; padding:10px; font-family:'Share Tech Mono',monospace; resize:vertical;"></textarea>
+                  <input type="password" id="vaultPassInput" placeholder="Master Password (min. 8 chars)" class="vault-pw">
+                  <button class="divine-btn" onclick="vaultSaveNote()"><i class="fas fa-save"></i> Encrypt & Save</button>
+                </div>
+                <div class="vault-box">
+                  <h4>🔓 Decrypt & Load</h4>
+                  <div class="vault-saved-list" id="vaultSavedList">
+                    <p style="color:#666;">Walang naka-save na notes.</p>
+                  </div>
+                  <input type="password" id="vaultDecryptPassInput" placeholder="Master Password" class="vault-pw">
+                  <button class="divine-btn" onclick="vaultDecryptSelected()"><i class="fas fa-unlock"></i> Decrypt Selected</button>
+                  <div id="vaultDisplayArea" style="display:none;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Crypto Hash Engine -->
+          <div class="arsenal-tool-panel" id="tool-hash">
+            <div class="divine-tool-card">
+              <h3><i class="fas fa-fingerprint"></i> Cryptographic Hash Engine <span class="badge">SHA-1/256/512</span></h3>
+              <p class="tool-desc">I-hash ang anumang string gamit ang SHA-1, SHA-256, at SHA-512. Kasama rin ang Base64 at Hex encoding.</p>
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                  <input type="text" id="hashInput" placeholder="Ilagay ang string na ikaka-hash..." value="Digital Rebels PH" style="flex:1; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:6px; padding:12px; color:#d0e5e0; font-family:'Share Tech Mono',monospace;">
+                  <button class="divine-btn" onclick="runCyberHash()"><i class="fas fa-cog"></i> Generate Hash</button>
+                </div>
+                <div style="background:rgba(0,0,0,0.3); padding:12px; border-radius:6px;">
+                  <div><span style="color:#88aabb;">SHA-256:</span> <span id="outSha256" style="color:var(--neon-green); word-break:break-all; font-size:0.8rem;"></span></div>
+                  <div><span style="color:#88aabb;">SHA-512:</span> <span id="outSha512" style="color:var(--neon-cyan); word-break:break-all; font-size:0.8rem;"></span></div>
+                  <div><span style="color:#88aabb;">SHA-1:</span> <span id="outSha1" style="color:var(--neon-gold); word-break:break-all; font-size:0.8rem;"></span></div>
+                  <div><span style="color:#88aabb;">Base64:</span> <span id="outBase64" style="color:#88aabb; word-break:break-all; font-size:0.8rem;"></span></div>
+                  <div><span style="color:#88aabb;">Hex:</span> <span id="outHex" style="color:#88aabb; word-break:break-all; font-size:0.8rem;"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quantum Key Generator -->
+          <div class="arsenal-tool-panel" id="tool-keygen">
+            <div class="divine-tool-card">
+              <h3><i class="fas fa-key"></i> Quantum Entropy Key Generator <span class="badge">CSPRNG</span></h3>
+              <p class="tool-desc">Gumawa ng cryptographically secure random key gamit ang Web Crypto API. Entropy-based at hindi predictable.</p>
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                  <label style="color:#88aabb; font-size:0.8rem;">Length: <input type="number" id="keyLengthInput" value="32" min="8" max="256" style="width:60px; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:4px; color:#fff; padding:4px;"></label>
+                  <label style="color:#88aabb; font-size:0.8rem;"><input type="checkbox" id="keySpecialChars" checked> Special Chars</label>
+                  <button class="divine-btn" onclick="triggerGenerateKey()"><i class="fas fa-sync"></i> Generate</button>
+                  <button class="divine-btn" onclick="copyKeyToClipboard()" style="background:var(--neon-blue);"><i class="fas fa-copy"></i> Copy</button>
+                </div>
+                <div style="background:rgba(0,0,0,0.3); padding:12px 16px; border-radius:6px;">
+                  <div id="keyDisplayOut" style="font-family:'Share Tech Mono',monospace; font-size:1.1rem; color:var(--neon-green); word-break:break-all;">Click Generate</div>
+                  <div style="color:#666; font-size:0.7rem; margin-top:4px;">Entropy: <span id="keyEntropy">0</span> bits</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frequency Synthesizer -->
+          <div class="arsenal-tool-panel" id="tool-freq">
+            <div class="divine-tool-card">
+              <h3><i class="fas fa-music"></i> Solfeggio Frequency Synthesizer <span class="badge">Web Audio</span></h3>
+              <p class="tool-desc">Gumawa ng pure sine wave tones gamit ang Web Audio API. Piliin ang Solfeggio frequencies o mag-input ng custom value.</p>
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                  <select id="freqPreset" style="background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:6px; color:#d0e5e0; padding:8px 12px; font-family:'Share Tech Mono',monospace;">
+                    <option value="174">174 Hz – Healing</option>
+                    <option value="285">285 Hz – Energy</option>
+                    <option value="396">396 Hz – Liberating Fear</option>
+                    <option value="417">417 Hz – Facilitating Change</option>
+                    <option value="432" selected>432 Hz – Nature/Universal</option>
+                    <option value="528">528 Hz – DNA Repair/Miracle</option>
+                    <option value="639">639 Hz – Relationships</option>
+                    <option value="741">741 Hz – Expression/Solutions</option>
+                    <option value="852">852 Hz – Awakening Intuition</option>
+                    <option value="963">963 Hz – Crown Chakra</option>
+                    <option value="custom">Custom</option>
+                  </select>
+                  <input type="number" id="freqValue" value="432" min="20" max="20000" style="width:120px; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:6px; color:#fff; padding:8px; font-family:'Share Tech Mono',monospace;">
+                  <button class="divine-btn" id="freqPlayBtn" onclick="playFrequency(parseFloat(document.getElementById('freqValue').value))"><i class="fas fa-play"></i> Play</button>
+                  <button class="divine-btn" id="freqStopBtn" style="background:var(--neon-red);" onclick="stopFrequency()"><i class="fas fa-stop"></i> Stop</button>
+                </div>
+                <div id="freqStatusText" style="color:#88aabb; font-size:0.85rem; text-align:center;">🔇 Synthesizer Ready</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code Shield -->
+          <div class="arsenal-tool-panel" id="tool-codeshield">
+            <div class="divine-tool-card" id="codeshield-container">
+              <!-- Will be rendered by app3.js -->
+            </div>
+          </div>
+
         </div>
 
         <!-- LEARNING HUB -->
         <div class="section-container" id="section-learning">
-          <div class="section-title">✦ LEARNING HUB (INDEPENDENT REBEL TOOLS)</div>
+          <div class="section-title">✦ LEARNING HUB</div>
           <div class="content-item">
             <div class="item-title">Self-Taught Rebel Framework</div>
-            <div class="item-text">Walang magtuturo sa'yo kundi ang sarili mong tiyaga. Gamitin ang mga bukas na armas na ito para maging ganap na master:</div>
+            <div class="item-text">Walang magtuturo sa'yo kundi ang sarili mong tiyaga.</div>
           </div>
           <div class="content-item">
             <div class="item-title">Open-Source Digital Toolkit</div>
             <ul style="list-style:none; line-height:1.8;">
-              <li>⚡ <b>FreeCodeCamp / MDN Web Docs</b> — Batayan sa pagbuo ng sariling Web Architecture.</li>
-              <li>⚡ <b>Arch Linux / Kali Linux Documentation</b> — Matutong mag-master ng terminal at operating system logic.</li>
-              <li>⚡ <b>Blender & GIMP Documentation</b> — Libreng 3D, CGI, at Digital Art Engine visual toolsets.</li>
-              <li>⚡ <b>Neovim / Vim Academy</b> — Keyboard-only lightning fast text editor navigation.</li>
-              <li>⚡ <b>CyberChef (GCHQ Cyber Toolkit)</b> — Swiss army knife para sa data encoding, hashing, at cryptography.</li>
+              <li>⚡ <b>FreeCodeCamp / MDN Web Docs</b> — Web Architecture</li>
+              <li>⚡ <b>Arch Linux / Kali Linux</b> — Terminal mastery</li>
+              <li>⚡ <b>Blender & GIMP</b> — 3D & Digital Art</li>
+              <li>⚡ <b>Neovim / Vim</b> — Keyboard-only editing</li>
+              <li>⚡ <b>CyberChef</b> — Data encoding & cryptography</li>
             </ul>
           </div>
         </div>
@@ -194,11 +408,22 @@
           </div>
           <div class="art-grid" id="forbiddenGridContainer"></div>
         </div>
+
+        <!-- HISTORY -->
+        <div class="section-container" id="section-history">
+          <div class="section-title" style="color:var(--neon-gold); text-shadow:0 0 10px rgba(255,204,0,0.4);">
+            <i class="fas fa-scroll"></i> HISTORY ARCHIVE
+          </div>
+          <div class="art-grid" id="historyGridContainer"></div>
+        </div>
+
       </div>
     </div>
   </div>
 
   <!-- ===== MODALS ===== -->
+
+  <!-- Art Modal (with X button – kept) -->
   <div class="art-modal" id="artModal">
     <div class="art-modal-wrapper">
       <button class="art-modal-close" onclick="closeArtModal()">&times;</button>
@@ -210,6 +435,7 @@
     </div>
   </div>
 
+  <!-- Terminal Modal -->
   <div class="terminal-overlay" id="terminalOverlay">
     <div class="terminal-window">
       <div class="term-header">
@@ -219,7 +445,7 @@
       <div class="term-output" id="termOutput">
         <p>> INITIALIZING DIGITAL REBELS MAINFRAME...</p>
         <p>> FREQUENCY 9.999: SYNCHRONIZED</p>
-        <p>> Try commands: <b style="color:var(--neon-gold)">day</b>, <b style="color:var(--neon-gold)">night</b>, <b style="color:var(--neon-gold)">lucifer</b>, <b style="color:var(--neon-gold)">broken</b>, <b style="color:var(--neon-gold)">normal</b>, <b style="color:var(--neon-gold)">forbidden truth</b>, o <b style="color:var(--neon-gold)">help</b></p>
+        <p>> Try commands: <b style="color:var(--neon-gold)">day</b>, <b style="color:var(--neon-gold)">night</b>, <b style="color:var(--neon-gold)">lucifer</b>, <b style="color:var(--neon-gold)">broken</b>, <b style="color:var(--neon-gold)">normal</b>, <b style="color:var(--neon-gold)">forbidden truth</b>, <b style="color:var(--neon-gold)">history</b>, o <b style="color:var(--neon-gold)">help</b></p>
       </div>
       <div class="term-input-line">
         <span>root@rebels:~#</span>
@@ -228,6 +454,7 @@
     </div>
   </div>
 
+  <!-- GCash Modal -->
   <div class="modal" id="gcashModal">
     <div class="modal-content">
       <h3><i class="fas fa-charging-station"></i> FREQUENCY FUEL</h3>
@@ -239,9 +466,10 @@
     </div>
   </div>
 
+  <!-- FORBIDDEN TRUTH MODAL (NO X BUTTON) -->
   <div class="modal" id="forbiddenModal">
     <div class="modal-content forbidden-modal-box">
-      <button class="art-modal-close" onclick="closeForbiddenModal()" style="top:-15px; right:-15px; background:var(--neon-red); color:#fff; border-color:#000;">&times;</button>
+      <!-- X button removed – may CLOSE ARCHIVE na sa baba -->
       <h3 style="color:var(--neon-red); font-family:'Orbitron', sans-serif; letter-spacing:2px; margin-bottom:12px; text-shadow:0 0 10px var(--neon-red);" id="forbiddenModalHeader">
         <i class="fas fa-biohazard"></i> DECRYPTED ARCHIVE
       </h3>
@@ -250,6 +478,21 @@
       </div>
       <div class="forbidden-text-content" id="forbiddenTextBody"></div>
       <button class="close-modal" onclick="closeForbiddenModal()" style="background:var(--neon-red); color:#fff; margin-top:15px; width:100%; border:none; box-shadow:0 0 15px rgba(255,0,85,0.5);">CLOSE ARCHIVE</button>
+    </div>
+  </div>
+
+  <!-- HISTORY MODAL (NO X BUTTON) -->
+  <div class="modal" id="historyModal">
+    <div class="modal-content history-modal-box">
+      <!-- X button removed – may CLOSE ARCHIVE na sa baba -->
+      <h3 style="color:var(--neon-gold); font-family:'Orbitron', sans-serif; letter-spacing:2px; margin-bottom:12px; text-shadow:0 0 10px var(--neon-gold);" id="historyModalHeader">
+        <i class="fas fa-scroll"></i> HISTORY ARCHIVE
+      </h3>
+      <div class="history-visual-box">
+        <img src="" alt="History Visual" id="historyVisualImg">
+      </div>
+      <div class="history-text-content" id="historyTextBody"></div>
+      <button class="close-modal" onclick="closeHistoryModal()" style="background:var(--neon-gold); color:#000; margin-top:15px; width:100%; border:none; box-shadow:0 0 15px rgba(255,204,0,0.5);">CLOSE ARCHIVE</button>
     </div>
   </div>
 
@@ -271,9 +514,10 @@
 
   <audio id="audioPlayer"></audio>
 
-  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <!-- Main Application JS -->
   <script src="app.js"></script>
+  <script src="app1.js"></script>
+  <script src="app2.js"></script>
+  <script src="app3.js"></script>
 </body>
 </html>
