@@ -128,23 +128,47 @@
           </div>
         </div>
 
-        <!-- ARSENAL – DIVINE TOOLS -->
+        <!-- ARSENAL – DIVINE TOOLS (16 Tools) -->
         <div class="section-container" id="section-arsenal">
           <div class="section-title">✦ ARSENAL // DIVINE TOOLS</div>
 
           <div class="arsenal-tabs">
+            <!-- Original GPS Tracker -->
             <button class="arsenal-tab active" data-tool="gps"><i class="fas fa-satellite-dish"></i> GPS Tracker</button>
-            <button class="arsenal-tab" data-tool="stego"><i class="fas fa-eye-slash"></i> LSB Steganography</button>
-            <button class="arsenal-tab" data-tool="dct"><i class="fas fa-wave-square"></i> DCT Steganography</button>
+            <!-- Supreme GPS (NEW - app5.js) -->
+            <button class="arsenal-tab" data-tool="gps-supreme"><i class="fas fa-crown"></i> Supreme GPS</button>
+            <!-- Steganography -->
+            <button class="arsenal-tab" data-tool="stego"><i class="fas fa-eye-slash"></i> LSB Stego</button>
+            <button class="arsenal-tab" data-tool="dct"><i class="fas fa-wave-square"></i> DCT Stego</button>
+            <!-- EXIF Cleaner -->
             <button class="arsenal-tab" data-tool="exif"><i class="fas fa-shield-alt"></i> EXIF Cleaner</button>
-            <button class="arsenal-tab" data-tool="vault"><i class="fas fa-vault"></i> Encrypted Vault</button>
+            <!-- Vault -->
+            <button class="arsenal-tab" data-tool="vault"><i class="fas fa-vault"></i> Vault</button>
+            <!-- Crypto Hash -->
             <button class="arsenal-tab" data-tool="hash"><i class="fas fa-fingerprint"></i> Crypto Hash</button>
+            <!-- Quantum Key -->
             <button class="arsenal-tab" data-tool="keygen"><i class="fas fa-key"></i> Quantum Key</button>
-            <button class="arsenal-tab" data-tool="freq"><i class="fas fa-music"></i> Frequency Synth</button>
+            <!-- Frequency -->
+            <button class="arsenal-tab" data-tool="freq"><i class="fas fa-music"></i> Frequency</button>
+            <!-- Code Shield -->
             <button class="arsenal-tab" data-tool="codeshield"><i class="fas fa-shield-halved"></i> Code Shield</button>
+            <!-- Network Intel -->
+            <button class="arsenal-tab" data-tool="network"><i class="fas fa-globe"></i> Network Intel</button>
+            <!-- Encrypted Clipboard -->
+            <button class="arsenal-tab" data-tool="clipboard"><i class="fas fa-clipboard"></i> Clipboard</button>
+            <!-- Checksum -->
+            <button class="arsenal-tab" data-tool="checksum"><i class="fas fa-file-contract"></i> Checksum</button>
+            <!-- Network Ping -->
+            <button class="arsenal-tab" data-tool="ping"><i class="fas fa-wifi"></i> Network Ping</button>
+            <!-- Markdown -->
+            <button class="arsenal-tab" data-tool="markdown"><i class="fas fa-markdown"></i> Markdown</button>
+            <!-- AI Generator -->
+            <button class="arsenal-tab" data-tool="ai"><i class="fas fa-brain"></i> AI Generator</button>
           </div>
 
-          <!-- GPS Tracker -->
+          <!-- ===== Tool Panels ===== -->
+
+          <!-- GPS Tracker (existing) -->
           <div class="arsenal-tool-panel active" id="tool-gps">
             <div class="tracker-container">
               <h3><i class="fas fa-satellite-dish"></i> Live Route Mapping</h3>
@@ -165,6 +189,11 @@
                 <button id="exportGeoJSONBtn" onclick="exportGeoJSON()" disabled class="export-btn"><i class="fas fa-download"></i> GeoJSON</button>
               </div>
             </div>
+          </div>
+
+          <!-- Supreme GPS Tracker (NEW - app5.js) -->
+          <div class="arsenal-tool-panel" id="tool-gps-supreme">
+            <!-- Rendered by app5.js -->
           </div>
 
           <!-- LSB Steganography -->
@@ -209,10 +238,7 @@
           <div class="arsenal-tool-panel" id="tool-dct">
             <div class="divine-tool-card">
               <h3><i class="fas fa-wave-square"></i> DCT Steganography <span class="badge">JPEG Robust</span></h3>
-              <p class="tool-desc" style="border-left-color:var(--neon-gold);">
-                <b>✅ JPEG-ROBUST:</b> Gumagamit ng Discrete Cosine Transform (DCT) para mag-embed ng data sa frequency domain. 
-                <b>Makatiis ito sa JPEG compression at social media re-encoding!</b>
-              </p>
+              <p class="tool-desc" style="border-left-color:var(--neon-gold);"><b>✅ JPEG-ROBUST:</b> Gumagamit ng Discrete Cosine Transform (DCT) para mag-embed ng data sa frequency domain. Makatiis ito sa JPEG compression at social media re-encoding!</p>
               <div class="stego-grid">
                 <div class="stego-box">
                   <h4>🔒 DCT ENCODE (JPEG Output)</h4>
@@ -376,7 +402,135 @@
           <!-- Code Shield -->
           <div class="arsenal-tool-panel" id="tool-codeshield">
             <div class="divine-tool-card" id="codeshield-container">
-              <!-- Will be rendered by app3.js -->
+              <!-- Rendered by app3.js -->
+            </div>
+          </div>
+
+          <!-- Network Intelligence -->
+          <div class="arsenal-tool-panel" id="tool-network">
+            <div class="divine-tool-card">
+              <h3><i class="fas fa-globe"></i> Network Intelligence <span class="badge">IP & Geolocation</span></h3>
+              <p class="tool-desc" style="border-left-color:var(--neon-cyan);">Tingnan ang iyong public IP, ISP, geolocation, at network security status.</p>
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                  <button class="divine-btn" id="ipScanBtn" style="background:var(--neon-cyan);"><i class="fas fa-sync"></i> Scan Network</button>
+                  <span id="ipStatus" style="color:var(--neon-gold); font-size:0.85rem;">Ready</span>
+                </div>
+                <div id="ipOutput" style="background:rgba(0,0,0,0.3); padding:12px; border-radius:6px; color:#d0e5e0; font-size:0.85rem; line-height:1.8; min-height:120px;">
+                  <span style="color:#666;">Click "Scan Network" to fetch your network intelligence.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Encrypted Clipboard -->
+          <div class="arsenal-tool-panel" id="tool-clipboard">
+            <div class="divine-tool-card">
+              <h3><i class="fas fa-clipboard"></i> Encrypted Clipboard <span class="badge">AES-GCM</span></h3>
+              <p class="tool-desc" style="border-left-color:var(--neon-gold);">I-encrypt ang text gamit ang password at gumawa ng shareable URL.</p>
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <textarea id="clipboardInput" placeholder="Ilagay ang text na gusto mong i-encrypt..." rows="3" style="background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:6px; color:#d0e5e0; padding:10px; font-family:'Share Tech Mono',monospace; resize:vertical;"></textarea>
+                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                  <input type="password" id="clipboardPassword" placeholder="Password (min 6 chars)" style="flex:1; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:6px; padding:10px; color:#d0e5e0; font-family:'Share Tech Mono',monospace;">
+                  <button class="divine-btn" id="clipboardEncryptBtn" style="background:var(--neon-blue);"><i class="fas fa-lock"></i> Encrypt & Share</button>
+                </div>
+                <div id="clipboardOutput" style="background:rgba(0,0,0,0.3); padding:12px; border-radius:6px; color:#d0e5e0; font-size:0.85rem; min-height:60px;">
+                  <span style="color:#666;">Encrypted data will appear here.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- File Checksum -->
+          <div class="arsenal-tool-panel" id="tool-checksum">
+            <div class="divine-tool-card">
+              <h3><i class="fas fa-file-contract"></i> File Integrity Monitor <span class="badge">SHA-256/512/MD5</span></h3>
+              <p class="tool-desc" style="border-left-color:var(--neon-green);">I-calculate ang SHA-256, SHA-512, at MD5 checksum ng anumang file.</p>
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <div class="exif-upload-area" id="checksumDrop" style="border-color:var(--neon-green);">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <p>I-drop ang file o mag-click para pumili</p>
+                  <input type="file" id="checksumFile" hidden>
+                </div>
+                <div id="checksumOutput" style="background:rgba(0,0,0,0.3); padding:12px; border-radius:6px; color:#d0e5e0; font-size:0.85rem; line-height:1.8; min-height:80px;">
+                  <span style="color:#666;">Mag-upload ng file para makita ang checksums.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Network Ping Tester -->
+          <div class="arsenal-tool-panel" id="tool-ping">
+            <div class="divine-tool-card">
+              <h3><i class="fas fa-wifi"></i> Network Ping Tester <span class="badge">Latency Check</span></h3>
+              <p class="tool-desc" style="border-left-color:var(--neon-red);">I-test ang latency sa Google, Cloudflare, GitHub, Facebook, at YouTube.</p>
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                  <button class="divine-btn" id="pingTestBtn" style="background:var(--neon-red);"><i class="fas fa-bolt"></i> Run Ping Test</button>
+                  <span id="pingStatus" style="color:var(--neon-gold); font-size:0.85rem;">Ready</span>
+                </div>
+                <div id="pingOutput" style="background:rgba(0,0,0,0.3); padding:12px; border-radius:6px; color:#d0e5e0; font-size:0.85rem; line-height:1.8; min-height:120px;">
+                  <span style="color:#666;">Click "Run Ping Test" to measure network latency.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Markdown Editor -->
+          <div class="arsenal-tool-panel" id="tool-markdown">
+            <div class="divine-tool-card">
+              <h3><i class="fas fa-markdown"></i> Markdown Editor <span class="badge">Live Preview</span></h3>
+              <p class="tool-desc" style="border-left-color:var(--neon-gold);">Mag-sulat ng Markdown, makita ang rendered HTML sa real-time.</p>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; min-height:300px;">
+                <div style="display:flex; flex-direction:column; gap:6px;">
+                  <div style="color:#88aabb; font-size:0.8rem;"><i class="fas fa-edit"></i> Editor</div>
+                  <textarea id="mdEditorInput" style="flex:1; background:rgba(0,0,0,0.7); border:1px solid var(--border-color); border-radius:6px; color:#d0e5e0; font-family:'Share Tech Mono',monospace; padding:12px; font-size:0.8rem; resize:vertical; min-height:250px; line-height:1.6;"># Welcome to Markdown Editor
+
+## Subheading
+
+- List item 1
+- List item 2
+
+\`\`\`javascript
+console.log('Hello World');
+\`\`\`
+
+[Visit Digital Rebels PH](https://digitalrebels.ph)</textarea>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:6px;">
+                  <div style="color:#88aabb; font-size:0.8rem;"><i class="fas fa-eye"></i> Preview</div>
+                  <div id="mdEditorPreview" style="flex:1; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:6px; padding:12px; color:#d0e5e0; font-size:0.85rem; overflow-y:auto; min-height:250px; line-height:1.8;"></div>
+                </div>
+              </div>
+              <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap;">
+                <button class="divine-btn" id="mdExportBtn"><i class="fas fa-download"></i> Export HTML</button>
+                <button class="divine-btn" id="mdCopyBtn" style="background:var(--neon-blue);"><i class="fas fa-copy"></i> Copy HTML</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Image Generator -->
+          <div class="arsenal-tool-panel" id="tool-ai">
+            <div class="divine-tool-card">
+              <h3><i class="fas fa-brain"></i> AI Image Generator <span class="badge">Dual AI Engine</span></h3>
+              <p class="tool-desc" style="border-left-color:var(--neon-cyan);">
+                <b>⚡ Dual AI Engine:</b> Gumagamit ng <b>Pollinations AI</b> (libre, walang API key) + <b>Hugging Face</b> (optional token) + <b>Cyberpunk Fallback</b>.
+              </p>
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:6px; border:1px solid var(--border-color);">
+                  <i class="fas fa-key" style="color:var(--neon-gold);"></i>
+                  <input type="password" id="aiTokenInput" placeholder="Hugging Face Token (optional)" style="flex:1; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:4px; padding:8px; color:#d0e5e0; font-family:'Share Tech Mono',monospace; font-size:0.7rem;">
+                  <span style="color:#666; font-size:0.6rem;">Get token at <a href="https://huggingface.co/settings/tokens" target="_blank" style="color:var(--neon-blue);">hf.co/settings/tokens</a></span>
+                </div>
+                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                  <input type="text" id="aiPrompt" placeholder="Ilagay ang prompt para sa AI..." value="cyberpunk city neon lights digital art" style="flex:1; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:6px; padding:12px; color:#d0e5e0; font-family:'Share Tech Mono',monospace;">
+                  <button class="divine-btn" id="aiGenerateBtn" style="background:var(--neon-cyan);"><i class="fas fa-magic"></i> Generate</button>
+                </div>
+                <div id="aiOutput" style="background:rgba(0,0,0,0.3); padding:12px; border-radius:6px; min-height:200px; display:flex; align-items:center; justify-content:center; border:1px solid var(--border-color);">
+                  <span style="color:#666;">Enter a prompt and click "Generate"</span>
+                </div>
+                <div id="aiStatus" style="color:#88aabb; font-size:0.85rem; text-align:center;">Ready</div>
+              </div>
             </div>
           </div>
 
@@ -423,7 +577,7 @@
 
   <!-- ===== MODALS ===== -->
 
-  <!-- Art Modal (with X button – kept) -->
+  <!-- Art Modal (with X) -->
   <div class="art-modal" id="artModal">
     <div class="art-modal-wrapper">
       <button class="art-modal-close" onclick="closeArtModal()">&times;</button>
@@ -466,10 +620,9 @@
     </div>
   </div>
 
-  <!-- FORBIDDEN TRUTH MODAL (NO X BUTTON) -->
+  <!-- FORBIDDEN TRUTH MODAL (NO X) -->
   <div class="modal" id="forbiddenModal">
     <div class="modal-content forbidden-modal-box">
-      <!-- X button removed – may CLOSE ARCHIVE na sa baba -->
       <h3 style="color:var(--neon-red); font-family:'Orbitron', sans-serif; letter-spacing:2px; margin-bottom:12px; text-shadow:0 0 10px var(--neon-red);" id="forbiddenModalHeader">
         <i class="fas fa-biohazard"></i> DECRYPTED ARCHIVE
       </h3>
@@ -481,10 +634,9 @@
     </div>
   </div>
 
-  <!-- HISTORY MODAL (NO X BUTTON) -->
+  <!-- HISTORY MODAL (NO X) -->
   <div class="modal" id="historyModal">
     <div class="modal-content history-modal-box">
-      <!-- X button removed – may CLOSE ARCHIVE na sa baba -->
       <h3 style="color:var(--neon-gold); font-family:'Orbitron', sans-serif; letter-spacing:2px; margin-bottom:12px; text-shadow:0 0 10px var(--neon-gold);" id="historyModalHeader">
         <i class="fas fa-scroll"></i> HISTORY ARCHIVE
       </h3>
@@ -514,10 +666,16 @@
 
   <audio id="audioPlayer"></audio>
 
+  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Divine Tools -->
   <script src="app.js"></script>
   <script src="app1.js"></script>
   <script src="app2.js"></script>
   <script src="app3.js"></script>
+  <script src="app4.js"></script>
+  <script src="app5.js"></script>
+
 </body>
 </html>
