@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Rebels PH | Alchemist's Terminal v9.999</title>
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJ9X8BV4KM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,9 +13,7 @@
     gtag('config', 'G-TJ9X8BV4KM');
   </script>
 
-  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <!-- EXIFr -->
   <script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/lite.umd.js"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
@@ -128,47 +125,53 @@
           </div>
         </div>
 
-        <!-- ARSENAL – DIVINE TOOLS (16 Tools) -->
+        <!-- ARSENAL – ALL 33 TOOLS -->
         <div class="section-container" id="section-arsenal">
-          <div class="section-title">✦ ARSENAL // DIVINE TOOLS</div>
+          <div class="section-title">✦ ARSENAL // 33 DIVINE TOOLS</div>
 
-          <div class="arsenal-tabs">
-            <!-- Original GPS Tracker -->
-            <button class="arsenal-tab active" data-tool="gps"><i class="fas fa-satellite-dish"></i> GPS Tracker</button>
-            <!-- Supreme GPS (NEW - app5.js) -->
+          <div class="arsenal-tabs" style="max-height:300px; overflow-y:auto;">
+
+            <!-- Tools 1-17 (Existing) -->
+            <button class="arsenal-tab active" data-tool="gps"><i class="fas fa-satellite-dish"></i> GPS</button>
             <button class="arsenal-tab" data-tool="gps-supreme"><i class="fas fa-crown"></i> Supreme GPS</button>
-            <!-- Steganography -->
             <button class="arsenal-tab" data-tool="stego"><i class="fas fa-eye-slash"></i> LSB Stego</button>
             <button class="arsenal-tab" data-tool="dct"><i class="fas fa-wave-square"></i> DCT Stego</button>
-            <!-- EXIF Cleaner -->
-            <button class="arsenal-tab" data-tool="exif"><i class="fas fa-shield-alt"></i> EXIF Cleaner</button>
-            <!-- Vault -->
+            <button class="arsenal-tab" data-tool="exif"><i class="fas fa-shield-alt"></i> EXIF</button>
             <button class="arsenal-tab" data-tool="vault"><i class="fas fa-vault"></i> Vault</button>
-            <!-- Crypto Hash -->
-            <button class="arsenal-tab" data-tool="hash"><i class="fas fa-fingerprint"></i> Crypto Hash</button>
-            <!-- Quantum Key -->
-            <button class="arsenal-tab" data-tool="keygen"><i class="fas fa-key"></i> Quantum Key</button>
-            <!-- Frequency -->
+            <button class="arsenal-tab" data-tool="hash"><i class="fas fa-fingerprint"></i> Hash</button>
+            <button class="arsenal-tab" data-tool="keygen"><i class="fas fa-key"></i> Key</button>
             <button class="arsenal-tab" data-tool="freq"><i class="fas fa-music"></i> Frequency</button>
-            <!-- Code Shield -->
-            <button class="arsenal-tab" data-tool="codeshield"><i class="fas fa-shield-halved"></i> Code Shield</button>
-            <!-- Network Intel -->
-            <button class="arsenal-tab" data-tool="network"><i class="fas fa-globe"></i> Network Intel</button>
-            <!-- Encrypted Clipboard -->
+            <button class="arsenal-tab" data-tool="codeshield"><i class="fas fa-shield"></i> Code Shield</button>
+            <button class="arsenal-tab" data-tool="network"><i class="fas fa-globe"></i> Network</button>
             <button class="arsenal-tab" data-tool="clipboard"><i class="fas fa-clipboard"></i> Clipboard</button>
-            <!-- Checksum -->
             <button class="arsenal-tab" data-tool="checksum"><i class="fas fa-file-contract"></i> Checksum</button>
-            <!-- Network Ping -->
-            <button class="arsenal-tab" data-tool="ping"><i class="fas fa-wifi"></i> Network Ping</button>
-            <!-- Markdown -->
+            <button class="arsenal-tab" data-tool="ping"><i class="fas fa-wifi"></i> Ping</button>
             <button class="arsenal-tab" data-tool="markdown"><i class="fas fa-markdown"></i> Markdown</button>
-            <!-- AI Generator -->
-            <button class="arsenal-tab" data-tool="ai"><i class="fas fa-brain"></i> AI Generator</button>
+            <button class="arsenal-tab" data-tool="ai"><i class="fas fa-brain"></i> AI</button>
+            <button class="arsenal-tab" data-tool="audio-mastering"><i class="fas fa-music"></i> Mastering</button>
+
+            <!-- Tools 18-25 (app7.js) -->
+            <button class="arsenal-tab" data-tool="bio-kinetic"><i class="fas fa-heartbeat"></i> Bio-Kinetic</button>
+            <button class="arsenal-tab" data-tool="agritxt"><i class="fas fa-leaf"></i> AgriTxt</button>
+            <button class="arsenal-tab" data-tool="atlas"><i class="fas fa-cubes"></i> Atlas</button>
+            <button class="arsenal-tab" data-tool="crypto-pulse"><i class="fas fa-coins"></i> Crypto</button>
+            <button class="arsenal-tab" data-tool="binary-psalms"><i class="fas fa-guitar"></i> Psalms</button>
+            <button class="arsenal-tab" data-tool="adarna"><i class="fas fa-microchip"></i> Adarna</button>
+            <button class="arsenal-tab" data-tool="system-enforcer"><i class="fas fa-brain"></i> Enforcer</button>
+            <button class="arsenal-tab" data-tool="temporal-ledger"><i class="fas fa-clock"></i> Ledger</button>
+
+            <!-- Tools 26-33 (app8.js) -->
+            <button class="arsenal-tab" data-tool="flow-state"><i class="fas fa-bolt"></i> Flow State</button>
+            <button class="arsenal-tab" data-tool="neuro-scrubber"><i class="fas fa-brush"></i> Scrubber</button>
+            <button class="arsenal-tab" data-tool="somatic"><i class="fas fa-circle"></i> Somatic</button>
+            <button class="arsenal-tab" data-tool="baybayin-hash"><i class="fas fa-ghost"></i> Baybayin</button>
+            <button class="arsenal-tab" data-tool="phantom-spoofer"><i class="fas fa-mask"></i> Spoofer</button>
+            <button class="arsenal-tab" data-tool="ocular-override"><i class="fas fa-eye"></i> Ocular</button>
+            <button class="arsenal-tab" data-tool="god-view"><i class="fas fa-crown"></i> God-View</button>
+            <button class="arsenal-tab" data-tool="master-killswitch" style="color:var(--neon-red);"><i class="fas fa-skull"></i> ☠️ VOID</button>
           </div>
 
-          <!-- ===== Tool Panels ===== -->
-
-          <!-- GPS Tracker (existing) -->
+          <!-- Tool Panels (existing - abbreviated for brevity, but all included) -->
           <div class="arsenal-tool-panel active" id="tool-gps">
             <div class="tracker-container">
               <h3><i class="fas fa-satellite-dish"></i> Live Route Mapping</h3>
@@ -191,12 +194,7 @@
             </div>
           </div>
 
-          <!-- Supreme GPS Tracker (NEW - app5.js) -->
-          <div class="arsenal-tool-panel" id="tool-gps-supreme">
-            <!-- Rendered by app5.js -->
-          </div>
-
-          <!-- LSB Steganography -->
+          <div class="arsenal-tool-panel" id="tool-gps-supreme"></div>
           <div class="arsenal-tool-panel" id="tool-stego">
             <div class="divine-tool-card">
               <h3><i class="fas fa-eye-slash"></i> LSB Steganography <span class="badge">PNG Only</span></h3>
@@ -233,8 +231,6 @@
               </div>
             </div>
           </div>
-
-          <!-- DCT Steganography -->
           <div class="arsenal-tool-panel" id="tool-dct">
             <div class="divine-tool-card">
               <h3><i class="fas fa-wave-square"></i> DCT Steganography <span class="badge">JPEG Robust</span></h3>
@@ -271,8 +267,6 @@
               </div>
             </div>
           </div>
-
-          <!-- EXIF Cleaner -->
           <div class="arsenal-tool-panel" id="tool-exif">
             <div class="divine-tool-card">
               <h3><i class="fas fa-shield-alt"></i> EXIF Metadata Cleaner <span class="badge">Privacy</span></h3>
@@ -302,8 +296,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Encrypted Vault -->
           <div class="arsenal-tool-panel" id="tool-vault">
             <div class="divine-tool-card">
               <h3><i class="fas fa-vault"></i> Encrypted Data Vault <span class="badge">AES-256-GCM</span></h3>
@@ -328,8 +320,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Crypto Hash Engine -->
           <div class="arsenal-tool-panel" id="tool-hash">
             <div class="divine-tool-card">
               <h3><i class="fas fa-fingerprint"></i> Cryptographic Hash Engine <span class="badge">SHA-1/256/512</span></h3>
@@ -349,8 +339,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Quantum Key Generator -->
           <div class="arsenal-tool-panel" id="tool-keygen">
             <div class="divine-tool-card">
               <h3><i class="fas fa-key"></i> Quantum Entropy Key Generator <span class="badge">CSPRNG</span></h3>
@@ -369,8 +357,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Frequency Synthesizer -->
           <div class="arsenal-tool-panel" id="tool-freq">
             <div class="divine-tool-card">
               <h3><i class="fas fa-music"></i> Solfeggio Frequency Synthesizer <span class="badge">Web Audio</span></h3>
@@ -398,15 +384,9 @@
               </div>
             </div>
           </div>
-
-          <!-- Code Shield -->
           <div class="arsenal-tool-panel" id="tool-codeshield">
-            <div class="divine-tool-card" id="codeshield-container">
-              <!-- Rendered by app3.js -->
-            </div>
+            <div class="divine-tool-card" id="codeshield-container"></div>
           </div>
-
-          <!-- Network Intelligence -->
           <div class="arsenal-tool-panel" id="tool-network">
             <div class="divine-tool-card">
               <h3><i class="fas fa-globe"></i> Network Intelligence <span class="badge">IP & Geolocation</span></h3>
@@ -422,8 +402,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Encrypted Clipboard -->
           <div class="arsenal-tool-panel" id="tool-clipboard">
             <div class="divine-tool-card">
               <h3><i class="fas fa-clipboard"></i> Encrypted Clipboard <span class="badge">AES-GCM</span></h3>
@@ -440,8 +418,6 @@
               </div>
             </div>
           </div>
-
-          <!-- File Checksum -->
           <div class="arsenal-tool-panel" id="tool-checksum">
             <div class="divine-tool-card">
               <h3><i class="fas fa-file-contract"></i> File Integrity Monitor <span class="badge">SHA-256/512/MD5</span></h3>
@@ -458,8 +434,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Network Ping Tester -->
           <div class="arsenal-tool-panel" id="tool-ping">
             <div class="divine-tool-card">
               <h3><i class="fas fa-wifi"></i> Network Ping Tester <span class="badge">Latency Check</span></h3>
@@ -475,8 +449,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Markdown Editor -->
           <div class="arsenal-tool-panel" id="tool-markdown">
             <div class="divine-tool-card">
               <h3><i class="fas fa-markdown"></i> Markdown Editor <span class="badge">Live Preview</span></h3>
@@ -491,191 +463,11 @@
 - List item 1
 - List item 2
 
-\`\`\`javascript
+```javascript
 console.log('Hello World');
-\`\`\`
+Visit Digital Rebels PH</textarea>
 
-[Visit Digital Rebels PH](https://digitalrebels.ph)</textarea>
-                </div>
-                <div style="display:flex; flex-direction:column; gap:6px;">
-                  <div style="color:#88aabb; font-size:0.8rem;"><i class="fas fa-eye"></i> Preview</div>
-                  <div id="mdEditorPreview" style="flex:1; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:6px; padding:12px; color:#d0e5e0; font-size:0.85rem; overflow-y:auto; min-height:250px; line-height:1.8;"></div>
-                </div>
-              </div>
-              <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap;">
-                <button class="divine-btn" id="mdExportBtn"><i class="fas fa-download"></i> Export HTML</button>
-                <button class="divine-btn" id="mdCopyBtn" style="background:var(--neon-blue);"><i class="fas fa-copy"></i> Copy HTML</button>
-              </div>
-            </div>
-          </div>
+</div> <div style="display:flex; flex-direction:column; gap:6px;"> <div style="color:#88aabb; font-size:0.8rem;"><i class="fas fa-eye"></i> Preview</div> <div id="mdEditorPreview" style="flex:1; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:6px; padding:12px; color:#d0e5e0; font-size:0.85rem; overflow-y:auto; min-height:250px; line-height:1.8;"></div> </div> </div> <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap;"> <button class="divine-btn" id="mdExportBtn"><i class="fas fa-download"></i> Export HTML</button> <button class="divine-btn" id="mdCopyBtn" style="background:var(--neon-blue);"><i class="fas fa-copy"></i> Copy HTML</button> </div> </div> </div> <div class="arsenal-tool-panel" id="tool-ai"> <div class="divine-tool-card"> <h3><i class="fas fa-brain"></i> AI Image Generator <span class="badge">Dual AI Engine</span></h3> <p class="tool-desc" style="border-left-color:var(--neon-cyan);"> <b>⚡ Dual AI Engine:</b> Gumagamit ng <b>Pollinations AI</b> (libre, walang API key) + <b>Hugging Face</b> (optional token) + <b>Cyberpunk Fallback</b>. </p> <div style="display:flex; flex-direction:column; gap:12px;"> <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:6px; border:1px solid var(--border-color);"> <i class="fas fa-key" style="color:var(--neon-gold);"></i> <input type="password" id="aiTokenInput" placeholder="Hugging Face Token (optional)" style="flex:1; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:4px; padding:8px; color:#d0e5e0; font-family:'Share Tech Mono',monospace; font-size:0.7rem;"> <span style="color:#666; font-size:0.6rem;">Get token at <a href="https://huggingface.co/settings/tokens" target="_blank" style="color:var(--neon-blue);">hf.co/settings/tokens</a></span> </div> <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;"> <input type="text" id="aiPrompt" placeholder="Ilagay ang prompt para sa AI..." value="cyberpunk city neon lights digital art" style="flex:1; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:6px; padding:12px; color:#d0e5e0; font-family:'Share Tech Mono',monospace;"> <button class="divine-btn" id="aiGenerateBtn" style="background:var(--neon-cyan);"><i class="fas fa-magic"></i> Generate</button> </div> <div id="aiOutput" style="background:rgba(0,0,0,0.3); padding:12px; border-radius:6px; min-height:200px; display:flex; align-items:center; justify-content:center; border:1px solid var(--border-color);"> <span style="color:#666;">Enter a prompt and click "Generate"</span> </div> <div id="aiStatus" style="color:#88aabb; font-size:0.85rem; text-align:center;">Ready</div> </div> </div> </div> <div class="arsenal-tool-panel" id="tool-audio-mastering"></div> <!-- app7.js Panels --> <div class="arsenal-tool-panel" id="tool-bio-kinetic"></div> <div class="arsenal-tool-panel" id="tool-agritxt"></div> <div class="arsenal-tool-panel" id="tool-atlas"></div> <div class="arsenal-tool-panel" id="tool-crypto-pulse"></div> <div class="arsenal-tool-panel" id="tool-binary-psalms"></div> <div class="arsenal-tool-panel" id="tool-adarna"></div> <div class="arsenal-tool-panel" id="tool-system-enforcer"></div> <div class="arsenal-tool-panel" id="tool-temporal-ledger"></div> <!-- app8.js Panels --> <div class="arsenal-tool-panel" id="tool-flow-state"></div> <div class="arsenal-tool-panel" id="tool-neuro-scrubber"></div> <div class="arsenal-tool-panel" id="tool-somatic"></div> <div class="arsenal-tool-panel" id="tool-baybayin-hash"></div> <div class="arsenal-tool-panel" id="tool-phantom-spoofer"></div> <div class="arsenal-tool-panel" id="tool-ocular-override"></div> <div class="arsenal-tool-panel" id="tool-god-view"></div> <div class="arsenal-tool-panel" id="tool-master-killswitch"></div> </div> <!-- LEARNING HUB --> <div class="section-container" id="section-learning"> <div class="section-title">✦ LEARNING HUB</div> <div class="content-item"> <div class="item-title">Self-Taught Rebel Framework</div> <div class="item-text">Walang magtuturo sa'yo kundi ang sarili mong tiyaga.</div> </div> <div class="content-item"> <div class="item-title">Open-Source Digital Toolkit</div> <ul style="list-style:none; line-height:1.8;"> <li>⚡ <b>FreeCodeCamp / MDN Web Docs</b> — Web Architecture</li> <li>⚡ <b>Arch Linux / Kali Linux</b> — Terminal mastery</li> <li>⚡ <b>Blender & GIMP</b> — 3D & Digital Art</li> <li>⚡ <b>Neovim / Vim</b> — Keyboard-only editing</li> <li>⚡ <b>CyberChef</b> — Data encoding & cryptography</li> </ul> </div> </div> <!-- FORBIDDEN TRUTH --> <div class="section-container" id="section-forbiddentruth"> <div class="section-title" style="color:var(--neon-red); text-shadow:0 0 10px rgba(255,0,85,0.4);"> <i class="fas fa-biohazard"></i> FORBIDDEN TRUTH ARCHIVE </div> <div class="art-grid" id="forbiddenGridContainer"></div> </div> <!-- HISTORY --> <div class="section-container" id="section-history"> <div class="section-title" style="color:var(--neon-gold); text-shadow:0 0 10px rgba(255,204,0,0.4);"> <i class="fas fa-scroll"></i> HISTORY ARCHIVE </div> <div class="art-grid" id="historyGridContainer"></div> </div> </div> </div> </div> <!-- ===== MODALS ===== --> <!-- Art Modal (with X) --> <div class="art-modal" id="artModal"> <div class="art-modal-wrapper"> <button class="art-modal-close" onclick="closeArtModal()">&times;</button> <img src="" alt="" id="artModalImg" class="art-modal-img"> <div class="art-modal-caption"> <div class="title" id="artModalTitle">Artwork Title</div> <div class="desc" id="artModalDesc">Artwork Description</div> </div> </div> </div> <!-- Terminal Modal --> <div class="terminal-overlay" id="terminalOverlay"> <div class="terminal-window"> <div class="term-header"> <span>⛧ TERMINAL v9.999</span> <span style="cursor:pointer; color:#ff5555" onclick="closeTerminalModal()">&times;</span> </div> <div class="term-output" id="termOutput"> <p>> INITIALIZING DIGITAL REBELS MAINFRAME...</p> <p>> FREQUENCY 9.999: SYNCHRONIZED</p> <p>> Try commands: <b style="color:var(--neon-gold)">day</b>, <b style="color:var(--neon-gold)">night</b>, <b style="color:var(--neon-gold)">lucifer</b>, <b style="color:var(--neon-gold)">broken</b>, <b style="color:var(--neon-gold)">normal</b>, <b style="color:var(--neon-gold)">forbidden truth</b>, <b style="color:var(--neon-gold)">history</b>, o <b style="color:var(--neon-gold)">help</b></p> </div> <div class="term-input-line"> <span>root@rebels:~#</span> <input type="text" id="termInput" placeholder="type command..." autocomplete="off"> </div> </div> </div> <!-- GCash Modal --> <div class="modal" id="gcashModal"> <div class="modal-content"> <h3><i class="fas fa-charging-station"></i> FREQUENCY FUEL</h3> <div class="qr-container"> <img src="https://raw.githubusercontent.com/wendeered/digitalrebelsph/main/gcash-qr.jpg" alt="GCash QR Code" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAwMDAiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjZmZjYzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+R0NBU0gKUVIgQ09ERTwvdGV4dD48L3N2Zz4='"> </div> <div style="color:var(--neon-gold); font-size:0.95rem; margin-bottom:15px; font-weight:bold;">"Every peso amplifies the signal."</div> <button class="close-modal" onclick="closeGCashModal()">SIGNAL AMPLIFIED</button> </div> </div> <!-- FORBIDDEN TRUTH MODAL (NO X) --> <div class="modal" id="forbiddenModal"> <div class="modal-content forbidden-modal-box"> <h3 style="color:var(--neon-red); font-family:'Orbitron', sans-serif; letter-spacing:2px; margin-bottom:12px; text-shadow:0 0 10px var(--neon-red);" id="forbiddenModalHeader"> <i class="fas fa-biohazard"></i> DECRYPTED ARCHIVE </h3> <div class="forbidden-visual-box"> <img src="" alt="Forbidden Truth Visual" id="forbiddenVisualImg"> </div> <div class="forbidden-text-content" id="forbiddenTextBody"></div> <button class="close-modal" onclick="closeForbiddenModal()" style="background:var(--neon-red); color:#fff; margin-top:15px; width:100%; border:none; box-shadow:0 0 15px rgba(255,0,85,0.5);">CLOSE ARCHIVE</button> </div> </div> <!-- HISTORY MODAL (NO X) --> <div class="modal" id="historyModal"> <div class="modal-content history-modal-box"> <h3 style="color:var(--neon-gold); font-family:'Orbitron', sans-serif; letter-spacing:2px; margin-bottom:12px; text-shadow:0 0 10px var(--neon-gold);" id="historyModalHeader"> <i class="fas fa-scroll"></i> HISTORY ARCHIVE </h3> <div class="history-visual-box"> <img src="" alt="History Visual" id="historyVisualImg"> </div> <div class="history-text-content" id="historyTextBody"></div> <button class="close-modal" onclick="closeHistoryModal()" style="background:var(--neon-gold); color:#000; margin-top:15px; width:100%; border:none; box-shadow:0 0 15px rgba(255,204,0,0.5);">CLOSE ARCHIVE</button> </div> </div> <!-- CHAT WIDGET --> <div class="chat-widget"> <div class="chat-toggle" id="chatToggle"><i class="fas fa-robot"></i></div> <div class="chat-window" id="chatWindow"> <div class="chat-header"> <span>⚡ LUCIFER II LUX v1.0</span> <button onclick="document.getElementById('chatWindow').classList.remove('open')" style="background:none;border:none;color:#ff5555;cursor:pointer;">&times;</button> </div> <div class="chat-messages" id="chatMessages"></div> <div class="chat-input-area"> <input type="text" id="chatInput" placeholder="Type message..."> <button id="chatSend">➤</button> </div> </div> </div>
+<audio id="audioPlayer"></audio>
 
-          <!-- AI Image Generator -->
-          <div class="arsenal-tool-panel" id="tool-ai">
-            <div class="divine-tool-card">
-              <h3><i class="fas fa-brain"></i> AI Image Generator <span class="badge">Dual AI Engine</span></h3>
-              <p class="tool-desc" style="border-left-color:var(--neon-cyan);">
-                <b>⚡ Dual AI Engine:</b> Gumagamit ng <b>Pollinations AI</b> (libre, walang API key) + <b>Hugging Face</b> (optional token) + <b>Cyberpunk Fallback</b>.
-              </p>
-              <div style="display:flex; flex-direction:column; gap:12px;">
-                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:6px; border:1px solid var(--border-color);">
-                  <i class="fas fa-key" style="color:var(--neon-gold);"></i>
-                  <input type="password" id="aiTokenInput" placeholder="Hugging Face Token (optional)" style="flex:1; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:4px; padding:8px; color:#d0e5e0; font-family:'Share Tech Mono',monospace; font-size:0.7rem;">
-                  <span style="color:#666; font-size:0.6rem;">Get token at <a href="https://huggingface.co/settings/tokens" target="_blank" style="color:var(--neon-blue);">hf.co/settings/tokens</a></span>
-                </div>
-                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
-                  <input type="text" id="aiPrompt" placeholder="Ilagay ang prompt para sa AI..." value="cyberpunk city neon lights digital art" style="flex:1; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); border-radius:6px; padding:12px; color:#d0e5e0; font-family:'Share Tech Mono',monospace;">
-                  <button class="divine-btn" id="aiGenerateBtn" style="background:var(--neon-cyan);"><i class="fas fa-magic"></i> Generate</button>
-                </div>
-                <div id="aiOutput" style="background:rgba(0,0,0,0.3); padding:12px; border-radius:6px; min-height:200px; display:flex; align-items:center; justify-content:center; border:1px solid var(--border-color);">
-                  <span style="color:#666;">Enter a prompt and click "Generate"</span>
-                </div>
-                <div id="aiStatus" style="color:#88aabb; font-size:0.85rem; text-align:center;">Ready</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- LEARNING HUB -->
-        <div class="section-container" id="section-learning">
-          <div class="section-title">✦ LEARNING HUB</div>
-          <div class="content-item">
-            <div class="item-title">Self-Taught Rebel Framework</div>
-            <div class="item-text">Walang magtuturo sa'yo kundi ang sarili mong tiyaga.</div>
-          </div>
-          <div class="content-item">
-            <div class="item-title">Open-Source Digital Toolkit</div>
-            <ul style="list-style:none; line-height:1.8;">
-              <li>⚡ <b>FreeCodeCamp / MDN Web Docs</b> — Web Architecture</li>
-              <li>⚡ <b>Arch Linux / Kali Linux</b> — Terminal mastery</li>
-              <li>⚡ <b>Blender & GIMP</b> — 3D & Digital Art</li>
-              <li>⚡ <b>Neovim / Vim</b> — Keyboard-only editing</li>
-              <li>⚡ <b>CyberChef</b> — Data encoding & cryptography</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- FORBIDDEN TRUTH -->
-        <div class="section-container" id="section-forbiddentruth">
-          <div class="section-title" style="color:var(--neon-red); text-shadow:0 0 10px rgba(255,0,85,0.4);">
-            <i class="fas fa-biohazard"></i> FORBIDDEN TRUTH ARCHIVE
-          </div>
-          <div class="art-grid" id="forbiddenGridContainer"></div>
-        </div>
-
-        <!-- HISTORY -->
-        <div class="section-container" id="section-history">
-          <div class="section-title" style="color:var(--neon-gold); text-shadow:0 0 10px rgba(255,204,0,0.4);">
-            <i class="fas fa-scroll"></i> HISTORY ARCHIVE
-          </div>
-          <div class="art-grid" id="historyGridContainer"></div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== MODALS ===== -->
-
-  <!-- Art Modal (with X) -->
-  <div class="art-modal" id="artModal">
-    <div class="art-modal-wrapper">
-      <button class="art-modal-close" onclick="closeArtModal()">&times;</button>
-      <img src="" alt="" id="artModalImg" class="art-modal-img">
-      <div class="art-modal-caption">
-        <div class="title" id="artModalTitle">Artwork Title</div>
-        <div class="desc" id="artModalDesc">Artwork Description</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Terminal Modal -->
-  <div class="terminal-overlay" id="terminalOverlay">
-    <div class="terminal-window">
-      <div class="term-header">
-        <span>⛧ TERMINAL v9.999</span>
-        <span style="cursor:pointer; color:#ff5555" onclick="closeTerminalModal()">&times;</span>
-      </div>
-      <div class="term-output" id="termOutput">
-        <p>> INITIALIZING DIGITAL REBELS MAINFRAME...</p>
-        <p>> FREQUENCY 9.999: SYNCHRONIZED</p>
-        <p>> Try commands: <b style="color:var(--neon-gold)">day</b>, <b style="color:var(--neon-gold)">night</b>, <b style="color:var(--neon-gold)">lucifer</b>, <b style="color:var(--neon-gold)">broken</b>, <b style="color:var(--neon-gold)">normal</b>, <b style="color:var(--neon-gold)">forbidden truth</b>, <b style="color:var(--neon-gold)">history</b>, o <b style="color:var(--neon-gold)">help</b></p>
-      </div>
-      <div class="term-input-line">
-        <span>root@rebels:~#</span>
-        <input type="text" id="termInput" placeholder="type command..." autocomplete="off">
-      </div>
-    </div>
-  </div>
-
-  <!-- GCash Modal -->
-  <div class="modal" id="gcashModal">
-    <div class="modal-content">
-      <h3><i class="fas fa-charging-station"></i> FREQUENCY FUEL</h3>
-      <div class="qr-container">
-        <img src="https://raw.githubusercontent.com/wendeered/digitalrebelsph/main/gcash-qr.jpg" alt="GCash QR Code" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAwMDAiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjZmZjYzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+R0NBU0gKUVIgQ09ERTwvdGV4dD48L3N2Zz4='">
-      </div>
-      <div style="color:var(--neon-gold); font-size:0.95rem; margin-bottom:15px; font-weight:bold;">"Every peso amplifies the signal."</div>
-      <button class="close-modal" onclick="closeGCashModal()">SIGNAL AMPLIFIED</button>
-    </div>
-  </div>
-
-  <!-- FORBIDDEN TRUTH MODAL (NO X) -->
-  <div class="modal" id="forbiddenModal">
-    <div class="modal-content forbidden-modal-box">
-      <h3 style="color:var(--neon-red); font-family:'Orbitron', sans-serif; letter-spacing:2px; margin-bottom:12px; text-shadow:0 0 10px var(--neon-red);" id="forbiddenModalHeader">
-        <i class="fas fa-biohazard"></i> DECRYPTED ARCHIVE
-      </h3>
-      <div class="forbidden-visual-box">
-        <img src="" alt="Forbidden Truth Visual" id="forbiddenVisualImg">
-      </div>
-      <div class="forbidden-text-content" id="forbiddenTextBody"></div>
-      <button class="close-modal" onclick="closeForbiddenModal()" style="background:var(--neon-red); color:#fff; margin-top:15px; width:100%; border:none; box-shadow:0 0 15px rgba(255,0,85,0.5);">CLOSE ARCHIVE</button>
-    </div>
-  </div>
-
-  <!-- HISTORY MODAL (NO X) -->
-  <div class="modal" id="historyModal">
-    <div class="modal-content history-modal-box">
-      <h3 style="color:var(--neon-gold); font-family:'Orbitron', sans-serif; letter-spacing:2px; margin-bottom:12px; text-shadow:0 0 10px var(--neon-gold);" id="historyModalHeader">
-        <i class="fas fa-scroll"></i> HISTORY ARCHIVE
-      </h3>
-      <div class="history-visual-box">
-        <img src="" alt="History Visual" id="historyVisualImg">
-      </div>
-      <div class="history-text-content" id="historyTextBody"></div>
-      <button class="close-modal" onclick="closeHistoryModal()" style="background:var(--neon-gold); color:#000; margin-top:15px; width:100%; border:none; box-shadow:0 0 15px rgba(255,204,0,0.5);">CLOSE ARCHIVE</button>
-    </div>
-  </div>
-
-  <!-- CHAT WIDGET -->
-  <div class="chat-widget">
-    <div class="chat-toggle" id="chatToggle"><i class="fas fa-robot"></i></div>
-    <div class="chat-window" id="chatWindow">
-      <div class="chat-header">
-        <span>⚡ LUCIFER II LUX v1.0</span>
-        <button onclick="document.getElementById('chatWindow').classList.remove('open')" style="background:none;border:none;color:#ff5555;cursor:pointer;">&times;</button>
-      </div>
-      <div class="chat-messages" id="chatMessages"></div>
-      <div class="chat-input-area">
-        <input type="text" id="chatInput" placeholder="Type message...">
-        <button id="chatSend">➤</button>
-      </div>
-    </div>
-  </div>
-
-  <audio id="audioPlayer"></audio>
-
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-  <!-- Divine Tools -->
-  <script src="app.js"></script>
-  <script src="app1.js"></script>
-  <script src="app2.js"></script>
-  <script src="app3.js"></script>
-  <script src="app4.js"></script>
-  <script src="app5.js"></script>
-
-</body>
-</html>
+<!-- Leaflet JS --> <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> <!-- Divine Tools --> <script src="app.js"></script> <script src="app1.js"></script> <script src="app2.js"></script> <script src="app3.js"></script> <script src="app4.js"></script> <script src="app5.js"></script> <script src="app6.js"></script> <script src="app7.js"></script> <!-- BAGONG IDINAGDAG --> <script src="app8.js"></script> <!-- BAGONG IDINAGDAG --></body> </html> ```
